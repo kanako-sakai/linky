@@ -7,7 +7,7 @@
 	      	<div class="overlay"></div>
 	        <div class="container-fluid p-0">
 	          <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third order-md-last img js-fullheight" style="background-image:url(images/bg_1.jpg);">
+	          	<div class="one-third order-md-last img js-fullheight" style=#>
 	          	</div>
 		          <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
@@ -15,7 +15,12 @@
 			            <h1 class="mb-4 mt-3" align="right"><span>女性のキャリアを<br>より自由に<br>より前向きに</span></h1>
 			            <p>先輩女性プロフェッショナルや公式女性メンターに相談して、キャリアの悩みを解決しましょう</p>
 			            
-			            <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">今すぐ会員登録</a></p>
+			            @if (Auth::check())
+			              <p></p>
+			            @else    
+  			            {{-- ユーザ登録ページへのリンク --}}
+                    {!! link_to_route('signup.get', '今すぐ会員登録', [], ['class' => 'btn btn-primary px-5 py-3 mt-3']) !!}
+                  @endif
 		            </div>
 		          </div>
 	        	</div>
