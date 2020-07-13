@@ -1,4 +1,4 @@
-@extends('layouts.sub')
+@extends('layouts.app_2')
 
 @section('content')
     <section class="hero-wrap hero-wrap-2" style="#" data-stellar-background-ratio="0.5">
