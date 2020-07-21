@@ -81,7 +81,7 @@ class RegisterController extends Controller
         $user = User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'email_verify_token' => base64_encode($data['email']),
+            'email_verify_token' => str_random(32) //base64_encode($data['email']),
         ]);
             // 'email_auth_number' => $data['email_auth_number'],
             // 'email_auth_valid_datetime' => $data['email_auth_valid_datetime'],
@@ -205,7 +205,9 @@ class RegisterController extends Controller
         $profile->marriage_status = $request->marriage_status;
         $profile->child_status = $request->child_status;
         $profile->save();
-    
+        
+        \Auth::login($user);
+        
         return view('auth.main.registered');
       }
 }
