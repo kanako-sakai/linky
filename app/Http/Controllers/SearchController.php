@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\User;
+use App\Profile;
+use App\Industry;
+use App\JobCategory;
 
 class SearchController extends Controller
 {
     public function index(Request $request){
-        $query = User::query();
+        $query = Profile::query();
         
         //$request->input()で検索時に入力した項目を取得
         $search1=$request->input('industry_id');
@@ -20,7 +25,6 @@ class SearchController extends Controller
         $search8=$request->input('marriage_status');
         $search9=$request->input('child_status');
         
-        //もし$search1があれば、
         if(!empty($search1)){
             $query->where('industry_id','$serarch1')->get();
         }
@@ -60,8 +64,13 @@ class SearchController extends Controller
         //ユーザーを1ページにつき20人ずつ表示させる
         $data = $query->paginate(20);
         
-        return view('users.index',[
-            'data' => $data
+        $industries = Industry::all()->pluck('name', 'id');
+        $job_categories = JobCategory::all()->pluck('name', 'id');
+        
+        return view('search.index',[
+            'data' => $data,
+            'industries' => $industries, 
+            'job_categories' => $job_categories,
         ]);
     }
 }
