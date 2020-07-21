@@ -7,18 +7,18 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav nav ml-auto">
-          <li class="nav-item">{!! link_to_route('home', 'ホーム') !!}</li>
+          <li class="nav-item">{!! link_to_route('home', 'ホーム',[],['class' => 'nav-link']) !!}</li>
           
-          <li class="nav-item">{!! link_to_route('about', 'About') !!}</li>
+          <li class="nav-item">{!! link_to_route('about', 'About',[],['class' => 'nav-link']) !!}</li>
           
         @if (Auth::check())
           {{-- ユーザ一覧ページへのリンク --}}
-          <li class="nav-item"><a href="#" class="nav-link"><span>相談相手を探す</span></a></li>
+          <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
           <li class="nav-item"><a href="#" class="nav-link"><span>公式メンターリスト</span></a></li>
           {{-- マイページへのリンク --}}
-          <li class="nav-item"><a href="#" class="nav-link"><span>マイページ</span></a></li>
+          <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()]) !!}</li>
           {{-- ログアウトへのリンク --}}
-          <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
+          <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
           
         @else  
           {{-- ユーザ登録ページへのリンク --}}
@@ -27,7 +27,7 @@
           <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
         @endif
         
-          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+          <li class="nav-item">{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'nav-link']) !!}</li>
         </ul>
       </div>
     </div>
