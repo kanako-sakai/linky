@@ -1,10 +1,18 @@
 @extends('layouts.app_2')
 
 @section('content')
+<section class="ftco-section" id="coaches-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+            	<div class="col-md-8 heading-section text-center">
+                	<h2 class="mb-4">マイページ</h2>
+          		</div>
+        	</div>
     <div class="row">
         <aside class="col-sm-4">
             {{-- ユーザ情報 --}}
             @include('users.card')
+            
         </aside>
         <div class="col-sm-8">
             {{-- タブ --}}
@@ -14,8 +22,13 @@
                 <ul class="list-unstyled">
                     @foreach ($matches_from_me as $matches_from_me)
                         <li class="media">
-                            {{-- ユーザのメールアドレスをもとにGravatarを取得して表示 --}}
-                            <img class="mr-2 rounded" src="{{ Gravatar::get($matches_from_me->receiver->email, ['size' => 50]) }}" alt="">
+                            {{-- アイコン --}}
+                            @if(isset($user->picture))
+                            	<img src = "{{ $matches_from_me->receiver->picture }}" width=50 height=50>
+                            @else
+                            	<img src="{{ Gravatar::get($matches_from_me->receiver->email, ['size' => 50]) }}" alt=""> 
+                            @endif
+
                             <div class="media-body">
                                 <div>
                                     {{ $matches_from_me->receiver->name }}
@@ -37,8 +50,13 @@
                 <ul class="list-unstyled">
                     @foreach ($matches_from_others as $matches_from_others)
                         <li class="media">
-                            {{-- ユーザのメールアドレスをもとにGravatarを取得して表示 --}}
-                            <img class="mr-2 rounded" src="{{ Gravatar::get($matches_from_others->sender->email, ['size' => 50]) }}" alt="">
+                            {{-- アイコン --}}
+                            @if(isset($user->picture))
+                            	<img src = "{{ $matches_from_others->sender->picture }}" width=50 height=50>
+                            @else
+                            	<img src="{{ Gravatar::get($matches_from_others->sender->email, ['size' => 50]) }}" alt=""> 
+                            @endif
+                            
                             <div class="media-body">
                                 <div>
                                     {{ $matches_from_others->sender->name }}
@@ -59,4 +77,5 @@
             @endif
         </div>
     </div>
+</section>    
 @endsection

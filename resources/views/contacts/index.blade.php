@@ -1,11 +1,18 @@
-@extends('layouts.app_2')
+@extends('layouts.sub')
 
 @section('content')
+<section class="ftco-section" id="coaches-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+            	<div class="col-md-8 heading-section text-center ftco-animate">
+                	<h2 class="mb-4">お問い合わせ</h2>
+          		</div>
+        	</div>
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">お問い合わせ</div>
+                    <div class="card-header">お問い合わせフォームをご記載ください。</div>
                     
                     {{--エラーメッセージ--}}
                     @include('commons.error_messages')   
@@ -34,6 +41,11 @@
                     
                     {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
                     {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+</div>
+</section>
 
 @endsection
                     

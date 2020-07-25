@@ -1,6 +1,10 @@
 @if($profile->exists())
 
-<h2>プロフィール</h2>
+<div class="row pb-2">
+    <h4>プロフィール</h4>
+    {{-- メッセージ編集ページへのリンク --}}
+    {!! link_to_route('users.edit', '編集', ['user' => $user], ['class' => 'btn btn-primary']) !!}
+</div>
 
     <table>
         <tbody>
@@ -80,7 +84,14 @@
                     @endif
                 </td>
             </tr>
+            <tr>
+                <td>【自己紹介】</td>
+                <td class="text-left"> {{$profile->intro}}
+                </td>
+            </tr>
         </tbody>
     </table>
-
+    
+    {{-- 退会フォームへのリンク --}}
+    <p>退会されたい方は{!! link_to_route('cancel_form', 'こちら', ['id' => $user->id]) !!}</p>
 @endif

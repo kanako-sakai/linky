@@ -1,5 +1,5 @@
 @if (Auth::id() != $user->id)
-    @if (Auth::user()->is_matching_from_me($user->id) || Auth::user()->is_matching_from_others($user->id))
+    @if (Auth::user()->is_matching($user->id))
 
     @elseif (Auth::user()->is_requested($user->id))
         {{-- 承認のボタン --}}

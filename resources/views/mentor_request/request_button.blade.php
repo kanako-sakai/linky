@@ -5,7 +5,7 @@
             {!! Form::submit('リクエストを取り消す', ['class' => "btn btn-danger btn-block"]) !!}
         {!! Form::close() !!}
     
-    @elseif (Auth::user()->is_matching_from_me($user->id) || Auth::user()->is_matching_from_others($user->id))
+    @elseif (Auth::user()->is_matching($user->id))
         <p>すでに{{ $user->name }}さんとのマッチングが成立しています。<br>
         マッチング一覧でご確認ください。</p>
 

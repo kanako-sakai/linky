@@ -9,14 +9,12 @@
         <ul class="navbar-nav nav ml-auto">
           <li class="nav-item">{!! link_to_route('home', 'ホーム',[],['class' => 'nav-link']) !!}</li>
           
-          <li class="nav-item">{!! link_to_route('about', 'About',[],['class' => 'nav-link']) !!}</li>
-          
         @if (Auth::check())
           {{-- ユーザ一覧ページへのリンク --}}
           <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
-          <li class="nav-item"><a href="#" class="nav-link"><span>公式メンターリスト</span></a></li>
+          <li class="nav-item">{!! link_to_route('offical_mentors', 'オフィシャルメンターリスト',[],['class' => 'nav-link']) !!}</li>
           {{-- マイページへのリンク --}}
-          <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()]) !!}</li>
+          <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
           {{-- ログアウトへのリンク --}}
           <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
           
