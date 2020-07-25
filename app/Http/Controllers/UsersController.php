@@ -288,7 +288,7 @@ class UsersController extends Controller
         
         return view('cancel.cancel_form', [
             'user' => $user,
-            'cancel_reasons' => $cancel_reasons
+            'cancel_reasons' => $cancel_reasons,
         ]);
     }
     
