@@ -48,44 +48,49 @@ class UsersController extends Controller
             //     ->orWhere('can_mentor', $s_can_mentor);
             // })->paginate(20);
         
-            if($request->has('intro')) {
+            if($s_intro !== null) 
+            {
                 $query->where('intro', 'like', '%'.$s_intro.'%');
             }
         
-            if($request->has('industry_id') && $s_industry != '指定なし') {
+            if($s_industry !== null && $s_industry != '指定なし') {
                 $query->where('industry_id', $s_industry);
             }    
-            
-            if($request->has('job_category_id') && $s_jobcategory != '指定なし') {
+        
+            if($s_jobcategory !== null && $s_jobcategory != '指定なし') {
                 $query->where('job_category_id', $s_jobcategory);
             }
             
-            if($request->has('expat')){
+            if($s_expat !== null){
                 $query->where('expat', $s_expat);
             }
             
-            if($request->has('s_mba')){
+            if($s_mba !== null){
                 $query->where('mba', $s_mba);
             }
             
-            if($request->has('s_otherstudyabroad')){
+            if($s_otherstudyabroad !== null){
                 $query->where('other_study_abroad', $s_otherstudyabroad);
             }
             
-            if($request->has('s_returnee')){
+            if($s_returnee!== null){
                 $query->where('returnee',$s_returnee);
             }
             
-            if($request->has('s_careerchange')){
+            if($s_careerchange !== null){
                 $query->where('career_change', $s_careerchange);
             }
             
-            if($request->has('s_marriage')){
+            if($s_marriage !== null){
                 $query->where('marriage_status',$s_marriage);
             }
             
-            if($request->has('s_child')){
+            if($s_child !== null){
                 $query->where('child_status', $s_child);
+            }
+            
+            if($s_can_mentor !== null){
+                $query->where('can_mentor', $s_can_mentor);
             }
         })->paginate(10);
     

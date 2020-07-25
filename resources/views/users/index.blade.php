@@ -42,20 +42,16 @@
            
             <h5>{!! Form::checkbox('can_mentor', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('can_mentor', '積極的に相談に乗れる方') !!}
-            
-          
+        
                 {!! Form::checkbox('expat', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('expat', '海外駐在・トレーニー') !!} 
 
-          
                 {!! Form::checkbox('mba', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('mba', 'MBA留学') !!}
-            
-
+        
                 {!! Form::checkbox('other_study_abroad', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('other_study_abroad', 'その他留学') !!}
                 
-
                 {!! Form::checkbox('returnee', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('returnee', '帰国子女') !!} 
       
@@ -65,7 +61,6 @@
                 {!! Form::checkbox('marriage_status', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('marriage_status', '結婚') !!} 
          
-                {!! Form::hidden('child_status', '0') !!}
                 {!! Form::checkbox('child_status', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('child_status', '育児') !!} 
             </h5>    
