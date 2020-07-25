@@ -170,6 +170,8 @@ class RegisterController extends Controller
         $profile->career_change = $request->career_change;
         $profile->marriage_status = $request->marriage_status;
         $profile->child_status = $request->child_status;
+        $profile->can_mentor = $request -> can_mentor;
+        $profile->intro = $request->intro;
         
         $industry = Industry::find($request->industry_id)->name;
         $job_category = JobCategory::find($request->job_category_id)->name;
@@ -204,6 +206,8 @@ class RegisterController extends Controller
         $profile->career_change = $request->career_change;
         $profile->marriage_status = $request->marriage_status;
         $profile->child_status = $request->child_status;
+        $profile->can_mentor = $request -> can_mentor;
+        $profile->intro = $request->intro;
         $profile->save();
         
         \Auth::login($user);

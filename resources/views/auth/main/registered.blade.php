@@ -1,19 +1,19 @@
 @extends('layouts.app_2')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">本会員登録完了</div>
+<section class="ftco-section" id="coaches-section">
+        	<div class="container">
+        		<div class="row justify-content-center pb-5">
+                	<div class="col-md-8 heading-section text-center">
+                    	<h2 class="mb-4">本会員登録完了</h2>
+              		</div>
+            	</div>
+            	
+                <div class="card-body">
+                    <p>本会員登録が完了しました。</p>
+                    {!! link_to_route('users.show', 'マイページへ', ['user' => Auth::id()], ['class'=>'btn btn-primary']) !!}
 
-                    <div class="card-body">
-                        <p>本会員登録が完了しました。</p>
-                        <a href="{{url('/')}}" class="sg-btn">トップページへ戻る</a>
-
-                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+</section>
 @endsection

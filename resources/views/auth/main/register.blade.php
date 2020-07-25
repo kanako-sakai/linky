@@ -1,11 +1,13 @@
 @extends('layouts.app_2')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">本会員登録</div>
+<section class="ftco-section" id="coaches-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+            	<div class="col-md-8 heading-section text-center">
+                	<h2 class="mb-4">本会員登録</h2>
+          		</div>
+        	</div>
 
                     @isset($message)
                         <div class="card-body">
@@ -20,12 +22,12 @@
                     @include('commons.error_messages')                    
                     
                    {!! Form::open(['route' => 'register.main.check']) !!}
-                   
+                       @csrf
                    <!--email_verify_tokenのデータを引き継ぐ-->
                     {!! Form::hidden('email_verify_token', $email_verify_token); !!} 
                    
                     <div class="form-group">
-                        {!! Form::label('name', '名前') !!}
+                        {!! Form::label('name', 'お名前') !!}
                         {!! Form::text('name', null, ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
@@ -99,12 +101,29 @@
                     </div>
                     
                     <div class="form-group">
-                        {!! Form::checkbox('agree', 1, null, ['class' => 'field']) !!}
-                        {!! Form::label('agree', 'プライバシーポリシーに同意') !!} 
+                        {!! Form::label('can_mentor', '他の方の相談に乗ることができますか？') !!}
+                        {!! Form::radio('can_mentor', 1, false, ['class' => 'field']) !!}
+                        {!! Form::label('1', '可') !!}
+                        {!! Form::radio('child_status', 0, false, ['class' => 'field']) !!}
+                        {!! Form::label('0', '不可') !!}
                     </div>
+                    
+                    <div class="form-group">
+                        {!! Form::label('intro', '自己紹介文(後から変更することができます)') !!}
+                        {!! Form::textarea('intro', null, ['class' => 'form-control', 'placeholder' => '【経歴】新卒でIT企業に入社。営業を3年経験した後に、金融業界に転職。
+【趣味】旅行']) !!}
+                    </div>    
+                    
+                    <div class="form-group">
+                        {!! Form::checkbox('agree', 1, null, ['class' => 'field']) !!}
+                        {!! link_to_route('privacy_policy', 'プライバシーポリシー') !!}に同意する。
+                    </div>
+                    
+                    <div style="text-align: center">
                     {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
                     
                     {!! Form::close() !!}
+                    </div>
                     @endempty
         </div>
     </div>

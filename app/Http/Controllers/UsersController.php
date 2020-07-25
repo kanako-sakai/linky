@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; //追加
+use Illuminate\Support\Facades\Storage; //追加
+
 
 use App\User; //追加
 use App\Profile;//追加
@@ -11,23 +13,17 @@ use App\Industry;//追加
 use App\JobCategory;//追加
 use App\MentorRequest; //追加
 use App\DirectMessage;//追加
+use App\CancelReason;//追加
 use Auth;
 
 class UsersController extends Controller
 {
     public function index(Request $request)
     {
-        // // ユーザ一覧をidの降順で取得
-        // $users = User::orderBy('id', 'desc')->paginate(10);
-
-        // // ユーザ一覧ビューでそれを表示
-        // return view('users.index2', [
-        //     'users' => $users,
-        // ]);
-        
         $users = User::whereHas('profile', function($query) use($request) {
 
             //$request->input()で検索時に入力した項目を取得
+            $s_intro=$request->input('intro');
             $s_industry=$request->input('industry_id');
             $s_jobcategory=$request->input('job_category_id');
             $s_expat=$request->input('expat');
@@ -37,44 +33,62 @@ class UsersController extends Controller
             $s_careerchange=$request->input('career_change');
             $s_marriage=$request->input('marriage_status');
             $s_child=$request->input('child_status');
+            $s_can_mentor=$request->input('can_mentor');
+            
+            // $query->where('industry_id', $s_industry)
+            //     ->orWhere('job_category_id', $s_jobcategory)
+            //     ->orWhere('expat', $s_expat)
+            //     ->orWhere('mba', $s_mba)
+            //     ->orWhere('other_study_abroad', $s_otherstudyabroad)
+            //     ->orWhere('returnee',$s_returnee)
+            //     ->orWhere('career_change', $s_careerchange)
+            //     ->orWhere('marriage_status',$s_marriage)
+            //     ->orWhere('child_status', $s_child)
+            //     ->orWhere('intro', 'like', '%'.$s_intro.'%')
+            //     ->orWhere('can_mentor', $s_can_mentor);
+            // })->paginate(20);
+        
+            if($request->has('intro')) {
+                $query->where('intro', 'like', '%'.$s_intro.'%');
+            }
         
             if($request->has('industry_id') && $s_industry != '指定なし') {
                 $query->where('industry_id', $s_industry);
-            }
+            }    
             
             if($request->has('job_category_id') && $s_jobcategory != '指定なし') {
                 $query->where('job_category_id', $s_jobcategory);
             }
             
-            if(!empty($s_expat)) {
+            if($request->has('expat')){
                 $query->where('expat', $s_expat);
             }
             
-            if(!empty($s_mba)){
+            if($request->has('s_mba')){
                 $query->where('mba', $s_mba);
             }
             
-            if(!empty($s_otherstudyabroad)){
+            if($request->has('s_otherstudyabroad')){
                 $query->where('other_study_abroad', $s_otherstudyabroad);
             }
             
-            if(!empty($s_returnee)){
+            if($request->has('s_returnee')){
                 $query->where('returnee',$s_returnee);
             }
             
-            if(!empty($s_careerchange)){
+            if($request->has('s_careerchange')){
                 $query->where('career_change', $s_careerchange);
             }
             
-            if(!empty($s_marriage)){
+            if($request->has('s_marriage')){
                 $query->where('marriage_status',$s_marriage);
             }
             
-            if(!empty($s_child)){
+            if($request->has('s_child')){
                 $query->where('child_status', $s_child);
             }
-        })->paginate(20);
-        
+        })->paginate(10);
+    
         $industries = Industry::all()->pluck('name', 'id');
         $job_categories = JobCategory::all()->pluck('name', 'id');
         
@@ -111,15 +125,22 @@ class UsersController extends Controller
     {
         $user = Auth::user();
         
-        $mentor_requestings=MentorRequest::where(function($query) {
-            $its_me = Auth::user();
-            $query->where('from_user_id', $its_me->id);
+        //件数をロード
+        $user->loadCount(['mentor_requestings' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
+        $mentor_requestings=MentorRequest::where(function($query) use($user) {
+            $query->where('from_user_id', $user->id);
             $query->where('status',0);
         })->paginate(10);
+        
+        $count_mentor_requestings = count($mentor_requestings);
         
         return view('users.mentor_requestings',[
             'user' => $user,
             'mentor_requestings' => $mentor_requestings,
+            'count_mentor_requestings'=>$mentor_requestings,
         ]);
     }
     
@@ -127,9 +148,13 @@ class UsersController extends Controller
     {
         $user = Auth::user();
         
-        $requesters = MentorRequest::where(function($query) {
-            $its_me = Auth::user();
-            $query->where('to_user_id', $its_me->id);
+        //件数をロード
+        $user->loadCount(['requesters' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
+        $requesters = MentorRequest::where(function($query) use($user) {
+            $query->where('to_user_id', $user->id);
             $query->where('status',0);
         })->paginate(10);
         
@@ -143,17 +168,22 @@ class UsersController extends Controller
     {
        $user = Auth::user();
        
+    //   //Todo: 件数をロード
+    //     $user -> loadCount(['mentor_requests' => function ($query) {
+    //         $query->where('mentor_requests.status', 1);
+    //     }]);
+    
+        $user->mentor_requests_count = $user->matchings()->count();
+       
        //承諾された自分が送ったリクエスト
-       $matches_from_me = MentorRequest::where(function($query) {
-            $its_me = Auth::user();
-            $query->where('from_user_id', $its_me->id);
+       $matches_from_me = MentorRequest::where(function($query) use($user) {
+            $query->where('from_user_id', $user->id);
             $query->where('status',1);
         })->paginate(10);
         
         // 承諾された自分に届いたリクエスト
-        $matches_from_others = MentorRequest::where(function($query) {
-            $its_me = Auth::user();
-            $query->where('to_user_id', $its_me->id);
+        $matches_from_others = MentorRequest::where(function($query) use($user) {
+            $query->where('to_user_id', $user->id);
             $query->where('status',1);
             })->paginate(10);
         
@@ -171,28 +201,154 @@ class UsersController extends Controller
         //自分のid
         $its_me = Auth::user();
         
-        // TODO: 自分とidがマッチしているかを確認
-       
-        
         // idの値でユーザを検索して取得
         $user = User::findOrFail($id);
+        
+        //マッチングしているかの確認
+        $is_matching = $its_me->is_matching($id);
         
         $messages = DirectMessage::where(function($query) use($id, $its_me) {
             $query->where('from_user_id', $id);
             $query->where('to_user_id', $its_me->id);
         })
             ->orWhere(function($query) use($id, $its_me) {
-                $user = User::findOrFail($id);
-                $its_me = Auth::user();
-                
                 $query->where('to_user_id', $id);
                 $query->where('from_user_id', $its_me->id);
-            })->orderBy('created_at', 'desc')->get();
+            })->orderBy('created_at', 'asc')->get();
         
-        return view('direct_message.messages',[
-            'user' => $user,
-            'messages'=> $messages,
-        ]);    
+        if (! $is_matching) {
+            return back();
+        } else {
+            return view('direct_message.messages',[
+                'user' => $user,
+                'messages'=> $messages,
+                ]);
+            }    
     }
     
+    //プロフィールの編集
+    public function edit()
+    {
+        $user = Auth::user();
+    
+        $profile = $user->profile()->first();
+        
+        $industries = Industry::all()->pluck('name', 'id');
+        $job_categories = JobCategory::all()->pluck('name', 'id');
+        
+        //編集ビューでそれを表示
+        return view('users.profile_edit', [
+            'user' => $user,
+            'profile' => $profile,
+            'industries' => $industries,
+            'job_categories' => $job_categories,
+        ]);
+    }
+    
+    //プロフィール編集の更新処理
+    public function update(Request $request, $id)
+    {
+        $user = Auth::user();
+        
+        $profile = $user->profile()->first();
+        
+        //プロフィールを更新
+        $profile->user_id=$user->id;
+        $profile->education = $request->education;
+        $profile->working_years = $request->working_years;
+        $profile->employee = $request->employee;
+        $profile->industry_id = $request->industry_id;
+        $profile->job_category_id= $request->job_category_id;
+        $profile->expat = $request->expat;
+        $profile->mba = $request->mba;
+        $profile->other_study_abroad = $request->other_study_abroad;
+        $profile->returnee = $request->returnee;
+        $profile->career_change = $request->career_change;
+        $profile->marriage_status = $request->marriage_status;
+        $profile->child_status = $request->child_status;
+        $profile->can_mentor = $request->can_mentor;
+        $profile->intro = $request->intro;
+        $profile->save();
+        
+        //マイページに戻る
+        return redirect()->route('users.show', ['user' => \Auth::id()]);
+    }
+    
+    //退会フォームの表示
+    public function showCancelForm() 
+    {
+        $user = Auth::user();
+        
+        $cancel_reasons = CancelReason::all()->pluck('name', 'id');
+        
+        return view('cancel.cancel_form', [
+            'user' => $user,
+            'cancel_reasons' => $cancel_reasons
+        ]);
+    }
+    
+    public function cancel(Request $request)
+    {
+        $user = Auth::user();
+        
+        $user->cancel_reason_id = $request->cancel_reason_id;
+        $user->save();
+        
+        Auth::logout(); //ログアウト
+        // $user->profile()->delete();
+        // $user->mentor_requestings()->delete();
+        // $user->requesters()->delete();
+        // $user->direct_messages()->delete();
+        $user->delete();
+        
+        //トップページへリダイレクト
+        return redirect('/');    
+    }
+    
+    //プロフィール写真
+    public function showPictureForm()
+    {
+        $user = Auth::user();
+        
+        return view('users.picture', [
+            'user' => $user,
+            ]);
+    }
+    
+    public function upload(Request $request)
+    {
+        $user = Auth::user();
+        
+        $form = $request->all();
+
+        //s3アップロード開始
+        $image = $request->file('image');
+        // バケットの`linkyprofilepictures`フォルダへアップロード
+        $path = Storage::disk('s3')->putFile('linkyprofilepictures', $image, 'public');
+        // アップロードした画像のフルパスを取得
+        $user->picture = Storage::disk('s3')->url($path);
+        
+        $user->save();
+
+      return redirect('/');
+    }
+    
+    public function picture_exists($id)
+    {
+        $user = findOrFail($id);
+        
+        return $user->picture->exists();
+    }
+    
+    //公式メンターリストを表示
+    public function official_mentors()
+    {
+        return view('official_mentors.index');
+    }
+    
+    //公式メンターリクエストフォームの表示
+    public function payment()
+    {
+        return view('official_mentors.payment');
+    }
 }
