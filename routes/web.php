@@ -45,10 +45,25 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('send_message', 'DirectMessageController@store')->name('send.message');
         Route::delete('delete_message', 'DirectMessageController@destroy')->name('delete.message');
         Route::get('direct_messages', 'UsersController@show_messages')->name('show.messages');
+        
+        //退会
+        Route::get('cancel', 'UsersController@showCancelForm')->name('cancel_form');
+        Route::post('cancel_confirmed', 'UsersController@cancel')->name('cancel_confirmed');
+        
+        //プロフィール写真
+        Route::get('/picture', 'UsersController@showPictureForm')->name('edit.picture');
+        Route::post('/picture', 'UsersController@upload')->name('upload');
+    
     });
     
     //ユーザー一覧
-        Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+        Route::resource('users', 'UsersController');
+        
+        
+        
+    //公式メンターリスト
+        Route::get('official_mentors', 'UsersController@official_mentors')->name('offical_mentors');
+        ROute::get('payment', 'UsersController@payment')->name('official_payment');
 });
 
 //お問い合わせ
@@ -60,4 +75,4 @@ Route::post('contact/complete', 'ContactsController@complete')->name('contact.co
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
