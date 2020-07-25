@@ -10,4 +10,9 @@ class JobCategory extends Model
     {
         return $this->hasMany(User::class);
     }
+    
+    public function profile()
+    {
+        return $this->hasMany(Profile::class);
+    }
 }

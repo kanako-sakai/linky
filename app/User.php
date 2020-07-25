@@ -7,10 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 use App\Notifications\PasswordResetNotification;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use SoftDeletes;//ソフトデリート用に追加
+    
+    protected $table = 'users';//ソフトデリート用に追加
+    protected $dates = ['deleted_at'];//ソフトデリート用に追加
 
     /**
      * The attributes that are mass assignable.
@@ -54,10 +59,9 @@ class User extends Authenticatable
         return $this->belongsTo(JobCategory::class);
     }
     
-    //パスワードリセット
-    public function sendPasswordResetNotification($token)
+    public function cancel_reasons()
     {
-        $this->notify(new PasswordResetNotification($token));
+        return $this->belongsTo(CancelReason::class);
     }
     
     /**
@@ -187,24 +191,30 @@ class User extends Authenticatable
     /**
      * マッチングが成立しているかどうか
      */
-    public function is_matching_from_me($userId)
+    public function is_matching($userId)
     {
         //承諾された自分が送ったリクエスト
-        return $is_matching_from_me = MentorRequest::where(function($query) {
+        return MentorRequest::where(function($query) use($userId) {
             $query->where('from_user_id', $this->id);
+            $query->where('to_user_id', $userId);
             $query->where('status',1);
+        })->orWhere(function($query) use($userId) {
+                $query->where('to_user_id', $this->id);
+                $query->where('from_user_id', $userId);
+                $query->where('status',1);
         })->exists();
     }
     
-    public function is_matching_from_others($userId)
+    public function matchings()
     {
-        // 承諾された自分に届いたリクエスト
-        return $is_matching_from_others = MentorRequest::where(function($query) {
-            $query->where('to_user_id', $this->id);
+        return MentorRequest::where(function($query) {
+            $query->where('from_user_id', $this->id);
             $query->where('status',1);
-        })->exists();
+        })->orWhere(function($query) {
+                $query->where('to_user_id', $this->id);
+                $query->where('status',1);
+        });
     }
- 
     /**
      * DirectMessageモデルとの関係を定義
      */
@@ -225,19 +235,10 @@ class User extends Authenticatable
     
     public function send_message($userId, $message)
     {
-        //すでにマッチングしているかの確認(自分から送ったリクエスト)
-        $is_matching_from_me = MentorRequest::where(function($query) {
-            $query->where('from_user_id', $this->id);
-            $query->where('status',1);
-        });
+        $is_matching = $this->is_matching($userId);
         
-        //すでにマッチングしているかの確認(自分に届いたリクエスト)
-        $is_matching_from_others = MentorRequest::where(function($query) {
-            $query->where('to_user_id', $this->id);
-            $query->where('status',1);
-        });
-        
-        if ($is_matching_from_me || $is_matching_from_others) {
+        // if ($is_matching_from_me || $is_matching_from_others) {
+        if($is_matching) {
             // マッチングしていたらメッセージを送る
             $this->messages_sent()->attach($userId, ['message'=> $message]);
             return true; 
@@ -245,5 +246,11 @@ class User extends Authenticatable
         }else {
             return false;
         }
+    }
+    
+    //パスワードリセット
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordResetNotification($token));
     }
 }
