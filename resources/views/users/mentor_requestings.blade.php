@@ -23,10 +23,10 @@
                     @foreach ($mentor_requestings as $mentor_requesting)
                         <li class="media">
                             {{-- アイコン --}}
-                            @if(isset($user->picture))
+                            @if(isset($mentor_requesting->receiver->picture))
                             	<img src = "{{ $mentor_requesting->receiver->picture }}" width=50 height=50>
                             @else
-                            	<img src="{{ Gravatar::get($mentor_requesting->receiver->email, ['size' => 50]) }}" alt=""> 
+                            	<img src = "/images/icon.png" alt="icon" width=50 height=50>
                             @endif
                             <div class="media-body">
                                 <div>

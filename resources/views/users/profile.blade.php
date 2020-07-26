@@ -92,6 +92,4 @@
         </tbody>
     </table>
     
-    {{-- 退会フォームへのリンク --}}
-    <p>退会されたい方は{!! link_to_route('cancel_form', 'こちら', ['id' => $user->id]) !!}</p>
 @endif

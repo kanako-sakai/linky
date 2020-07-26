@@ -24,10 +24,10 @@
                     @foreach ($requesters as $requester)
                         <li class="media">
                             {{-- アイコン --}}
-                            @if(isset($user->picture))
+                            @if(isset($requester->sender->picture))
                             	<img src = "{{ $requester->sender->picture }}" width=50 height=50>
                             @else
-                            	<img src="{{ Gravatar::get(Gravatar::get($requester->sender->email, ['size' => 50])) }}" alt=""> 
+                            	<img src = "/images/icon.png" alt="icon" width=50 height=50>
                             @endif
                             
                             <div class="media-body">

@@ -140,8 +140,6 @@ class UsersController extends Controller
             $query->where('status',0);
         })->paginate(10);
         
-        $count_mentor_requestings = count($mentor_requestings);
-        
         return view('users.mentor_requestings',[
             'user' => $user,
             'mentor_requestings' => $mentor_requestings,
@@ -173,11 +171,7 @@ class UsersController extends Controller
     {
        $user = Auth::user();
        
-    //   //Todo: 件数をロード
-    //     $user -> loadCount(['mentor_requests' => function ($query) {
-    //         $query->where('mentor_requests.status', 1);
-    //     }]);
-    
+      //Todo: 件数をロード
         $user->mentor_requests_count = $user->matchings()->count();
        
        //承諾された自分が送ったリクエスト
@@ -191,7 +185,7 @@ class UsersController extends Controller
             $query->where('to_user_id', $user->id);
             $query->where('status',1);
             })->paginate(10);
-        
+    
         return view('users.matches',[
             'user' => $user,
             'matches_from_me'=> $matches_from_me,
@@ -292,23 +286,32 @@ class UsersController extends Controller
         ]);
     }
     
-    public function cancel(Request $request)
-    {
-        $user = Auth::user();
+    // //退会処理
+    // public function cancel(Request $request)
+    // {
+    //     $user = Auth::user();
         
-        $user->cancel_reason_id = $request->cancel_reason_id;
-        $user->save();
+    //     $user->cancel_reason_id = $request->cancel_reason_id;
+    //     $user->save();
         
-        Auth::logout(); //ログアウト
-        // $user->profile()->delete();
-        // $user->mentor_requestings()->delete();
-        // $user->requesters()->delete();
-        // $user->direct_messages()->delete();
-        $user->delete();
+    //     Auth::logout(); //ログアウト
+    //     $user->delete();
         
-        //トップページへリダイレクト
-        return redirect('/');    
-    }
+    //     //トップページへリダイレクト
+    //     return redirect('/');    
+    // }
+    
+    // //リレーションも削除
+    // protected static function boot()
+    // {
+    //     parent::boot();
+        
+    //     static::deleted(function ($user) {
+    //         $user->profile()->delete();
+    //         $user->mentor_requests()->delete();
+    //         $user->direct_messages()->delete();
+    //     });
+    // }
     
     //プロフィール写真
     public function showPictureForm()

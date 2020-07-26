@@ -1,5 +1,5 @@
 @if (Auth::id() != $user->id)
-    @if (Auth::user()->is_requesting($user->id))
+    @if (Auth::user()->is_requesting($user->id) && !Auth::user()->is_matching($user->id))
         {{-- 取り消すボタンのフォーム --}}
         {!! Form::open(['route' => ['user.undo.request', $user->id], 'method' => 'delete']) !!}
             {!! Form::submit('リクエストを取り消す', ['class' => "btn btn-danger btn-block"]) !!}
@@ -9,7 +9,7 @@
         <p>すでに{{ $user->name }}さんとのマッチングが成立しています。<br>
         マッチング一覧でご確認ください。</p>
 
-    @elseif (Auth::user()->is_requested($user->id))
+    @elseif (Auth::user()->is_requested($user->id) && !Auth::user()->is_matching($user->id))
         <p>既に{{ $user->name }}さんからリクエストが届いています。<br>
         {{ $user->name }}さんからのリクエストを承認または拒否してください。</p>
     
