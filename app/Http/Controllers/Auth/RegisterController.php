@@ -147,6 +147,7 @@ class RegisterController extends Controller
             'career_change'=> ['required', 'numeric'],
             'marriage_status'=> ['required', 'numeric'],
             'child_status'=> ['required', 'numeric'],
+            'agree' => ['required', 'numeric'],
         ]);
         
         //データ保持
