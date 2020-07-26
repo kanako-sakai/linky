@@ -7,15 +7,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 use App\Notifications\PasswordResetNotification;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     use Notifiable;
-    use SoftDeletes;//ソフトデリート用に追加
-    
-    protected $table = 'users';//ソフトデリート用に追加
-    protected $dates = ['deleted_at'];//ソフトデリート用に追加
 
     /**
      * The attributes that are mass assignable.
