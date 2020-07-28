@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddStatusToMentorRequests extends Migration
+class CreateMentorRequestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddStatusToMentorRequests extends Migration
      */
     public function up()
     {
-        Schema::table('mentor_requests', function (Blueprint $table) {
+        Schema::create('mentor_requests', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('from_user_id');
+            $table->unsignedBigInteger('to_user_id');
+            $table->string('message')->nullable();
             $table->string('status',20)->default(0);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,7 @@ class AddStatusToMentorRequests extends Migration
      */
     public function down()
     {
-        Schema::table('mentor_requests', function (Blueprint $table) {
-            $table->dropColumn('status');
-        });
+        Schema::dropIfExists('mentor_requests');
+        
     }
 }

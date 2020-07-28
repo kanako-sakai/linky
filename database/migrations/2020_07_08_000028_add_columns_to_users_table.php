@@ -14,7 +14,6 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('name')->nullable();
             $table->tinyInteger('email_verified')->default(0);
             $table->string('email_verify_token')->nullable();     
             $table->tinyInteger('status')->default(0);
@@ -31,7 +30,6 @@ class AddColumnsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('name');
             $table->dropColumn('email_verified');
             $table->dropColumn('email_verify_token');
             $table->dropColumn('status');
