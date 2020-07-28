@@ -40,6 +40,7 @@ class LoginController extends Controller
     
     // public function redirectPath()
     // {
-    //     return redirect()->route('users.show', ['user' => \Auth::id()]);
+    //     // return redirect()->route('users.show', ['user' => \Auth::id()]);
+    //     return redirect()->action('UsersController@show', ['user' => \Auth::id()]);
     // }
 }

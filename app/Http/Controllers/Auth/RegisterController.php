@@ -157,6 +157,7 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->name = $request->name;
+        $user->agree = $request->agree;
         
         $profile = new Profile();
         $profile->education = $request->education;
@@ -191,6 +192,7 @@ class RegisterController extends Controller
         $user = User::where('email_verify_token', $request->email_verify_token)->firstOrFail();
         $user->status = config('const.USER_STATUS.REGISTER');
         $user->name = $request->name;
+        $user->agree = $request->agree;
         $user->save();
         
         $profile = new Profile();

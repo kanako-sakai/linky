@@ -14,12 +14,12 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email_auth_number', 8)->nullable();
-            $table->dateTime('email_auth_valid_datetime')->nullable();
-            $table->dateTime('valid_datetime')->nullable();
-            $table->string('card_number', 32)->nullable();
-            $table->string('stripe_token', 64)->nullable();
-            $table->tinyInteger('agree');
+            $table->string('name')->nullable();
+            $table->tinyInteger('email_verified')->default(0);
+            $table->string('email_verify_token')->nullable();     
+            $table->tinyInteger('status')->default(0);
+            $table->string('picture')->nullable();
+            $table->tinyInteger('agree')->default(0);
         });
     }
 
@@ -31,11 +31,11 @@ class AddColumnsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('email_auth_number');
-            $table->dropColumn('email_auth_valid_datetime');
-            $table->dropColumn('valid_datetime');
-            $table->dropColumn('card_number');
-            $table->dropColumn('stripe_token');
+            $table->dropColumn('name');
+            $table->dropColumn('email_verified');
+            $table->dropColumn('email_verify_token');
+            $table->dropColumn('status');
+            $table->dropColumn('picture');
             $table->dropColumn('agree');
         });
     }

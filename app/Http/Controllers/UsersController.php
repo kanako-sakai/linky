@@ -338,7 +338,7 @@ class UsersController extends Controller
         
         $user->save();
 
-      return redirect('/');
+      return redirect()->action('UsersController@show', ['user' => $user]);
     }
     
     public function picture_exists($id)

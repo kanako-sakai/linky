@@ -82,17 +82,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class)->withTimestamps();
     }
-    
-    //自分からリクエストを出してマッチしたユーザー
-    public function matches_from_me()
-    {
-        return $this->belongsToMany(User::class, 'mentor_requests', 'from_user_id', 'to_user_id')->withTimestamps();
-    }
-    
-    public function matches_from_others()
-    {
-        return $this->belongsToMany(User::class, 'mentor_requests', 'to_user_id', 'from_user_id')->withTimestamps();
-    }
+
     /**
      * MentorRequestモデルとの関係性を定義
      */

@@ -28,6 +28,8 @@ class CreateProfilesTable extends Migration
             $table->tinyInteger('career_change');
             $table->tinyInteger('marriage_status');
             $table->tinyInteger('child_status');
+            $table->tinyInteger('can_mentor')->default(0);
+            $table->string('intro')->nullable();
             $table->timestamps();
             
              

@@ -7,7 +7,7 @@
 	      	<div class="overlay"></div>
 	        <div class="container-fluid p-0">
 	          <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third order-md-last img js-fullheight" style=#>
+	          	<div class="one-third order-md-last img js-fullheight">
 	          	</div>
 		          <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
@@ -26,6 +26,7 @@
 	        	</div>
 	        </div>
 	      </div>
+	   </div>   
     </section>
 		
     <section class="ftco-section ftco-services ftco-no-pt ftco-no-pb">
@@ -33,7 +34,7 @@
         <div class="row no-gutters services-section">
           <div class="col-md-6 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services text-center d-block">
-              <div class="icon"><img src="/images/iconmonstr-friend-4-240.png" width:"70", height="70"></span></div>
+              <div class="icon"><img src="/images/iconmonstr-friend-4-240.png" width:"70", height="70" alt="friend"></div>
               <div class="media-body">
                 <h3 class="heading mb-3">相談相手を見つける</h3>
                 <p>相談したい内容や経歴で相談したい相手を見つけ、相談リクエストを出しましょう。</p>
@@ -43,7 +44,7 @@
           </div>
           <div class="col-md-6 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services services-2 text-center d-block">
-              <div class="icon">><img src="/images/iconmonstr-customer-8-240.png" width:"70", height="70"></span></div>
+              <div class="icon"><img src="/images/iconmonstr-customer-8-240.png" width:"70", height="70" alt="friend"></div>
               <div class="media-body">
                 <h3 class="heading mb-3">公式メンターに相談</h3>
                 <p>公式メンターとのオンライン面談で悩みを相談しましょう。</p>
@@ -78,7 +79,7 @@
        </div>
     </section>   
 	 
-	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="founder">
     	<div class="container">
     		<div class="row d-flex"> 
         		<div class="col-md-6 col-lg-5 d-flex">

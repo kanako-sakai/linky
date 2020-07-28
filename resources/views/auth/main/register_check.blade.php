@@ -155,6 +155,7 @@
                         </div>
                         <input type="hidden" name="can_mentor" value="{{$profile->can_mentor}}">
                     </div>
+                        <input type="hidden" name="agree" value="{{$user->agree}}">
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">

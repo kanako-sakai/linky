@@ -9,100 +9,102 @@
           		</div>
         	</div>
         	
-    {{-- 検索　--}}
-    <div class="row p-5 bg-light">
-    
-        {!! Form::open(['route' => 'users.index', 'method' => 'get']) !!}
-            <div class="row">
-                <h4>キーワードで探す</h4>
-            </div>
-            <div class="form-group">
-                {!! Form::text('intro', null, ['class' => 'form-control']) !!}
-             </div>
+            {{-- 検索　--}}
+            <div class="row p-5 bg-light">
             
-            <div class="row">
-                <h4>業種で探す</h4>
-            </div>
-            <div class="form-group">
-                {!! Form::select('industry_id', $industries->prepend('指定なし', ''), ['class' => 'form-control']) !!}
-             </div>
-            
-            <div class="row">
-                <h4>職種で探す</h4>
-            </div>
-            <div class="form-group">
-                {!! Form::select('job_category_id', $job_categories->prepend('指定なし', ''), ['class' => 'form-control']) !!}
-            </div>
-            
-            <div class="row">
-                <h4>その他の項目から探す</h4>
-            </div>
-            
-            <div class="form-group">
-           
-            <h5>{!! Form::checkbox('can_mentor', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('can_mentor', '積極的に相談に乗れる方') !!}
-        
-                {!! Form::checkbox('expat', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('expat', '海外駐在・トレーニー') !!} 
-
-                {!! Form::checkbox('mba', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('mba', 'MBA留学') !!}
-        
-                {!! Form::checkbox('other_study_abroad', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('other_study_abroad', 'その他留学') !!}
+                {!! Form::open(['route' => 'users.index', 'method' => 'get']) !!}
+                    <div class="row">
+                        <h4>キーワードで探す</h4>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::text('intro', null, ['class' => 'form-control']) !!}
+                     </div>
+                    
+                    <div class="row">
+                        <h4>業種で探す</h4>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::select('industry_id', $industries->prepend('指定なし', ''), ['class' => 'form-control']) !!}
+                     </div>
+                    
+                    <div class="row">
+                        <h4>職種で探す</h4>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::select('job_category_id', $job_categories->prepend('指定なし', ''), ['class' => 'form-control']) !!}
+                    </div>
+                    
+                    <div class="row">
+                        <h4>その他の項目から探す</h4>
+                    </div>
+                    
+                    <div class="form-group">
+                   
+                    <h5>{!! Form::checkbox('can_mentor', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('can_mentor', '積極的に相談に乗れる方') !!}
                 
-                {!! Form::checkbox('returnee', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('returnee', '帰国子女') !!} 
-      
-                {!! Form::checkbox('career_change', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('career_change', '転職') !!} 
-    
-                {!! Form::checkbox('marriage_status', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('marriage_status', '結婚') !!} 
-         
-                {!! Form::checkbox('child_status', 1, null, ['class' => 'field']) !!}
-                {!! Form::label('child_status', '育児') !!} 
-            </h5>    
+                        {!! Form::checkbox('expat', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('expat', '海外駐在・トレーニー') !!} 
+        
+                        {!! Form::checkbox('mba', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('mba', 'MBA留学') !!}
+                
+                        {!! Form::checkbox('other_study_abroad', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('other_study_abroad', 'その他留学') !!}
+                        
+                        {!! Form::checkbox('returnee', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('returnee', '帰国子女') !!} 
+              
+                        {!! Form::checkbox('career_change', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('career_change', '転職') !!} 
+            
+                        {!! Form::checkbox('marriage_status', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('marriage_status', '結婚') !!} 
+                 
+                        {!! Form::checkbox('child_status', 1, null, ['class' => 'field']) !!}
+                        {!! Form::label('child_status', '育児') !!} 
+                    </h5>    
+                    </div>
+                    
+                    {!! Form::submit('検索する', ['class' => 'btn py-3 px-4 btn-primary']) !!}
+                {!! Form::close() !!}
             </div>
             
-            {!! Form::submit('検索する', ['class' => 'btn py-3 px-4 btn-primary']) !!}
-        {!! Form::close() !!}
-    </div>
-    
-    {{-- ユーザ一覧 --}}
-    <div class="row">
-        <div class="text-center">
-            <h3>相談相手リスト</h3>
+            {{-- ユーザ一覧 --}}
+            <div class="row">
+                <div class="text-center">
+                    <h3>相談相手リスト</h3>
+                </div>
+            
+                <div class="container">
+                    <!--検索ボタンが押された時に表示-->
+                    @if(!empty($users))
+                        <ul class="list-unstyled">
+                            @foreach ($users as $user)
+                                <!--$user->profile()->first()-->
+                                <li class="media">
+                                    {{-- アイコン --}}
+                                    @if(isset($user->picture))
+                                    	<img src = "{{ $user->picture }}" width=100 height=100>
+                                    @else
+                                    	<img src="{{ Gravatar::get($user->email, ['size' => 100]) }}" alt=""> 
+                                    @endif
+                                    <div class="media-body">
+                                        <div class = col-md-4>
+                                            {{-- ユーザ詳細ページへのリンク --}}
+                                            <p>{!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!}</p>
+                                            <p>{{ $user->profile->industry()->first()->name }}</p>
+                                            <p>{{ $user->profile->job_category()->first()->name }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach    
+                        </ul>
+                        {{-- ページネーションのリンク --}}
+                        {{ $users->links() }}
+                    @endif
+                </div>
+            </div> 
         </div>
-    
-        <div class="container">
-            <!--検索ボタンが押された時に表示-->
-            @if(!empty($users))
-                <ul class="list-unstyled">
-                    @foreach ($users as $user)
-                        <!--$user->profile()->first()-->
-                        <li class="media">
-                            {{-- アイコン --}}
-                            @if(isset($user->picture))
-                            	<img src = "{{ $user->picture }}" width=100 height=100>
-                            @else
-                            	<img src="{{ Gravatar::get($user->email, ['size' => 100]) }}" alt=""> 
-                            @endif
-                            <div class="media-body">
-                                <div class = col-md-4>
-                                    {{-- ユーザ詳細ページへのリンク --}}
-                                    <p>{!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!}</p>
-                                    <p>{{ $user->profile->industry()->first()->name }}</p>
-                                    <p>{{ $user->profile->job_category()->first()->name }}</p>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach    
-                </ul>
-                {{-- ページネーションのリンク --}}
-                {{ $users->links() }}
-            @endif
-        </div>
-    </div>    
+</section>        
 @endsection    
