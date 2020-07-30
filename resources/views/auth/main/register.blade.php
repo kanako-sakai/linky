@@ -104,7 +104,7 @@
                         {!! Form::label('can_mentor', '他の方の相談に乗ることができますか？') !!}
                         {!! Form::radio('can_mentor', 1, false, ['class' => 'field']) !!}
                         {!! Form::label('1', '可') !!}
-                        {!! Form::radio('child_status', 0, false, ['class' => 'field']) !!}
+                        {!! Form::radio('can_mentor', 0, false, ['class' => 'field']) !!}
                         {!! Form::label('0', '不可') !!}
                     </div>
                     

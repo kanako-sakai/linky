@@ -145,7 +145,7 @@
                     </div>
                     
                     <div class="form-group row">
-                        <label for="child_status" class="col-md-4 col-form-label text-md-right">【相談に乗ることの可否】</label>
+                        <label for="can_mentor" class="col-md-4 col-form-label text-md-right">【相談に乗ることの可否】</label>
                         <div class="col-md-6">
                             @if ($profile->can_mentor == 0)
                                 <p>不可</p>
