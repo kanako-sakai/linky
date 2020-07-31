@@ -32,8 +32,8 @@
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: window.location.protocol + '///success',
-      cancelUrl: window.location.protocol + '///canceled',
+      successUrl: 'https://343a918939f1470fa7c4fcd914ec3979.vfs.cloud9.ap-northeast-1.amazonaws.com/payment/success',
+      cancelUrl: 'https://343a918939f1470fa7c4fcd914ec3979.vfs.cloud9.ap-northeast-1.amazonaws.com/payment/canceled',
     })
     .then(function (result) {
       if (result.error) {
@@ -58,33 +58,49 @@
                     {{--エラーメッセージ--}}
                     @include('commons.error_messages')   
                     
-                    {!! Form::open(['route' => 'contact.confirm']) !!}
+                    {!! Form::open(['route' => ['official.confirm', $user->id]]) !!}
+              
                    
                     <div class="form-group">
                         {!! Form::label('name', 'お名前') !!}
-                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('name', $user->name, ['class' => 'form-control']) !!}
                     </div>
                     
                     <div class="form-group">
-                        {!! Form::label('email', 'Email') !!}
-                        {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
+                        {!! Form::label('email', 'ご連絡先(メールアドレス)') !!}
+                        {!! Form::email('email', $user->email, ['class' => 'form-control']) !!}
                     </div>
                     
                     <div class="form-group">
-                        {!! Form::label('title', '件名') !!}
-                        {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                        {!! Form::label('plan', 'ご希望のプラン') !!}
+                        {!! Form::text('plan', null, ['class' => 'form-control']) !!}
                     </div>
                     
                     <div class="form-group">
-                        {!! Form::label('body', 'お話しされたいメンター') !!}
-                        {!! Form::text('body', null, ['class' => 'form-control']) !!}
+                        {!! Form::label('mentor_pref', 'ご希望のメンター') !!}
+                        {!! Form::text('mentor_pref', null, ['class' => 'form-control']) !!}
                     </div>
                     
                     <div class="form-group">
-                        {!! Form::label('body', '可能日時') !!}
-                        {!! Form::text('body', null, ['class' => 'form-control']) !!}
+                        {!! Form::label('goal', 'メンタリングの目的') !!}
+                        {!! Form::text('goal', null, ['class' => 'form-control']) !!}
                     </div>
                     
+                    <div class="form-group">
+                        {!! Form::label('questions', 'お話しされたい内容') !!}
+                        {!! Form::text('questions', null, ['class' => 'form-control']) !!}
+                    </div>
+                    
+                    <div class="form-group">
+                        {!! Form::label('dates', 'ご希望時間') !!}
+                        {!! Form::text('dates', null, ['class' => 'form-control']) !!}
+                    </div>
+                    
+                    <div class="form-group">
+                        {!! Form::checkbox('precaution', 1, null, ['class' => 'field']) !!}
+                        {!! link_to_route('privacy_policy', 'プライバシーポリシー') !!}に同意する。
+                    </div>
+                  
                     {!! Form::submit('送信', ['class' => 'btn py-3 px-4 btn-primary']) !!}
                     {!! Form::close() !!}
         

@@ -256,4 +256,10 @@ class User extends Authenticatable
     {
         $this->notify(new PasswordResetNotification($token));
     }
-}
+    
+    //  OfficialRequestモデルとの関係
+    public function official_requests()
+    {
+        return $this->hasMany(OfficialRequest::class);
+    }
+}   

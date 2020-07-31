@@ -348,15 +348,5 @@ class UsersController extends Controller
         return $user->picture->exists();
     }
     
-    //公式メンターリストを表示
-    public function official_mentors()
-    {
-        return view('official_mentors.index');
-    }
     
-    //公式メンターリクエストフォームの表示
-    public function payment()
-    {
-        return view('official_mentors.payment');
-    }
 }
