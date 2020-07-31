@@ -11,7 +11,7 @@
   role="link"
   type="button"
 >
-  Checkout
+  支払う
 </button>
 
 <div id="error-message"></div>
@@ -103,4 +103,7 @@
                   
                     {!! Form::submit('送信', ['class' => 'btn py-3 px-4 btn-primary']) !!}
                     {!! Form::close() !!}
+                  </div>
+                </section>
+  @endsection              
         

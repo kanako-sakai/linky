@@ -11,7 +11,7 @@
 	          	</div>
 		          <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
-		          		<span class="subheading">Welcome to the Club</span>
+		          		<span class="subheading">Get inspired, Move forward</span>
 			            <h1 class="mb-4 mt-3" align="right"><span>女性のキャリアを<br>より自由に<br>より前向きに</span></h1>
 			            <p>先輩女性プロフェッショナルや公式女性メンターに相談して、キャリアの悩みを解決しましょう</p>
 			            
@@ -79,24 +79,25 @@
        </div>
     </section>   
 	 
-	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="founder">
+	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb">
     	<div class="container">
     		<div class="row d-flex"> 
         		<div class="col-md-6 col-lg-5 d-flex">
     				  <div class="img d-flex align-self-stretch align-items-center" style="background-image: url(/images/kanako_sakai.jpg);"></div>
         		</div>
     		    <div class="col-md-6 col-lg-7 pl-lg-5 py-5">
-    				<div class="py-md-5">
-	    				<div class="row justify-content-start pb-3">
-    			             <div class="col-md-12 heading-section ftco-animate">
-        			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Founder</h2>
-        			            <p>幼少期から高校までをヨーロッパで過ごした後、大学進学のため帰国。東京大学経済学部卒業。新卒でマッキンゼー・アンド・カンパニー東京支社に入社。主に製薬・消費財のプロジェクトに従事。1年目に社内結婚、3年目に長男を出産、2年間の育児休業を経て復職後、2019年よりハーバードビジネススクールにMBAに夫と共に留学中。女性が家族との時間を楽しみながらも、肩身の狭い思いをせずにより活き活きと働ける社会を実現したいというパッションから本プラットフォームの運営を開始。</p>
-			                </div>
-    		            </div>
-    	            </div>
-                </div>
-        	</div>
-        </div>	
+      				<div class="py-md-5">
+  	    				<div class="row justify-content-start pb-3">
+  			             <div class="col-md-12 heading-section ftco-animate">
+  			               <span class="subheading">Our team</span>
+      			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Founder</h2>
+      			            <p>幼少期から高校までをヨーロッパで過ごした後、大学進学のため帰国。東京大学経済学部卒業。新卒で外資系戦略コンサルティングファームの東京支社に入社。主に製薬・消費財のプロジェクトに従事。1年目に社内結婚、3年目に長男を出産、2年間の育児休業を経て復職後、2019年よりハーバードビジネススクールにMBAに夫と共に留学中。女性が家族との時間を楽しみながらも、肩身の狭い思いをせずにより活き活きと働ける社会を実現したいというパッションから本プラットフォームの運営を開始。</p>
+  	                </div>
+      		      </div>
+              </div>
+            </div>
+        </div>
+      </div>	
     </section>
 
 @endsection

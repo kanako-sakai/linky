@@ -25,15 +25,16 @@
                             {!! Form::label('password', 'パスワード') !!}
                             {!! Form::password('password', ['class' => 'form-control']) !!}
                         </div>
-        
+                        
+                        <div class="text-center">
                         {!! Form::submit('ログイン', ['class' =>'btn py-3 px-4 btn-primary']) !!}
                     {!! Form::close() !!}
         
-                    {{-- ユーザ登録ページへのリンク --}}
-                    <p class="mt-2">新規登録がまだの方は {!! link_to_route('signup.get', 'こちら') !!}</p>
-                    {{-- パスワードリセットへのリンク --}}
-                    <p class="mt-2">{!! link_to_route('password.request', 'パスワードをお忘れの方') !!}</p>
-                    <p></p>
+                        {{-- ユーザ登録ページへのリンク --}}
+                        <p class="mt-2">新規登録がまだの方は {!! link_to_route('signup.get', 'こちら') !!}</p>
+                        {{-- パスワードリセットへのリンク --}}
+                        <p class="mt-2">{!! link_to_route('password.request', 'パスワードをお忘れの方') !!}</p>
+                        </div>
                 </div>
             </div>
         </div>
