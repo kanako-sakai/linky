@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Auth;
 
 class LoginController extends Controller
@@ -39,17 +40,12 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     
-    // //TO DO：ここをどう書くか考える
-    // protected function attemptLogin(Request $request)
-    // {
-    //     if ($this->status !== 1) {
-    //         return view('auth.login_failed');
-    //     }
-        
-    //     return $this->guard()->attempt(
-    //         $this->credentials($request), $request->filled('remember')
-    //     );
-    // }
+    protected function credentials(Request $request)
+    {
+        $credentials = $request -> only($this->username(), 'password');
+        $credentials['status'] = 1;
+        return $credentials;
+    }
     
     protected function redirectTo() {
         if(! Auth::user()) {
@@ -58,4 +54,6 @@ class LoginController extends Controller
         
         return route('users.show', ['user' =>Auth::id()]);
     }
+    
+    
 }
