@@ -19,7 +19,7 @@
 			              <p></p>
 			            @else    
   			            {{-- ユーザ登録ページへのリンク --}}
-                    {!! link_to_route('signup.get', '今すぐ会員登録', [], ['class' => 'btn btn-primary px-5 py-3 mt-3']) !!}
+                    {!! link_to_route('signup.get', '今すぐ無料会員登録', [], ['class' => 'btn btn-primary px-5 py-3 mt-3']) !!}
                   @endif
 		            </div>
 		          </div>

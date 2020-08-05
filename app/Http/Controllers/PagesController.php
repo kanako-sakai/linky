@@ -20,4 +20,9 @@ class PagesController extends Controller
     public function getPrivacyPolicy(){
         return view('privacy_policy');
     }
+    
+    //注意事項を表示
+    public function getPrecaution(){
+        return view('precaution');
+    }
 }

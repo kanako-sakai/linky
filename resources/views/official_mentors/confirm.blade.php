@@ -16,7 +16,7 @@
                             <div class="panel-body">
                                 <p>誤りがないことを確認のうえ送信ボタンをクリックしてください。</p>
                                 
-                                <div class="card-body">
+                                <div class="bg-light card-body">
                                     <form method="POST" action="{{ route('official.complete', $user->id) }}">
                                         @csrf
                                         

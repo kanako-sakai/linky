@@ -15,13 +15,15 @@ class OfficialRequestController extends Controller
         return view('official_mentors.index');
     }
     
-    // 支払い画面
-    // public function payment()
-    // {
-    //     return view('official_mentors.payment');
-    // }
+    //支払い画面
+    public function payment()
+    {
+        $user = Auth::user();
+        
+        return view('official_mentors.payment', ['user'=>$user]);
+    }
     
-    public function show()
+    public function request_form()
     {
         $user = Auth::user();
         

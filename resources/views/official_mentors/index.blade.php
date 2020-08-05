@@ -1,4 +1,4 @@
-@extends('layouts.sub')
+@extends('layouts.app_2')
 
 @section('content')
 <section class="ftco-section" id="coaches-section">
@@ -6,11 +6,11 @@
     		<div class="row justify-content-center pb-5">
             	<div class="col-md-8 heading-section text-center">
                 	<h2 class="mb-4">オフィシャルメンター</h2>
-            			<p>Linky公式のメンターです。</p>
+            			<p>Rolemy公式のメンターです。</p>
             			<p>公式メンターに相談されたい場合は、以下のリクエストフォームをご入力ください。</p>
             			<p>1回からリクエストいただくことも可能ですが、1-2か月に1度のペースで3-5回継続的にお話しいただくことをオススメしております。途中でメンターを変更することも可能ですので、その際はお気軽にご連絡ください。</p>
                      	{{-- リクエストページへのリンク --}}
-    					{!! link_to_route('official.form', 'リクエストを出す', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}
+    					{!! link_to_route('official.payment', 'リクエストを出す', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}
     		
           		</div>
         	</div>
@@ -155,6 +155,8 @@
 			            <p>当日はそのZoomのリンクから入っていただき、メンターとお話しください。</p>
 			            
 			            <p>※メンターのスケジュール上、リクエストを頂いてから実際にメンタリングセッションを行っていただくまでにお時間を要することがございますがご了承ください。</p>
+						{{-- リクエストページへのリンク --}}
+    					{!! link_to_route('official.payment', 'リクエストを出す', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}
 			          </div>
 			        </div>
 		        </div>

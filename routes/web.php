@@ -15,6 +15,7 @@
 Route::get('/', 'PagesController@getHome')->name('home');
 Route::get('/about', 'PagesController@getAbout')->name('about');
 Route::get('/privacy_policy', 'PagesController@getPrivacyPolicy')->name('privacy_policy');
+Route::get('/precaution', 'PagesController@getPrecaution')->name('precaution');
 
 //ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -55,6 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/picture', 'UsersController@upload')->name('upload');
         
         //オフィシャルメンターリクエスト
+        Route::get('official_request/payment', 'OfficialRequestController@payment')->name('official.payment');
         Route::get('official_request', 'OfficialRequestController@show')->name('official.form');
         Route::post('officialrequest/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
         Route::post('officialrequest/complete', 'OfficialRequestController@complete')->name('official.complete');
@@ -66,7 +68,7 @@ Route::group(['middleware' => ['auth']], function () {
      
     //公式メンターリスト
         Route::get('official_mentors', 'OfficialRequestController@official_mentors')->name('offical_mentors');
-        Route::get('payment', 'OfficialRequestController@payment')->name('official_payment');   
+ 
    
 });
 

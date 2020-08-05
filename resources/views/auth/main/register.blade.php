@@ -56,9 +56,8 @@
             </div>
             
             <div class="form-group">
-                <div class="row">
-                    海外経験
-                </div>
+                {!! Form::label('expat', '海外経験 （ない場合は選択不要）') !!} <br>
+                
                 {!! Form::hidden('expat', '0') !!}
                 {!! Form::checkbox('expat', 1, null, ['class' => 'field']) !!}
                 {!! Form::label('expat', '海外駐在・トレーニー') !!} <br>
@@ -77,7 +76,7 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('career_change', '転職経験') !!}
+                {!! Form::label('career_change', '転職経験') !!} <br>
                 {!! Form::radio('career_change', 0, false, ['class' => 'field']) !!}
                 {!! Form::label('0', 'なし') !!}
                 {!! Form::radio('career_change', 1, false, ['class' => 'field']) !!}
@@ -85,7 +84,7 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('marriage_status', '既婚／未婚') !!}
+                {!! Form::label('marriage_status', '既婚／未婚') !!} <br>
                 {!! Form::radio('marriage_status', 0, false, ['class' => 'field']) !!}
                 {!! Form::label('0', '未婚') !!}
                 {!! Form::radio('marriage_status', 1, false, ['class' => 'field']) !!}
@@ -93,7 +92,7 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('child_status', 'お子様の有無') !!}
+                {!! Form::label('child_status', 'お子様の有無') !!} <br>
                 {!! Form::radio('child_status', 0, false, ['class' => 'field']) !!}
                 {!! Form::label('0', 'なし') !!}
                 {!! Form::radio('child_status', 1, false, ['class' => 'field']) !!}
@@ -101,7 +100,7 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('can_mentor', '他の方の相談に乗ることができますか？') !!}
+                {!! Form::label('can_mentor', '他の方の相談に乗ることができますか？') !!} <br>
                 {!! Form::radio('can_mentor', 1, false, ['class' => 'field']) !!}
                 {!! Form::label('1', '可') !!}
                 {!! Form::radio('can_mentor', 0, false, ['class' => 'field']) !!}
