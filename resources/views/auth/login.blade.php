@@ -26,10 +26,13 @@
                             {!! Form::password('password', ['class' => 'form-control']) !!}
                         </div>
                         
-                        <div class="text-center">
+                        <div class="form-group text-center">
                         {!! Form::submit('ログイン', ['class' =>'btn py-3 px-4 btn-primary']) !!}
+                        </div>
+                        
                     {!! Form::close() !!}
-        
+                        
+                        <div class = "text-center">
                         {{-- ユーザ登録ページへのリンク --}}
                         <p class="mt-2">新規登録がまだの方は {!! link_to_route('signup.get', 'こちら') !!}</p>
                         {{-- パスワードリセットへのリンク --}}
@@ -37,6 +40,6 @@
                         </div>
                 </div>
             </div>
-        </div>
+        </div>    
 </section>    
 @endsection

@@ -9,8 +9,8 @@
     		<div class="row justify-content-center pb-5">
           <div class="col-md-8 heading-section text-center ftco-animate">
               <h2 class="mb-4">プランの購入</h2>
-              <h5>リクエストをご検討いただき、ありがとうございます。</h5>
-              <h5>ご自身のニーズに合わせ、お好きなプランをお選びください。</h5>
+              <h5>決済がエラーとなりました。</h5>
+              <h5>再度ご購入をお願いいたします。</h5>
           </div>
         </div>
       </div>
@@ -65,8 +65,8 @@
                           // a successful payment.
                           // Instead use one of the strategies described in
                           // https://stripe.com/docs/payments/checkout/fulfillment
-                          successUrl: 'https://ks-mentor-requests.herokuapp.com/request_form',
-                          cancelUrl: 'https://ks-mentor-requests.herokuapp.com/official_request/payment_failed',
+                          successUrl: 'https://343a918939f1470fa7c4fcd914ec3979.vfs.cloud9.ap-northeast-1.amazonaws.com/request_form',
+                          cancelUrl: 'https://ks-mentor-requests.herokuapp.com/canceled',
                         })
                         .then(function (result) {
                           if (result.error) {
@@ -131,8 +131,8 @@
                             // a successful payment.
                             // Instead use one of the strategies described in
                             // https://stripe.com/docs/payments/checkout/fulfillment
-                            successUrl: 'https://ks-mentor-requests.herokuapp.com/request_form',
-                            cancelUrl: 'https://ks-mentor-requests.herokuapp.com/official_request/payment_failed',
+                            successUrl: 'https://ks-mentor-requests.herokuapp.com/success',
+                            cancelUrl: 'https://ks-mentor-requests.herokuapp.com/canceled',
                           })
                           .then(function (result) {
                             if (result.error) {
@@ -196,8 +196,8 @@
                           // a successful payment.
                           // Instead use one of the strategies described in
                           // https://stripe.com/docs/payments/checkout/fulfillment
-                          successUrl: 'https://ks-mentor-requests.herokuapp.com/request_form',
-                          cancelUrl: 'https://ks-mentor-requests.herokuapp.com/official_request/payment_failed',
+                          successUrl: 'https://ks-mentor-requests.herokuapp.com/success',
+                          cancelUrl: 'https://ks-mentor-requests.herokuapp.com/canceled',
                         })
                         .then(function (result) {
                           if (result.error) {

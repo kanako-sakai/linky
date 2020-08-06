@@ -54,20 +54,18 @@ Route::group(['middleware' => ['auth']], function () {
         //プロフィール写真
         Route::get('/picture', 'UsersController@showPictureForm')->name('edit.picture');
         Route::post('/picture', 'UsersController@upload')->name('upload');
-        
-        //オフィシャルメンターリクエスト
-        Route::get('official_request/payment', 'OfficialRequestController@payment')->name('official.payment');
-        Route::get('official_request', 'OfficialRequestController@show')->name('official.form');
-        Route::post('officialrequest/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
-        Route::post('officialrequest/complete', 'OfficialRequestController@complete')->name('official.complete');
-    
     });
     
     //ユーザー一覧
         Route::resource('users', 'UsersController');
      
-    //公式メンターリスト
+    //オフィシャルメンターリクエスト
         Route::get('official_mentors', 'OfficialRequestController@official_mentors')->name('offical_mentors');
+        Route::get('official_request/payment', 'OfficialRequestController@payment')->name('official.payment');
+        Route::get('request_form', 'OfficialRequestController@request_form')->name('official.form');
+        Route::get('official_request/payment_failed', 'OfficialRequestController@payment_failed')->name('payment.failed');
+        Route::post('official_request/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
+        Route::post('official_request/complete', 'OfficialRequestController@complete')->name('official.complete');
  
    
 });

@@ -1,4 +1,4 @@
-@extends('layouts.sub')
+@extends('layouts.app_2')
 
 @section('content')
 <section class="ftco-section" id="coaches-section">

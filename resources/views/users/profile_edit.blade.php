@@ -39,6 +39,13 @@
                 <div class="form-group">
                     {!! Form::label('employee', 'ご勤務先') !!}
                     {!! Form::text('employee', null, ['class' => 'form-control']) !!}
+                    @if($profile->employer_display == 0)
+                    {!! Form::label('employer_display', '勤務先を非表示にする') !!}
+                    {!! Form::checkbox('employer_display', 1, null, ['class' => 'field']) !!}
+                    @else
+                    {!! Form::label('employer_display', '勤務先を表示する') !!}
+                    {!! Form::checkbox('employer_display', 0, null, ['class' => 'field']) !!}
+                    @endif
                 </div>
                 
                 <div class="form-group">
@@ -100,7 +107,7 @@
                     {!! Form::label('can_mentor', '他の方の相談に乗ることができますか？') !!}
                     {!! Form::radio('can_mentor', 1, false, ['class' => 'field']) !!}
                     {!! Form::label('1', '可') !!}
-                    {!! Form::radio('child_status', 0, false, ['class' => 'field']) !!}
+                    {!! Form::radio('can_mentor', 0, false, ['class' => 'field']) !!}
                     {!! Form::label('0', '不可') !!}
                 </div>
                 

@@ -267,6 +267,7 @@ class UsersController extends Controller
         $profile->child_status = $request->child_status;
         $profile->can_mentor = $request->can_mentor;
         $profile->intro = $request->intro;
+        $profile->employer_display = $request->employer_display;
         $profile->save();
         
         //マイページに戻る

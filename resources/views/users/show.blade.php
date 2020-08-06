@@ -12,13 +12,13 @@
               		</div>
             	</div>
                 <div class="row">
-                    <aside class="col-sm-4">
+                    <aside class = "col-md-5">
                         @include('users.card')
                         @include('users.profile')
             
                     </aside>
                     
-                    <div class="col-sm-8">
+                    <div class="col-md-7">
                     @include('users.navtabs')
                     </div>
                 </div>
@@ -52,11 +52,14 @@
                                     <td>【社会人歴】</td>
                                     <td class="text-left">{{ $profile->working_years }}</td>
                                 </tr>
-                              
+                                @if($profile->employer_display==1)
+                                
+                                @else
                                 <tr>
                                     <td>【勤務先】</td>
                                     <td class="text-left">{{ $profile->employee }}</td>
                                 </tr>
+                                @endif
                                 
                                 <tr>
                                     <td>【業種】</td>

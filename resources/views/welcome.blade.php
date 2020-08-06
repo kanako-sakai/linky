@@ -32,28 +32,35 @@
     <section class="ftco-section ftco-services ftco-no-pt ftco-no-pb">
       <div class="container">
         <div class="row no-gutters services-section">
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services text-center d-block">
               <div class="icon"><img src="/images/iconmonstr-friend-4-240.png" width:"70", height="70" alt="friend"></div>
               <div class="media-body">
                 <h3 class="heading mb-3">相談相手を見つける</h3>
                 <p>相談したい内容や経歴で相談したい相手を見つけ、相談リクエストを出しましょう。</p>
-                <p>{!! link_to_route('users.index', '相談相手を見つける', ['class' => 'btn']) !!}<p>
               </div>
             </div>      
           </div>
-          <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services services-2 text-center d-block">
-              <div class="icon"><img src="/images/iconmonstr-customer-8-240.png" width:"70", height="70" alt="friend"></div>
+              <div class="icon"><img src="/images/iconmonstr-customer-8-240.png" width:"70", height="70" alt="customer"></div>
               <div class="media-body">
                 <h3 class="heading mb-3">公式メンターに相談</h3>
-                <p>公式メンターとのオンライン面談で悩みを相談しましょう。</p>
-                <!-- <p><a href="#" class="btn btn-primary">Read more</a></p> -->
+                <p>公式メンターとの1対1のオンライン面談で悩みを相談しましょう。</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services services-2 text-center d-block">
+              <div class="icon"><img src="/images/iconmonstr-idea-14-240.png" width:"70", height="70" alt="idea"></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">グループ座談会</h3>
+                <p>テーマごとのオンライン座談会で悩みを解決しましょう。</p>
               </div>
             </div>    
           </div>
         </div>
-      </div>
+      </div>  
     </section>
     
     <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
@@ -79,25 +86,24 @@
        </div>
     </section>   
 	 
-	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb">
-    	<div class="container">
-    		<div class="row d-flex"> 
-        		<div class="col-md-6 col-lg-5 d-flex">
-    				  <div class="img d-flex align-self-stretch align-items-center" style="background-image: url(/images/kanako_sakai.jpg);"></div>
-        		</div>
-    		    <div class="col-md-6 col-lg-7 pl-lg-5 py-5">
-      				<div class="py-md-5">
-  	    				<div class="row justify-content-start pb-3">
-  			             <div class="col-md-12 heading-section ftco-animate">
-  			               <span class="subheading">Our team</span>
-      			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Founder</h2>
-      			            <p>幼少期から高校までをヨーロッパで過ごした後、大学進学のため帰国。東京大学経済学部卒業。新卒で外資系戦略コンサルティングファームの東京支社に入社。主に製薬・消費財のプロジェクトに従事。1年目に社内結婚、3年目に長男を出産、2年間の育児休業を経て復職後、2019年よりハーバードビジネススクールにMBAに夫と共に留学中。女性が家族との時間を楽しみながらも、肩身の狭い思いをせずにより活き活きと働ける社会を実現したいというパッションから本プラットフォームの運営を開始。</p>
-  	                </div>
-      		      </div>
+  	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb">
+      	<div class="container">
+      		<div class="row d-flex"> 
+          		<div class="col-md-6 col-lg-5 d-flex">
+      				  <div class="img d-flex align-self-stretch align-items-center" style="background-image: url(/images/kanako_sakai.jpg);"></div>
+          		</div>
+      		    <div class="col-md-6 col-lg-7 pl-lg-5 py-5">
+        				<div class="py-md-5">
+    	    				<div class="row justify-content-start pb-3">
+    			             <div class="col-md-12 heading-section ftco-animate">
+    			               <span class="subheading">Our team</span>
+        			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Founder</h2>
+        			            <p>幼少期から高校までをヨーロッパで過ごした後、大学進学のため帰国。東京大学経済学部卒業。新卒で外資系戦略コンサルティングファームの東京支社に入社。主に製薬・消費財のプロジェクトに従事。1年目に社内結婚、3年目に長男を出産、2年間の育児休業を経て復職後、2019年よりハーバードビジネススクールにMBAに夫と共に留学中。女性が家族との時間を楽しみながらも、肩身の狭い思いをせずにより活き活きと働ける社会を実現したいというパッションから本プラットフォームの運営を開始。</p>
+    	                </div>
+        		      </div>
+                </div>
               </div>
-            </div>
-        </div>
-      </div>	
-    </section>
-
+          </div>
+        </div>	
+      </section>
 @endsection

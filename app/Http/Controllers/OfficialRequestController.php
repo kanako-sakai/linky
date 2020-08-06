@@ -18,9 +18,12 @@ class OfficialRequestController extends Controller
     //支払い画面
     public function payment()
     {
-        $user = Auth::user();
+        // $user = Auth::user();
         
-        return view('official_mentors.payment', ['user'=>$user]);
+        $success_url=config('success_url.success_url');
+        $cancel_url=config('cancel_url.cancel_url');
+        
+        return view('official_mentors.payment');
     }
     
     public function request_form()
@@ -28,6 +31,13 @@ class OfficialRequestController extends Controller
         $user = Auth::user();
         
         return view('official_mentors.request_form', ['user' => $user]);
+    }
+    
+    public function request_failed()
+    {
+        $user = Auth::user();
+        
+        return view('official_mentors.payment_failed');
     }
     
     public function confirm(Request $request)

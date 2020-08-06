@@ -26,13 +26,21 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('plan', 'ご希望のプラン') !!}
-                {!! Form::text('plan', null, ['class' => 'form-control']) !!}
+                {!! Form::label('plan', 'ご購入のプラン') !!}
+                <select type="text" class="form-control" name="plan">
+                    @foreach(config('plans') as $key => $plan)
+                        <option value="{{ $plan }}">{{ $plan }}</option>
+                    @endforeach    
+                </select>
             </div>
             
             <div class="form-group">
                 {!! Form::label('mentor_pref', 'ご希望のメンター') !!}
-                {!! Form::text('mentor_pref', null, ['class' => 'form-control']) !!}
+                <select type="text" class="form-control" name="mentor_pref">
+                    @foreach(config('mentors') as $key => $mentor)
+                        <option value="{{ $mentor }}">{{ $mentor }}</option>
+                    @endforeach    
+                </select>
             </div>
             
             <div class="form-group">
