@@ -33,11 +33,11 @@ class OfficialRequestController extends Controller
         return view('official_mentors.request_form', ['user' => $user]);
     }
     
-    public function request_failed()
+    public function payment_failed()
     {
         $user = Auth::user();
         
-        return view('official_mentors.payment_failed');
+        return view('official_mentors.payment');
     }
     
     public function confirm(Request $request)
