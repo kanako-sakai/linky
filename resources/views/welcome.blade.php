@@ -60,7 +60,7 @@
     		<div class="row d-flex">
   				<div class="py-md-5">
       				<div class="row justify-content-start pb-3">
-  			          <div class="offset-1 col-11 heading-section ftco-animate">
+  			          <div class="offset-1 col-10 heading-section ftco-animate">
   			          	<span class="subheading">About Us</span>
   			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Mission</h2>
     			            <p>「身近に女性のロールモデルがいない」</p>
@@ -83,7 +83,7 @@
       		<div class="row d-flex"> 
       		  <div class="py-md-5">
   	    				<div class="row justify-content-start pb-3">
-			             <div class="offset-1 col-11 heading-section ftco-animate">
+			             <div class="offset-1 col-10 heading-section ftco-animate">
 			               <span class="subheading">運営者から皆さまへ</span>
 			               <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Founder</h2>
     			            <h3>坂井華奈子 | Kanako Sakai</h3>
