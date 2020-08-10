@@ -21,14 +21,16 @@
                     <ul class="list-unstyled">
                         @foreach ($matches_from_me as $match_from_me)
                             <li class="media">
+                                <div class="col-md-2">
                                 {{-- アイコン --}}
                                 @if(isset($match_from_me->receiver->picture))
                                 	<img src = "{{ $match_from_me->receiver->picture }}" width=50 height=50>
                                 @else
                                 	<img src = "/images/icon.png" alt="icon" width=50 height=50>
                                 @endif
+                                </div>
     
-                                <div class="media-body">
+                                <div class="media-body col-md-5">
                                     <div>
                                         {{ $match_from_me->receiver->name }}
                                     </div>
@@ -36,10 +38,11 @@
                                         {{-- ユーザ詳細ページへのリンク --}}
                                         <p>{!! link_to_route('users.show', 'プロフィール詳細', ['user' => $match_from_me->receiver->id]) !!}</p>
                                     </div>
-                                    <div>
-                                        {{-- ダイレクトメッセージページへのボタン --}}
-                                        <p>{!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_me->receiver->id], ['class'=>'btn btn-primary']) !!}</p>
-                                    </div>
+                                </div>    
+                                
+                                <div class="col-md-4">
+                                    {{-- ダイレクトメッセージページへのボタン --}}
+                                    <p>{!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_me->receiver->id], ['class'=>'btn btn-primary']) !!}</p>
                                 </div>
                             </li>
                         @endforeach
@@ -50,14 +53,16 @@
                     <ul class="list-unstyled">
                         @foreach ($matches_from_others as $match_from_others)
                             <li class="media">
+                                <div class="col-md-2">
                                 {{-- アイコン --}}
                                 @if(isset($match_from_others->sender->picture))
                                 	<img src = "{{ $match_from_others->sender->picture }}" width=50 height=50>
                                 @else
                                 	<img src = "/images/icon.png" alt="icon" width=50 height=50> 
                                 @endif
+                                </div>
                                 
-                                <div class="media-body">
+                                <div class="media-body col-md-5">
                                     <div>
                                         {{ $match_from_others->sender->name }}
                                     </div>
@@ -65,11 +70,11 @@
                                         {{-- ユーザ詳細ページへのリンク --}}
                                         <p>{!! link_to_route('users.show', 'プロフィール詳細', ['user' => $match_from_others->sender->id]) !!}</p>
                                     </div>
-                                    <div>
-                                        {{-- ダイレクトメッセージページへのボタン --}}
-                                        <p>{!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_others->sender->id], ['class'=>'btn btn-primary']) !!}</p>
-                                    </div>
-    
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    {{-- ダイレクトメッセージページへのボタン --}}
+                                    <p>{!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_others->sender->id], ['class'=>'btn btn-primary']) !!}</p>
                                 </div>
                             </li>
                         @endforeach

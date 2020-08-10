@@ -20,14 +20,14 @@
             @if (count($mentor_requestings) > 0)
                 <ul class="list-unstyled">
                     @foreach ($mentor_requestings as $mentor_requesting)
-                        <li class="media">
+                        <li class="media col-md-3">
                             {{-- アイコン --}}
                             @if(isset($mentor_requesting->receiver->picture))
                             	<img src = "{{ $mentor_requesting->receiver->picture }}" width=50 height=50>
                             @else
                             	<img src = "/images/icon.png" alt="icon" width=50 height=50>
                             @endif
-                            <div class="media-body">
+                            <div class="media-body offset-md-1 col-md-8">
                                 <div>
                                     {{ $mentor_requesting->receiver->name }}
                                 </div>
