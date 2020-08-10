@@ -66,7 +66,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('official_request/payment_failed', 'OfficialRequestController@payment_failed')->name('payment.failed');
         Route::post('official_request/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
         Route::post('official_request/complete', 'OfficialRequestController@complete')->name('official.complete');
- 
+        
+    //グループ座談会
+        Route::get('group/index', 'GroupController@index')->name('group_index');
+        Route::get('group/form1', 'GroupController@form1')->name('group_form1');
    
 });
 

@@ -1,4 +1,11 @@
 <ul class="nav nav-tabs nav-justified mb-3">
+    
+    {{--　プロフィールタブ --}}
+    <li class="nav-item">
+        <a href="{{ route('users.show', ['user' => $user]) }}" class="nav-link {{ Request::routeIs('users.show') ? 'active' : '' }}">
+            プロフィール
+        </a>
+    </li> 
 
     {{--　リクエスト申請中一覧タブ --}}
     <li class="nav-item">

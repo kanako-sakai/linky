@@ -90,11 +90,12 @@
                                     	<img src="{{ Gravatar::get($user->email, ['size' => 100]) }}" alt=""> 
                                     @endif
                                     <div class="media-body">
-                                        <div class = col-md-4>
+                                        <div class = col-md-12>
                                             {{-- ユーザ詳細ページへのリンク --}}
                                             <p>{!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!}</p>
-                                            <p>{{ $user->profile->industry()->first()->name }}</p>
-                                            <p>{{ $user->profile->job_category()->first()->name }}</p>
+                                            <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
+                                            <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
+                                            <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
                                         </div>
                                     </div>
                                 </li>
@@ -102,6 +103,7 @@
                         </ul>
                         {{-- ページネーションのリンク --}}
                         {{ $users->links() }}
+                    </div>
                     @endif
                 </div>
             </div> 

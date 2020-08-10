@@ -8,15 +8,14 @@
                 	<h2 class="mb-4">マイページ</h2>
           		</div>
         	</div>
-    <div class="row">
-        <aside class="col-sm-4">
-            {{-- ユーザ情報 --}}
-            @include('users.card')
-            
-        </aside>
-        <div class="col-sm-8">
-            {{-- タブ --}}
-            @include('users.navtabs')
+            <div class="col-md-12">
+                @include('users.card')
+                    
+                <div class="col-md-12">
+                    @include('users.navtabs')
+                </div>      
+                
+            <div class="text-center">
             {{-- ユーザ一覧 --}}
             @if (count($mentor_requestings) > 0)
                 <ul class="list-unstyled">
@@ -41,7 +40,8 @@
                     @endforeach
                 </ul>
             @endif
-        </div>
+            </div>
+        </div>    
     </div>
 </section>    
 @endsection

@@ -16,8 +16,13 @@
     @else    
         {{-- リクエスト送信ボタンのフォーム --}}
         {!! Form::open(['route' => ['user.mentor.request', $user->id]]) !!}
+        <div class="form-group">
             {!! Form::textarea('message',null, ['class' => 'form-control', 'placeholder' => 'リクエストのメッセージをご記入ください。']) !!}
+        </div>
+        
+        <div class="form-group">
             {!! Form::submit('リクエスト送信', ['class' => "btn btn-primary btn-block"]) !!}
+        </div>    
         {!! Form::close() !!}
     @endif
 @endif

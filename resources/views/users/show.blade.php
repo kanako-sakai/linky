@@ -11,18 +11,17 @@
                     	<h2 class="mb-4">マイページ</h2>
               		</div>
             	</div>
-                <div class="row">
-                    <aside class = "col-md-5">
-                        @include('users.card')
-                        @include('users.profile')
-            
-                    </aside>
+                <div class="col-md-12">
+                    @include('users.card')
                     
-                    <div class="col-md-7">
-                    @include('users.navtabs')
+                    <div class="col-md-12">
+                        @include('users.navtabs')
+                    </div>    
+                    <div class="text-center">
+                        @include('users.profile')
                     </div>
-                </div>
-            </div>    
+                </div>    
+            </div>
     </section>
     
     @else
@@ -42,35 +41,35 @@
                         <h3>プロフィール</h3>
                 
                 <div class= "pb-5 text-center">
-                        <table class = "row justify-content-center pb-5">
+                        <table class = "profile offset-md-2">
                             <tbody>
                                 <tr>
-                                    <td>【最終学歴】</td>
+                                    <th>【最終学歴】</th>
                                     <td class="text-left">{{ $profile->education }}</td>
                                 </tr>
                                 <tr>
-                                    <td>【社会人歴】</td>
+                                    <th>【社会人歴】</th>
                                     <td class="text-left">{{ $profile->working_years }}</td>
                                 </tr>
                                 @if($profile->employer_display==1)
                                 
                                 @else
                                 <tr>
-                                    <td>【勤務先】</td>
+                                    <th>【勤務先】</th>
                                     <td class="text-left">{{ $profile->employee }}</td>
                                 </tr>
                                 @endif
                                 
                                 <tr>
-                                    <td>【業種】</td>
+                                    <th>【業種】</th>
                                     <td class="text-left">{{ $industry }}</td>
                                 </tr>
                                 <tr>
-                                    <td>【職種】</td>
+                                    <th>【職種】</th>
                                     <td class="text-left">{{ $job_category }}</td>
                                 </tr>
                                 <tr>
-                                    <td>【海外経験】</td>
+                                    <th>【海外経験】</th>
                                     <td class="text-left">
                                         @if ($profile->expat == 0)<p></p>
                                         @else
@@ -94,7 +93,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>【転職経験】</td>
+                                    <th>【転職経験】</th>
                                     <td class="text-left">
                                         @if ($profile->career_change == 0)
                                             <p>なし</p>
@@ -104,7 +103,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>【既婚／未婚】</td>
+                                    <th>【既婚／未婚】</th>
                                     <td class="text-left">
                                         @if ($profile->marriage_status == 0)
                                             <p>既婚</p>
@@ -114,7 +113,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>【子供の有無】</td>
+                                    <th>【子供の有無】</th>
                                     <td class="text-left">
                                         @if ($profile->child_status == 0)
                                             <p>なし</p>
@@ -124,19 +123,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>【自己紹介】</td>
+                                    <th>【自己紹介】</th>
                                     <td class="text-left"> {{$profile->intro}}
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
             
-                    <div class = "pb-5 text-center">    
+                    <div class = "col-md-6 offset-md-3 pb-5 text-center">    
                     {{--　リクエストボタン --}}
                     @include('mentor_request.request_button')
                     </div>
                 
-                    <div class= "pb-5 text-center">    
+                    <div class= "col-md-6 offset-md-3 pb-5 text-center">    
                     {{--　承認ボタン --}}
                     @include('mentor_request.accept_button')
                     </div>

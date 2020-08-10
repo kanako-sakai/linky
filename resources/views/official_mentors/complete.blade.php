@@ -9,7 +9,7 @@
           		</div>
         	</div>
 
-            <div class="col-md-8 heading-section text-center">
+            <div class="col-md-12 heading-section text-center">
                 <p>リクエストいただきありがとうございます。</p>
                 <p>2-3営業日以内にはご返信いたします。</p>
                 <p>万が一、返信のない場合は、linky.register@gmail.comまでご連絡ください。</p>

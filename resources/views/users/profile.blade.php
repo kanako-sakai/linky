@@ -1,24 +1,24 @@
 @if($profile->exists())
 
 <div class="row pb-2">
-    <h4>プロフィール</h4>
-    {{-- メッセージ編集ページへのリンク --}}
-    {!! link_to_route('users.edit', '編集', ['user' => $user], ['class' => 'btn btn-primary']) !!}
+    <div class="offset-md-9">
+    {!! link_to_route('users.edit', 'プロフィールを編集', ['user' => $user], ['class' => 'btn btn-primary']) !!}
+    </div>
 </div>
 
-    <table>
+    <table class="profile">
         <tbody>
             <tr>
-                <td>【最終学歴】</td>
+                <th>【最終学歴】</th>
                 <td class="text-left">{{ $profile->education }}</td>
             </tr>
             <tr>
-                <td>【社会人歴】</td>
+                <th>【社会人歴】</th>
                 <td class="text-left">{{ $profile->working_years }}</td>
             </tr>
         
             <tr>
-                <td>【勤務先】</td>
+                <th>【勤務先】</th>
                 <td class="text-left">{{ $profile->employee }} 
                 <br>
                 @if($profile->employer_display==1)
@@ -36,7 +36,7 @@
                     		c27.668,0,50.11,22.434,50.11,50.11C306.112,369.936,283.67,392.378,256.002,392.378z" style="fill: rgb(75, 75, 75);"></path>
                     </g>
                 </svg>
-                自分のみ
+                <span style="color: #808080">自分のみ</span>
                 @else
                 <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="width: 16px; height: 16px; opacity: 1;" xml:space="preserve">
                     <style type="text/css">
@@ -72,22 +72,22 @@
                     		"></path>
                     </g>
                     </svg>
-                公開
+                <span style="color: #808080">公開</span>
                 @endif
                 </td>
             </tr>
             
             
             <tr>
-                <td>【業種】</td>
+                <th>【業種】</th>
                 <td class="text-left">{{ $industry }}</td>
             </tr>
             <tr>
-                <td>【職種】</td>
+                <th>【職種】</th>
                 <td class="text-left">{{ $job_category }}</td>
             </tr>
             <tr>
-                <td>【海外経験】</td>
+                <th>【海外経験】</th>
                 <td class="text-left">
                     @if ($profile->expat == 0)<p></p>
                     @else
@@ -111,7 +111,7 @@
                 </td>
             </tr>
             <tr>
-                <td>【転職経験】</td>
+                <th>【転職経験】</th>
                 <td class="text-left">
                     @if ($profile->career_change == 0)
                         <p>なし</p>
@@ -121,7 +121,7 @@
                 </td>
             </tr>
             <tr>
-                <td>【既婚／未婚】</td>
+                <th>【既婚／未婚】</th>
                 <td class="text-left">
                     @if ($profile->marriage_status == 0)
                         <p>既婚</p>
@@ -131,7 +131,7 @@
                 </td>
             </tr>
             <tr>
-                <td>【子供の有無】</td>
+                <th>【子供の有無】</th>
                 <td class="text-left">
                     @if ($profile->child_status == 0)
                         <p>なし</p>
@@ -141,7 +141,7 @@
                 </td>
             </tr>
             <tr>
-                <td>【自己紹介】</td>
+                <th>【自己紹介】</th>
                 <td class="text-left"> {{$profile->intro}}
                 </td>
             </tr>

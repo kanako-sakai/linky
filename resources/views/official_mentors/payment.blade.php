@@ -65,8 +65,8 @@
                           // a successful payment.
                           // Instead use one of the strategies described in
                           // https://stripe.com/docs/payments/checkout/fulfillment
-                          successUrl: 'https://ks-mentor-requests.herokuapp.com/request_form',
-                          cancelUrl: 'https://ks-mentor-requests.herokuapp.com/official_request/payment_failed',
+                          successUrl: '{{ config("stripe.success_url") }}',
+                          cancelUrl: '{{ config("stripe.cancel_url") }}',
                         })
                         .then(function (result) {
                           if (result.error) {
@@ -131,8 +131,8 @@
                             // a successful payment.
                             // Instead use one of the strategies described in
                             // https://stripe.com/docs/payments/checkout/fulfillment
-                            successUrl: 'https://ks-mentor-requests.herokuapp.com/request_form',
-                            cancelUrl: 'https://ks-mentor-requests.herokuapp.com/official_request/payment_failed',
+                            successUrl: '{{ config("stripe.success_url") }}',
+                            cancelUrl: '{{ config("stripe.cancel_url") }}',
                           })
                           .then(function (result) {
                             if (result.error) {
@@ -196,8 +196,8 @@
                           // a successful payment.
                           // Instead use one of the strategies described in
                           // https://stripe.com/docs/payments/checkout/fulfillment
-                          successUrl: 'https://ks-mentor-requests.herokuapp.com/request_form',
-                          cancelUrl: 'https://ks-mentor-requests.herokuapp.com/official_request/payment_failed',
+                          successUrl: '{{ config("stripe.success_url") }}',
+                          cancelUrl: '{{ config("stripe.cancel_url") }}',
                         })
                         .then(function (result) {
                           if (result.error) {

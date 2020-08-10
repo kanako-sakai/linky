@@ -1,5 +1,73 @@
-.paragraph
-{
-    margin: 10px auto;
-    width: 50px;
+.welcome {
+    position: relative;
+    height: 600px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.subhead {
+          color: #48d1cc;
+          float:right;
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+}
+
+.catch {
+          font-size: 44px;
+          color: #000000;
+          text-align:right;
+          line-height: 1.3;
+          font-weight: 300; }
+          .welcome h1 span {
+            font-weight: 900; }
+          @media (max-width: 991.98px) {
+            .welcome h1 {
+              color:#000000;
+              font-size: 50px; } }
+          @media (max-width: 767.98px) {
+            .welcome h1 {
+              font-size: 40px; } 
+          }
+
+.welcome p {
+          color: #696969;
+          text-align: right;
+          font-weight: 400; }
+          @media (max-width: 991.98px) {
+            .welcome p {
+              color: #696969;
+              font-size: 12px; } }
+              
+.register-button {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.founder_img {
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    background-position:center;
+    background-size: cover;
+}    
+
+table.profile{
+    width: 100%;
+}
+
+th{
+    width: 35%;
+}
+
+td{
+    width: 65%;
+}
+
+p.intro {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

@@ -25,4 +25,6 @@ class PagesController extends Controller
     public function getPrecaution(){
         return view('precaution');
     }
+    
+   
 }

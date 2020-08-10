@@ -18,11 +18,6 @@ class OfficialRequestController extends Controller
     //支払い画面
     public function payment()
     {
-        // $user = Auth::user();
-        
-        $success_url=config('success_url.success_url');
-        $cancel_url=config('cancel_url.cancel_url');
-        
         return view('official_mentors.payment');
     }
     
