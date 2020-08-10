@@ -2,7 +2,7 @@
 
 @section('content')
   <section class="welcome">
-    <div class="container">
+    <div class="container-fluid">
     	<div class="hero text offset-md-2 col-md-4">
          <span class="subhead">Get inspired, Move forward</span><br>
           <h1 class="catch"><span>女性のキャリアを<br>より自由に<br>より前向きに</span></h1>
