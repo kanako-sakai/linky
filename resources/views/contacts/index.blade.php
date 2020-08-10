@@ -39,7 +39,9 @@
                         {!! Form::text('body', null, ['class' => 'form-control']) !!}
                     </div>
                     
+                    <div class="form-group text-center">
                     {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
+                    </div>
                     {!! Form::close() !!}
                 </div>
             </div>
