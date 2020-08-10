@@ -10,10 +10,13 @@
         	</div>
             <div class="col-md-12">
                 @include('users.card')
+            </div>
+            
+            <hr class ="cp_hr05" />
                     
-                <div class="col-md-12">
-                    @include('users.navtabs')
-                </div>      
+            <div class="col-md-12">
+                @include('users.navtabs')
+            </div>      
                 
             <div class="text-center">
             {{-- ユーザ一覧 --}}
@@ -42,6 +45,5 @@
             @endif
             </div>
         </div>    
-    </div>
 </section>    
 @endsection

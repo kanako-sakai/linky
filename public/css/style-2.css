@@ -71,3 +71,14 @@ p.intro {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+
+.cp_hr05 {
+	position: relative;
+	height: 1px;
+	border-width: 0;
+	background-color: #00bcd4;
+	background-image: -webkit-linear-gradient(left,
+	#00bcd4 0%,#283593 50%,#00bcd4 100%);
+	background-image:         linear-gradient(90deg,
+	#00bcd4 0%,#283593 50%,#00bcd4 100%);
+}

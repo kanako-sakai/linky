@@ -9,7 +9,7 @@
               		</div>
             	</div>
             	
-                <div class="card-body">
+                <div class="offset-md-4 col-md-6">
                     <p>本会員登録が完了しました。</p>
                     {!! link_to_route('users.show', 'マイページへ', ['user' => Auth::id()], ['class'=>'btn btn-primary']) !!}
 

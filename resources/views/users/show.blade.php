@@ -11,16 +11,18 @@
                     	<h2 class="mb-4">マイページ</h2>
               		</div>
             	</div>
+            	
                 <div class="col-md-12">
                     @include('users.card')
-                    
-                    <div class="col-md-12">
-                        @include('users.navtabs')
-                    </div>    
-                    <div class="text-center">
-                        @include('users.profile')
-                    </div>
+                </div>
+                <hr class ="cp_hr05" />
+                
+                <div class="col-md-12">
+                    @include('users.navtabs')
                 </div>    
+                <div class="text-center">
+                    @include('users.profile')
+                </div>
             </div>
     </section>
     
@@ -37,11 +39,13 @@
                    @include('users.icon')
                 </div>	
                 
+                <hr class ="cp_hr05" />
+                
                 <div class= "pb-5 text-center">
                         <h3>プロフィール</h3>
                 
-                <div class= "pb-5 text-center">
-                        <table class = "profile offset-md-2">
+                <div class= "col-md-12">
+                        <table class = "profile">
                             <tbody>
                                 <tr>
                                     <th>【最終学歴】</th>
@@ -129,6 +133,8 @@
                                 </tr>
                             </tbody>
                         </table>
+                        
+                    <hr class ="cp_hr05" />    
             
                     <div class = "col-md-6 offset-md-3 pb-5 text-center">    
                     {{--　リクエストボタン --}}

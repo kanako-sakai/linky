@@ -9,7 +9,7 @@
           		</div>
         	</div>
 
-            <div class="card-body">
+            <div class="offset-md-4 col-md-6">
                 <form method="POST" action="{{ route('signup.post') }}">
                     @csrf
 
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                        <div class="col-md-6 offset-md-3">
                             <button type="submit" class="btn btn-primary">
                                 仮登録
                             </button>
