@@ -29,11 +29,11 @@
               		</div>
               	</div>
                 <h3 class="heading"><a href="single.html">8月29日(土)午前11:00-12:00</a></h3>
-                <p>若手のうちにやっておくこといいことをテーマにお話ししましょう。</p>
+                <p>「社会人3年目までにやっておくべきこと」。</p>
                 <div class="d-flex align-items-center mt-4 meta">
 	                <p class="mb-0">
 	                    {{-- リクエストページへのリンク --}}
-    					<a href="https://forms.gle/eCeQFLcwwLDgikpCA">参加申し込み</a>
+    					<a href="https://forms.gle/eCeQFLcwwLDgikpCA" target="_blank" rel="noopener noreferrer">参加申し込み</a>
     				</p>	
 	                    
 </section>	                    

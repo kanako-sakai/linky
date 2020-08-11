@@ -21,12 +21,12 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
+              <div class="block-20" style="background-image: url('images/green.png');">
+              </div>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">1回チケット</span>
+              			<span class="day">1回</span>
               		</div>
               		<div class="two">
               			<span class="yr">45分×1回</span>
@@ -87,12 +87,12 @@
     
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="single.html" class="block-20" style="background-image: url('images/green.png');">
               </a>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">3回チケット</span>
+              			<span class="day">3回</span>
               		</div>
               		<div class="two">
               			<span class="yr">45分×3回</span>
@@ -152,12 +152,12 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="single.html" class="block-20" style="background-image: url('images/green.png');">
               </a>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">5回チケット</span>
+              			<span class="day">5回</span>
               		</div>
               		<div class="two">
               			<span class="yr">45分×5回　10,000円</span>
