@@ -95,4 +95,60 @@
           </div>
         </div>	
     </section>
+    
+    <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb">
+      	<div class="container">
+      		<div class="row d-flex"> 
+      		  <div class="py-md-5">
+  	    				<div class="row justify-content-start pb-3">
+			             <div class="offset-1 col-10 heading-section ftco-animate">
+			               <span class="subheading">ご利用前にお読みください</span>
+			               <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Q&A</h2>
+			               <div class="card" style="mb-3">
+			                 <div class="card-header">
+			                   <h5 class="card-title">Q. 会員登録は有料ですか？</h5>
+			                 </div>
+			                 <div class="card-body">
+			                   会員登録は無料です。また登録会員の中から相談相手を見つけ、お話しされる場合は全て無料でご利用いただくことができます。公式メンターとの面談、グループ座談会のみ有料となります。
+			                 </div>
+			               </div>
+			               <div class="card">
+			                 <div class="card-header">
+			                   <h5 class="card-title">Q. どのような人に相談できるのですか？</h5>
+			                 </div>
+			                 <div class="card-body">
+			                   ご自身がお話しされたいと思う方を業種や職種、子育ての経験など様々な項目で検索し、無料でお話ししていただくことが可能です。また公式メンターとして、MBAホルダーを含めた様々なキャリアを積んだ女性プロフェッショナルが皆様のご相談に乗らせていただきます(こちらは有料となります)。
+			                 </div>
+			               </div>
+			               <div class="card">
+			                 <div class="card-header">
+			                   <h5 class="card-title">Q. 相談はどのような形式になりますか？</h5>
+			                 </div>
+			                 <div class="card-body">
+			                   公式メンターとの面談はZoomを使用したオンラインとなります。会員登録者同士でお話しされる場合は、ご自由に決めていただき構いませんが、基本的にはオンラインでの面談を推奨しております。
+			                 </div>
+			               </div>
+			               <div class="card">
+			                 <div class="card-header">
+			                   <h5 class="card-title">Q. 誰かの相談に乗るには何か資格などが必要ですか？</h5>
+			                 </div>
+			                 <div class="card-body">
+			                   いいえ、全く必要ございません。ご自身のご経験が他の方の役に立つと思われる場合は、積極的に他の方のご相談に乗っていただけますと幸いです。また多くの方の相談に乗っていただいた場合は、公式メンターとしてお声がけさせていただく可能性もございます。
+			                 </div>
+			               </div>
+			               <div class="card">
+			                 <div class="card-header">
+			                   <h5 class="card-title">Q. 男性でも利用できますか？</h5>
+			                 </div>
+			                 <div class="card-body">
+			                   大変申し訳ございませんが、こちらは女性限定のサービスです。キャリアに悩む女性のご友人やパートナーの方に是非お勧めいただければ幸いです。
+			                 </div>
+			               </div>
+			             </div>
+                </div>
+  		        </div>
+          </div>
+        </div>	
+    </section>
+    
 @endsection
