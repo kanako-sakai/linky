@@ -36,7 +36,7 @@
                     
                     <div class="form-group">
                         {!! Form::label('body', 'お問い合わせ内容') !!}
-                        {!! Form::text('body', null, ['class' => 'form-control']) !!}
+                        {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
                     </div>
                     
                     <div class="form-group text-center">

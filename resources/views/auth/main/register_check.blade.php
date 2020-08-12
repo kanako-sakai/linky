@@ -156,10 +156,12 @@
                         <input type="hidden" name="can_mentor" value="{{$profile->can_mentor}}">
                     </div>
                         <input type="hidden" name="agree" value="{{$user->agree}}">
-
-                    <div class="form-group row mb-0">
-                        <div class="col-md-7 offset-md-5">
-                            <button type="submit" class="btn btn-primary">
+                    
+                    <div class="form-group">
+                        <span class="col-md-6 offset-4">
+                           <input value= "前に戻る" onclick= "history.back();" type="button" class="btn btn-primary">
+                        <span class="col-md-4">
+                            <button type="submit" name="action" value="submit" class="btn btn-primary">
                                 本登録
                             </button>
                         </div>

@@ -40,13 +40,13 @@
                     {!! Form::label('employee', 'ご勤務先') !!}
                     {!! Form::text('employee', null, ['class' => 'form-control']) !!}
                     @if($profile->employer_display == 0)
-                    {!! Form::hidden('employer_display', 0) !!}
-                    {!! Form::label('employer_display', '勤務先を非表示にする') !!}
-                    {!! Form::checkbox('employer_display', 1, null, ['class' => 'field']) !!}
-                    @else
-                    {!! Form::hidden('employer_display', 1) !!}
                     {!! Form::label('employer_display', '勤務先を表示する') !!}
-                    {!! Form::checkbox('employer_display', 0, null, ['class' => 'field']) !!}
+                    {!! Form::hidden('employer_display', '1') !!}
+                    {!! Form::checkbox('employer_display', 0, true, ['class' => 'field']) !!}
+                    @else
+                    {!! Form::label('employer_display', '勤務先を表示する') !!}
+                    {!! Form::hidden('employer_display', '1') !!}
+                    {!! Form::checkbox('employer_display', 0, 0, ['class' => 'field']) !!}
                     @endif
                 </div>
                 

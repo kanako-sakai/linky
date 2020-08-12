@@ -89,24 +89,24 @@
             <tr>
                 <th>【海外経験】</th>
                 <td class="text-left">
-                    @if ($profile->expat == 0)<p></p>
+                    @if ($profile->expat == 0)<span></span>
                     @else
-                        <p>海外駐在・トレーニー</p>
+                        <span>海外駐在・トレーニー</span>
                     @endif    
                     @if ($profile->mba == 0)
-                        <p></p>
+                        <span></span>
                     @else
-                        <p>MBA留学</p>
+                        <span>| MBA留学</span>
                     @endif
                     @if ($profile->other_study_abroad == 0)
-                        <p></p>
+                        <span></span>
                     @else
-                        <p>その他海外留学</p>
+                        <span>| その他海外留学</span>
                     @endif
                     @if ($profile->returnee == 0)
-                        <p></p>
+                        <span></span>
                     @else
-                        <p>帰国子女</p>
+                        <span>| 帰国子女</span>
                     @endif
                 </td>
             </tr>
@@ -124,9 +124,9 @@
                 <th>【既婚／未婚】</th>
                 <td class="text-left">
                     @if ($profile->marriage_status == 0)
-                        <p>既婚</p>
-                    @else
                         <p>未婚</p>
+                    @else
+                        <p>既婚</p>
                     @endif
                 </td>
             </tr>
@@ -142,7 +142,7 @@
             </tr>
             <tr>
                 <th>【自己紹介】</th>
-                <td class="text-left"> {{$profile->intro}}
+                <td class="text-left"> {!! nl2br(e($profile->intro)) !!}
                 </td>
             </tr>
         </tbody>

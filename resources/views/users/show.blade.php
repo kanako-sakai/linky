@@ -75,24 +75,24 @@
                                 <tr>
                                     <th>【海外経験】</th>
                                     <td class="text-left">
-                                        @if ($profile->expat == 0)<p></p>
+                                        @if ($profile->expat == 0)<span></span>
                                         @else
-                                            <p>海外駐在・トレーニー</p>
+                                            <span>海外駐在・トレーニー</span>
                                         @endif    
                                         @if ($profile->mba == 0)
-                                            <p></p>
+                                            <span></span>
                                         @else
-                                            <p>MBA留学</p>
+                                            <span>| MBA留学</span>
                                         @endif
                                         @if ($profile->other_study_abroad == 0)
-                                            <p></p>
+                                            <span></span>
                                         @else
-                                            <p>その他海外留学</p>
+                                            <span>| その他海外留学</span>
                                         @endif
                                         @if ($profile->returnee == 0)
-                                            <p></p>
+                                            <span></span>
                                         @else
-                                            <p>帰国子女</p>
+                                            <span>| 帰国子女</span>
                                         @endif
                                     </td>
                                 </tr>
@@ -141,10 +141,10 @@
                     @include('mentor_request.request_button')
                     </div>
                 
-                    <div class= "col-md-6 offset-md-3 pb-5 text-center">    
-                    {{--　承認ボタン --}}
-                    @include('mentor_request.accept_button')
-                    </div>
+                    <!--<div class= "col-md-6 offset-md-3 pb-5 text-center">    -->
+                    <!--{{--　承認ボタン --}}-->
+                    <!--@include('mentor_request.accept_button')-->
+                    <!--</div>-->
                 </div> 
             </div>    
         </div>

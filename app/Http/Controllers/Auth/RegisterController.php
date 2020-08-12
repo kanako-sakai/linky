@@ -135,8 +135,8 @@ class RegisterController extends Controller
     {   
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'education' => ['required', 'string', 'max:255'],
             'working_years'=> ['required', 'numeric', 'max:60'],
+            'education' => ['required', 'string', 'max:255'],
             'employee'=> ['required', 'string', 'max:255'],
             'industry_id'=> ['required', 'string'],
             'job_category_id'=> ['required', 'string'],
@@ -147,7 +147,21 @@ class RegisterController extends Controller
             'career_change'=> ['required', 'numeric'],
             'marriage_status'=> ['required', 'numeric'],
             'child_status'=> ['required', 'numeric'],
+            'can_mentor' => ['required', 'numeric'],
             'agree' => ['required', 'numeric'],
+        ],
+        [
+            'name.required' => '名前は必須です。',
+            'working_years.required'=>'社会人歴は必須です。',
+            'education.required' => '最終学歴は必須です。',
+            'employee.required' => 'ご勤務先は必須です。',
+            'industry_id.required' => '業種は必須です。',
+            'job_category_id.required' => '職種は必須です。',
+            'career_change.required' => '転職経験は必須です。',
+            'marriage_status.required' => '既婚/未婚は必須です。',
+            'child_status.required' => 'お子様の有無は必須です。',
+            'can_mentor.required' => '他の方の相談に乗ることができるかは必須です。',
+            'agree.required' => 'プライバシーポリシーに同意してください。',
         ]);
         
         //データ保持
@@ -160,8 +174,8 @@ class RegisterController extends Controller
         $user->agree = $request->agree;
         
         $profile = new Profile();
-        $profile->education = $request->education;
         $profile->working_years = $request->working_years;
+        $profile->education = $request->education;
         $profile->employee = $request->employee;
         $profile->industry_id = $request->industry_id;
         $profile->job_category_id= $request->job_category_id;
@@ -187,8 +201,9 @@ class RegisterController extends Controller
         ]);
     }
     
-        public function mainRegister(Request $request)
-      {
+    public function mainRegister(Request $request)
+    {
+        
         $user = User::where('email_verify_token', $request->email_verify_token)->firstOrFail();
         $user->status = config('const.USER_STATUS.REGISTER');
         $user->name = $request->name;
@@ -214,7 +229,7 @@ class RegisterController extends Controller
         $profile->save();
         
         \Auth::login($user);
-        
+    
         return view('auth.main.registered');
-      }
+    }
 }

@@ -8,6 +8,7 @@
                 	<h2 class="mb-4">{{ $user->name }}</h2>
           		</div>
         	</div>
+        	
     
             @if(count($messages) >0)
                 <ul class="list-unstyled">
@@ -25,14 +26,17 @@
                                 </div>
                                 <div>
                                     {{ $message->message }}
-                                </div>
-                                <div>
+                                </div> 
+                                <span class="timestamp col-md-4">
+                                    {{ $message->created_at }}
+                                </span>
+                                <span class="col-md-4">
                                     @if (Auth::id() == $message->sender->id)
                                     {!! Form::open(['route' => ['delete.message', $message->id], 'method' => 'delete']) !!}
                                         {!! Form::submit('削除', ['class' => 'btn btn-sm']) !!}
                                     {!! Form::close() !!}    
                                     @endif
-                                </div>
+                                </span>
                             </div>
                         </li>
                     @endforeach

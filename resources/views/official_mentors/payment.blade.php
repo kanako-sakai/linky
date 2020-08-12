@@ -21,18 +21,14 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <div class="block-20" style="background-image: url('images/green.png');">
-              </div>
+              <div class="payicon1"></div>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">1回</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">45分×1回</span>
+              			<span class="day">1回プラン</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">まずはお気軽に1回から始めたい方へ</a></h3>
+                <h3 class="heading">まずはお気軽に1回から始めたい方へ</h3>
                 <p>簡単な相談やメンターのキャリアについてのお話しのみ聞きたい方にオススメです。</p>
                 <p>45分×1回分　2,500円</p>
                 <div class="d-flex align-items-center mt-4 meta">
@@ -87,18 +83,14 @@
     
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/green.png');">
-              </a>
+              <div class="payicon3"></div>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">3回</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">45分×3回</span>
+              			<span class="day">3回プラン</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">継続して相談されたい方へ</a></h3>
+                <h3 class="heading">継続して相談されたい方へ</h3>
                 <p>1-2か月に1回のペースで継続的にメンターお話しすることで、より具体的なフィードバックを得ることができます。</p>
                 <p>45分×3回分　7,000円</p>
                 <div class="d-flex align-items-center mt-4 meta">
@@ -152,18 +144,15 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="single.html" class="block-20" style="background-image: url('images/green.png');">
-              </a>
+              <div class="payicon5">
+              </div>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">5回</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">45分×5回　10,000円</span>
+              			<span class="day">5回プラン</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">より中長期的にサポートを得たい方へ</a></a></h3>
+                <h3 class="heading">より中長期的にサポートを得たい方へ</h3>
                 <p>より長期的にサポートをもらうことで、具体的なゴールの達成に近づくことができます。</p>
                 <p>45分×5回分 10,000円</p>
                 <div class="d-flex align-items-center mt-4 meta">

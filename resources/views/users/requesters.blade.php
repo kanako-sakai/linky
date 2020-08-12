@@ -50,7 +50,7 @@
                             
                                     @elseif (Auth::user()->is_requested($requester->sender->id))
                                         {{-- メッセージの表示 --}}
-                                        <p>{{ $requester->message }}</p>
+                                        <p>{!! nl2br(e($requester->message)) !!}</p>
                             </div>
                             <div class="col-md-2">
                                         {{-- 承認のボタン --}}

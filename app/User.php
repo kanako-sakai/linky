@@ -191,6 +191,25 @@ class User extends Authenticatable
         }
     }
     
+    //自分が出したリクエストが拒否されているかどうか
+    public function myRequestDenied($userId)
+    {
+        return MentorRequest::where(function($query) use($userId) {
+            $query->where('to_user_id', $userId);
+            $query->where('from_user_id', $this->id);
+            $query->where('status', 9);
+        })->exists();
+    }
+    
+    //相手からきたリクエストを拒否したか
+    public function DeniedOthersRequest($userId)
+    {
+        return MentorRequest::where(function($query) use($userId) {
+            $query->where('to_user_id', $this->id);
+            $query->where('from_user_id', $userId);
+            $query->where('status', 9);
+        })->exists();
+    }
     /**
      * マッチングが成立しているかどうか
      */

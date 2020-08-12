@@ -98,17 +98,35 @@ class UsersController extends Controller
         })->paginate(10);
         
         $s_intro = $request->input('intro');
-        $s_industry = $request->input('industry_id');
-    
+        $s_industry = $request -> input('industry_id');
+
         $industries = Industry::all()->pluck('name', 'id');
         $job_categories = JobCategory::all()->pluck('name', 'id');
-        
+        $s_jobcategory=$request->input('job_category_id');
+        $s_expat=$request->input('expat');
+        $s_mba=$request->input('mba');
+        $s_otherstudyabroad=$request->input('other_study_abroad');
+        $s_returnee=$request->input('returnee');
+        $s_careerchange=$request->input('career_change');
+        $s_marriage=$request->input('marriage_status');
+        $s_child=$request->input('child_status');
+        $s_can_mentor=$request->input('can_mentor');
+    
         return view('users.index',[
             'users' => $users,
             'industries' => $industries, 
             'job_categories' => $job_categories,
             's_intro' => $s_intro,
             's_industry' => $s_industry,
+            's_jobcategory' => $s_jobcategory,
+            's_expat'=> $s_expat,
+            's_mba'=>$s_mba,
+            's_otherstudyabroad' => $s_otherstudyabroad,
+            's_returnee' => $s_returnee,
+            's_careerchange'=>$s_careerchange,
+            's_marriage'=>$s_marriage,
+            's_child'=>$s_child,
+            's_can_mentor' => $s_can_mentor,
             ]);
     }    
     
@@ -135,12 +153,26 @@ class UsersController extends Controller
         
         $user->mentor_requests_count = $user->matchings()->count();
         
-        //リクエストをしている
+        //リクエストメッセージを取り出すためにリクエストのインスタンスを取得
         $request = MentorRequest::where(function($query) use($user) {
             $query->where('to_user_id', $user->id);
             $query->where('from_user_id', Auth::id());
             $query->where('status',0);
         })->first(); 
+        
+        //自分から出したが拒否されたリクエスト
+        $my_request_denied = MentorRequest::where(function($query) use($user) {
+            $query->where('to_user_id', $user->id);
+            $query->where('from_user_id', Auth::id());
+            $query->where('status',9);
+        })->first(); 
+        
+        //相手からもらったリクエストで拒否したもの
+        $request_received_denied = MentorRequest::where(function($query) use($user) {
+            $query->where('from_user_id', $user->id);
+            $query->where('to_user_id', Auth::id());
+            $query->where('status',9);
+        })->first();
 
          
         // ユーザ詳細ビューでそれを表示
@@ -150,11 +182,14 @@ class UsersController extends Controller
             'industry' => $industry,
             'job_category' => $job_category,
             'request' => $request,
+            'my_request_denied' => $my_request_denied,
+            'request_received_denied' => $request_received_denied
         ]);
     }
     
     //メンターリクエスト関連
     
+    //自分からのリクエスト
     public function mentor_requestings()
     {
         $user = Auth::user();
@@ -182,6 +217,7 @@ class UsersController extends Controller
         ]);
     }
     
+    //自分に届いたリクエスト
     public function requesters()
     {
         $user = Auth::user();
@@ -208,6 +244,7 @@ class UsersController extends Controller
         ]);
     }
     
+    //マッチング成立
     public function matches()
     {
        $user = Auth::user();

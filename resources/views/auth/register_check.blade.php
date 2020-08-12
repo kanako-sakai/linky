@@ -32,7 +32,9 @@
                     </div>
 
                     <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-3">
+                        <span class="col-md-6 offset-4">
+                           <input value= "前に戻る" onclick= "history.back();" type="button" class="btn btn-primary">
+                        <span class="col-md-4">
                             <button type="submit" class="btn btn-primary">
                                 仮登録
                             </button>
