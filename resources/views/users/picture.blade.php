@@ -9,9 +9,12 @@
       		</div>
       	</div>	
       	
+      	{{--エラーメッセージ--}}
+        @include('commons.error_messages')
+      	
       	<form action="{{ action('UsersController@upload', $user->id) }}" method="post" enctype="multipart/form-data">
     <!-- アップロードフォームの作成 -->
-            <input type="file" name="image">
+            <input type="file" name="picture">
             {{ csrf_field() }}
             <input type="submit" value="アップロード">
           </form>

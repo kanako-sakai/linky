@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; //追加
 use Illuminate\Support\Facades\Storage; //追加
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image; //追加
 
 
 use App\User; //追加
@@ -15,6 +17,7 @@ use App\MentorRequest; //追加
 use App\DirectMessage;//追加
 use App\CancelReason;//追加
 use Auth;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -93,6 +96,9 @@ class UsersController extends Controller
                 $query->where('can_mentor', $s_can_mentor);
             }
         })->paginate(10);
+        
+        $s_intro = $request->input('intro');
+        $s_industry = $request->input('industry_id');
     
         $industries = Industry::all()->pluck('name', 'id');
         $job_categories = JobCategory::all()->pluck('name', 'id');
@@ -101,6 +107,8 @@ class UsersController extends Controller
             'users' => $users,
             'industries' => $industries, 
             'job_categories' => $job_categories,
+            's_intro' => $s_intro,
+            's_industry' => $s_industry,
             ]);
     }    
     
@@ -115,12 +123,33 @@ class UsersController extends Controller
         $industry = Industry::find($profile->industry_id)->name;
         $job_category = JobCategory::find($profile->job_category_id)->name;
         
+        //件数をロード
+        
+        $user->loadCount(['mentor_requestings' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
+        $user->loadCount(['requesters' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
+        $user->mentor_requests_count = $user->matchings()->count();
+        
+        //リクエストをしている
+        $request = MentorRequest::where(function($query) use($user) {
+            $query->where('to_user_id', $user->id);
+            $query->where('from_user_id', Auth::id());
+            $query->where('status',0);
+        })->first(); 
+
+         
         // ユーザ詳細ビューでそれを表示
         return view('users.show', [
             'user' => $user,
             'profile' => $profile,
             'industry' => $industry,
             'job_category' => $job_category,
+            'request' => $request,
         ]);
     }
     
@@ -134,6 +163,12 @@ class UsersController extends Controller
         $user->loadCount(['mentor_requestings' => function ($query) {
             $query->where('mentor_requests.status', 0);
         }]);
+        
+        $user->loadCount(['requesters' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
+        $user->mentor_requests_count = $user->matchings()->count();
         
         $mentor_requestings=MentorRequest::where(function($query) use($user) {
             $query->where('from_user_id', $user->id);
@@ -152,9 +187,15 @@ class UsersController extends Controller
         $user = Auth::user();
         
         //件数をロード
+        $user->loadCount(['mentor_requestings' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
         $user->loadCount(['requesters' => function ($query) {
             $query->where('mentor_requests.status', 0);
         }]);
+        
+        $user->mentor_requests_count = $user->matchings()->count();
         
         $requesters = MentorRequest::where(function($query) use($user) {
             $query->where('to_user_id', $user->id);
@@ -171,7 +212,16 @@ class UsersController extends Controller
     {
        $user = Auth::user();
        
-      //Todo: 件数をロード
+        //件数をロード
+        
+        $user->loadCount(['mentor_requestings' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
+        $user->loadCount(['requesters' => function ($query) {
+            $query->where('mentor_requests.status', 0);
+        }]);
+        
         $user->mentor_requests_count = $user->matchings()->count();
        
        //承諾された自分が送ったリクエスト
@@ -329,15 +379,35 @@ class UsersController extends Controller
         $user = Auth::user();
         
         $form = $request->all();
-
-        //s3アップロード開始
-        $image = $request->file('image');
-        // バケットの`linkyprofilepictures`フォルダへアップロード
-        $path = Storage::disk('s3')->putFile('linkyprofilepictures', $image, 'public');
-        // アップロードした画像のフルパスを取得
-        $user->picture = Storage::disk('s3')->url($path);
+        
+        $request->validate([
+            'picture'=> 'required|file|image|max:1024|mimes:jpeg,png,jpg,gif',
+        ],
+        [
+            'picture.required' => '画像ファイルを選択してください。'
+        ]);
+        
+        $imagefile = $request->file('picture');
+        $name = $imagefile->getClientOriginalName();
+        $storePath="linkyprofilepictures/".$name;
+        $image=Image::make($imagefile)
+            ->resize(300, null, function($constraint) {
+                $constraint->aspectRatio();
+            });
+        $path = Storage::disk('s3')->put($storePath, (string) $image->encode(), 'public');
+        
+        $user->picture = Storage::disk('s3')->url($storePath);
         
         $user->save();
+        
+        // //s3アップロード開始
+        // $image = $request->file('picture');
+        // // バケットの`linkyprofilepictures`フォルダへアップロード
+        // $path = Storage::disk('s3')->putFile('linkyprofilepictures', $image, 'public');
+        // // アップロードした画像のフルパスを取得
+        // $user->picture = Storage::disk('s3')->url($path);
+        
+        // $user->save();
 
       return redirect()->action('UsersController@show', ['user' => $user]);
     }
