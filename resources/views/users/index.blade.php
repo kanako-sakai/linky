@@ -10,7 +10,7 @@
         	</div>
         	
             {{-- 検索　--}}
-            <div class="row p-5 bg-light">
+            <div class="row p-5 search-box">
             
                 {!! Form::open(['route' => 'users.index', 'method' => 'get']) !!}
                     <div class="row">
@@ -40,44 +40,45 @@
                     
                     <div class="form-group">
                    
-                    <h5>{!! Form::checkbox('can_mentor', 1, empty($s_can_mentor) ? null : $s_can_mentor, ['class' => 'field']) !!}
-                        {!! Form::label('can_mentor', '積極的に相談に乗れる方') !!}
+                    <h5>
+                        {!! Form::checkbox('can_mentor', 1, empty($s_can_mentor) ? null : $s_can_mentor, ['class' => 'search', 'id'=>'can_mentor']) !!}
+                        {!! Form::label('can_mentor', '積極的に相談に乗れる方', ['class' => 'label']) !!}
                 
-                        {!! Form::checkbox('expat', 1, empty($s_expat) ? null : $s_expat, ['class' => 'field']) !!}
-                        {!! Form::label('expat', '海外駐在・トレーニー') !!} 
+                        {!! Form::checkbox('expat', 1, empty($s_expat) ? null : $s_expat, ['class' => 'search', 'id'=>'expat']) !!}
+                        {!! Form::label('expat', '海外駐在・トレーニー', ['class' => 'label']) !!} 
         
-                        {!! Form::checkbox('mba', 1, empty($s_mba) ? null : $s_mba, ['class' => 'field']) !!}
-                        {!! Form::label('mba', 'MBA留学') !!}
+                        {!! Form::checkbox('mba', 1, empty($s_mba) ? null : $s_mba, ['class' => 'search', 'id'=>'mba']) !!}
+                        {!! Form::label('mba', 'MBA留学',['class' => 'label']) !!}
                 
-                        {!! Form::checkbox('other_study_abroad', 1, empty($s_otherstudyabroad) ? null : $s_otherstudyabroad, ['class' => 'field']) !!}
-                        {!! Form::label('other_study_abroad', 'その他留学') !!}
+                        {!! Form::checkbox('other_study_abroad', 1, empty($s_otherstudyabroad) ? null : $s_otherstudyabroad, ['class' => 'search', 'id'=>'other_study_abroad']) !!}
+                        {!! Form::label('other_study_abroad', 'その他留学',['class' => 'label']) !!}
                         
-                        {!! Form::checkbox('returnee', 1, empty($s_returnee) ? null : $s_returnee, ['class' => 'field']) !!}
-                        {!! Form::label('returnee', '帰国子女') !!} 
+                        {!! Form::checkbox('returnee', 1, empty($s_returnee) ? null : $s_returnee, ['class' => 'search', 'id'=>'returnee']) !!}
+                        {!! Form::label('returnee', '帰国子女',['class' => 'label']) !!} 
               
-                        {!! Form::checkbox('career_change', 1, empty($s_careerchange) ? null : $s_careerchange, ['class' => 'field']) !!}
-                        {!! Form::label('career_change', '転職') !!} 
+                        {!! Form::checkbox('career_change', 1, empty($s_careerchange) ? null : $s_careerchange, ['class' => 'search', 'id'=>'career_change']) !!}
+                        {!! Form::label('career_change', '転職',['class' => 'label']) !!} 
             
-                        {!! Form::checkbox('marriage_status', 1, empty($s_marriage) ? null : $s_marriage, ['class' => 'field']) !!}
-                        {!! Form::label('marriage_status', '結婚') !!} 
+                        {!! Form::checkbox('marriage_status', 1, empty($s_marriage) ? null : $s_marriage, ['class' => 'search', 'id'=>'marriage_status']) !!}
+                        {!! Form::label('marriage_status', '結婚',['class' => 'label']) !!} 
                  
-                        {!! Form::checkbox('child_status', 1, empty($s_child) ? null : $s_child, ['class' => 'field']) !!}
-                        {!! Form::label('child_status', '育児') !!} 
+                        {!! Form::checkbox('child_status', 1, empty($s_child) ? null : $s_child, ['class' => 'search', 'id'=>'child_status']) !!}
+                        {!! Form::label('child_status', '育児',['class' => 'label']) !!} 
                     </h5>    
                     </div>
                     
                     <div class="form-group text-center">
-                    {!! Form::submit('検索する', ['class' => 'btn py-3 px-4 btn-primary']) !!}
+                        <h5>{!! Form::submit('検 索', ['class' => 'btn py-3 px-4 btn-primary']) !!}</h5>
                 {!! Form::close() !!}
                     </div>
             </div>
             
             {{-- ユーザ一覧 --}}
             <div class="row">
-                <div class="text-center">
+                <div class="member-list">
                     <h3>相談相手リスト</h3>
                 </div>
-            
+
                 <div class="container">
                     <!--検索ボタンが押された時に表示-->
                     @if(!empty($users))
@@ -87,9 +88,9 @@
                                 <li class="media">
                                     {{-- アイコン --}}
                                     @if(isset($user->picture))
-                                    	<img src = "{{ $user->picture }}" width=100 height=100>
+                                    	<img src = "{{ $user->picture }}" class="profile_icon">
                                     @else
-                                    	<img src="{{ Gravatar::get($user->email, ['size' => 100]) }}" alt=""> 
+                                    	<p class="no_icon"></p> 
                                     @endif
                                     <div class="media-body">
                                         <div class = col-md-12>
@@ -99,6 +100,7 @@
                                             <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
                                             <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
                                         </div>
+                                         <hr class ="cp_hr05" />
                                     </div>
                                 </li>
                             @endforeach    

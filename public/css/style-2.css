@@ -162,3 +162,75 @@ p.intro {
     margin: 0; 
     padding: 0;
 }
+
+.profile_icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no_icon {
+    background-image: url('../images/green.png');
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.users_icon {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="checkbox"].search {
+  display: none;
+}
+
+.label {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  margin: 5px; /* ラベル外側の余白を指定する */
+  width: auto; /* ラベルの横幅を指定する */
+  height: 45px; /* ラベルの高さを指定する */
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 45px; /* 行の高さを指定する */
+  padding-left: 5px; /* ラベル内左側の余白を指定する */
+  padding-right: 5px; /* ラベル内右側の余白を指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+  color: #000000; /* フォントの色を指定 */
+  border: 1px solid #808080;/* ラベルの境界線を実線で指定する */
+  border-radius: 20px; /* 角丸を指定する */
+  background-color:#f5f5f5;
+}
+
+.search:checked + .label {
+  background-color:#008b8b;
+  border: 1px solid #008b8b;
+  color:#fff;
+}
+
+.search-box {
+  border: 1px solid #d3d3d3;/* ラベルの境界線を実線で指定する */
+  background-color:#fff;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.member-list {
+  margin-top:30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 30px;
+  width: auto;
+}
+
+.search-title {
+    height:30px;
+    border:0;
+    box-shadow:0 30px 30px -30px #ccc inset;
+}

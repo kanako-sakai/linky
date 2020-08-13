@@ -35,7 +35,7 @@
               		</div>
             	</div>
             	
-                <div class="pb-5 text-center">
+                <div class="text-center">
                    @include('users.icon')
                 </div>	
                 

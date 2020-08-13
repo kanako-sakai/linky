@@ -28,9 +28,9 @@
                             <div class="col-md-2">
                             {{-- アイコン --}}
                             @if(isset($requester->sender->picture))
-                            	<img src = "{{ $requester->sender->picture }}" width=50 height=50>
+                            	<img src = "{{ $requester->sender->picture }}" class="profile_icon">
                             @else
-                            	<img src = "/images/icon.png" alt="icon" width=50 height=50>
+                            	<p class="no_icon"></p>
                             @endif
                             </div>
                             

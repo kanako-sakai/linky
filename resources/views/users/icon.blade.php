@@ -1,5 +1,5 @@
 @if(isset($user->picture))
-	<img src = "{{ $user->picture }}" width=100px height=100px>
+	<img src = "{{ $user->picture }}" class="profile_icon">
 @else
-	<img src="{{ Gravatar::get($user->email, ['size' => 100]) }}" alt=""> 
+	<p class="no_icon"></p> 
 @endif

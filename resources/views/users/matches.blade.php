@@ -26,9 +26,9 @@
                             <div class="col-md-2">
                             {{-- アイコン --}}
                             @if(isset($match_from_me->receiver->picture))
-                            	<img src = "{{ $match_from_me->receiver->picture }}" width=50 height=50>
+                            	<img src = "{{ $match_from_me->receiver->picture }}" class="profile_icon">
                             @else
-                            	<img src = "/images/icon.png" alt="icon" width=50 height=50>
+                            	<p class="no_icon"></p>
                             @endif
                             </div>
 
@@ -58,9 +58,9 @@
                             <div class="col-md-2">
                             {{-- アイコン --}}
                             @if(isset($match_from_others->sender->picture))
-                            	<img src = "{{ $match_from_others->sender->picture }}" width=50 height=50>
+                            	<img src = "{{ $match_from_others->sender->picture }}" class="profile_icon">
                             @else
-                            	<img src = "/images/icon.png" alt="icon" width=50 height=50> 
+                            	<p class="no_icon"></p> 
                             @endif
                             </div>
                             
