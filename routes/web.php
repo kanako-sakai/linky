@@ -62,7 +62,9 @@ Route::group(['middleware' => ['auth']], function () {
     //オフィシャルメンターリクエスト
         Route::get('official_mentors', 'OfficialRequestController@official_mentors')->name('offical_mentors');
         Route::get('official_request/payment', 'OfficialRequestController@payment')->name('official.payment');
-        Route::get('request_form', 'OfficialRequestController@request_form')->name('official.form');
+        Route::get('request_form_1', 'OfficialRequestController@request_form_1')->name('official.form1');
+        Route::get('request_form_3', 'OfficialRequestController@request_form_3')->name('official.form3');
+        Route::get('request_form_5', 'OfficialRequestController@request_form_5')->name('official.form5');
         Route::get('official_request/payment_failed', 'OfficialRequestController@payment_failed')->name('payment.failed');
         Route::post('official_request/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
         Route::post('official_request/complete', 'OfficialRequestController@complete')->name('official.complete');
@@ -76,7 +78,7 @@ Route::group(['middleware' => ['auth']], function () {
 //お問い合わせ
 Route::get('contact', 'ContactsController@index')->name('contact.index');
 Route::post('contact/confirm', 'ContactsController@confirm')->name('contact.confirm');
-Route::post('contact/complete', 'ContactsController@complete')->name('contact.complete');
+Route::post('contact/complete', 'ContactsController@send')->name('contact.send');
 
 //パスワードリセット
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

@@ -61,7 +61,7 @@
                           // a successful payment.
                           // Instead use one of the strategies described in
                           // https://stripe.com/docs/payments/checkout/fulfillment
-                          successUrl: '{{ config("stripe.success_url") }}',
+                          successUrl: '{{ config("stripe.success_url_1") }}',
                           cancelUrl: '{{ config("stripe.cancel_url") }}',
                         })
                         .then(function (result) {
@@ -123,7 +123,7 @@
                             // a successful payment.
                             // Instead use one of the strategies described in
                             // https://stripe.com/docs/payments/checkout/fulfillment
-                            successUrl: '{{ config("stripe.success_url") }}',
+                            successUrl: '{{ config("stripe.success_url_3") }}',
                             cancelUrl: '{{ config("stripe.cancel_url") }}',
                           })
                           .then(function (result) {
@@ -185,7 +185,7 @@
                           // a successful payment.
                           // Instead use one of the strategies described in
                           // https://stripe.com/docs/payments/checkout/fulfillment
-                          successUrl: '{{ config("stripe.success_url") }}',
+                          successUrl: '{{ config("stripe.success_url_5") }}',
                           cancelUrl: '{{ config("stripe.cancel_url") }}',
                         })
                         .then(function (result) {

@@ -27,11 +27,13 @@
             
             <div class="form-group">
                 {!! Form::label('plan', 'ご購入のプラン') !!}
-                <select type="text" class="form-control" name="plan">
-                    @foreach(config('plans') as $key => $plan)
-                        <option value="{{ $plan }}">{{ $plan }}</option>
-                    @endforeach    
-                </select>
+                {!! Form::hidden('plan', '1回プラン') !!}
+                <p>1回プラン</p>
+                <!--<select type="text" class="form-control" name="plan">-->
+                <!--    @foreach(config('plans') as $key => $plan)-->
+                <!--        <option value="{{ $plan }}">{{ $plan }}</option>-->
+                <!--    @endforeach    -->
+                <!--</select>-->
             </div>
             
             <div class="form-group">
@@ -54,7 +56,7 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('dates', 'ご希望時間　（時間調整がしやすいよう、1日少なくとも3時間以上可能な時間をご提示ください。）') !!}
+                {!! Form::label('dates', 'ご希望日時　（時間調整がしやすいよう、1日少なくとも3時間以上可能な時間をご提示ください。）') !!}
                 {!! Form::textarea('dates', '【第一希望】〇月〇日　〇〇時～〇〇時 &#13;&#10;【第二希望】〇月〇日　〇〇時～〇〇時　&#13;&#10;【第三希望】〇月〇日　〇〇時～〇〇時　&#13;&#10;【第四希望】〇月〇日　〇〇時～〇〇時　&#13;&#10;【第五希望】〇月〇日　〇〇時～〇〇時', ['class' => 'form-control']) !!}
             </div>
             
