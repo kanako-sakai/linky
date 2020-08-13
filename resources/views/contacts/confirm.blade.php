@@ -17,7 +17,7 @@
                                 <p>誤りがないことを確認のうえ送信ボタンをクリックしてください。</p>
                                 
                                 <div class="card-body">
-                                    <form method="POST" action="{{ route('contact.complete') }}">
+                                    <form method="POST" action="{{ route('contact.send') }}">
                                         @csrf
                                         
                                         <div class="form-group row">
@@ -29,7 +29,7 @@
                                         </div>
                                         
                                         <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【メールアドレス】</label>
+                                            <label for="email" class="col-md-4 col-form-label text-md-right">【メールアドレス】</label>
                                             <div class="col-md-6">
                                                 <span class="">{{$contact->email}}</span>
                                                 <input type="hidden" name="email" value="{{$contact->email}}">
@@ -37,7 +37,7 @@
                                         </div>
                                         
                                         <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【件　名】</label>
+                                            <label for="title" class="col-md-4 col-form-label text-md-right">【件　名】</label>
                                             <div class="col-md-6">
                                                 <span class="">{{$contact->title}}</span>
                                                 <input type="hidden" name="title" value="{{$contact->title}}">
@@ -45,7 +45,7 @@
                                         </div>
                                         
                                         <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【お問い合わせ内容】</label>
+                                            <label for="body" class="col-md-4 col-form-label text-md-right">【お問い合わせ内容】</label>
                                             <div class="col-md-6">
                                                 <span class="">{{$contact->body}}</span>
                                                 <input type="hidden" name="body" value="{{$contact->body}}">
