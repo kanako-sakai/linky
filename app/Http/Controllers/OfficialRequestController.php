@@ -199,6 +199,9 @@ class OfficialRequestController extends Controller
             $query->where('from_user_id', $user->id);
         })->orderBy('created_at', 'asc')->paginate(20);
         
+        //最新のレコードを取得
+        $latest_record = OfficialRecord::where('from_user_id', $user->id)->latest()->first();
+        
         //スケジュールの取得
         $meetings = Schedule::where(function($query) use($user) {
             $query->where('from_user_id', $user->id);
@@ -220,6 +223,7 @@ class OfficialRequestController extends Controller
             'user'=>$user,
             'records'=>$records,
             'meetings'=>$meetings,
+            'latest_record'=>$latest_record
             ]);
     }
     
