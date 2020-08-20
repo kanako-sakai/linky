@@ -6,11 +6,9 @@
 
 ==============================<br>
 <br>
-■お名前: {{ $content['from_name'] }}<br>
+■お名前: {{ $content['to_name'] }}<br>
 <br>
-■メールアドレス: {{ $content['from'] }}<br>
-<br>
-■プラン: <?php echo nl2br(htmlspecialchars($content['plan'])); ?><br>
+■メールアドレス: {{ $content['to'] }}<br>
 <br>
 ■希望メンター: {{ $content['mentor_id'] }}<br>
 <br>
@@ -28,5 +26,5 @@
 
 <br>
 内容を確認のうえ、担当よりご連絡致します。<br>
-2-3営業日以内に連絡がない場合は、お手数ですが、linky.register@gmail.comまでご連絡お願いいたします。
+2-3営業日以内に連絡がない場合は、お手数ですが、rolemy.info@gmail.comまでご連絡お願いいたします。
 <br>

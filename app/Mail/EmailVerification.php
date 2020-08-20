@@ -33,7 +33,7 @@ class EmailVerification extends Mailable
     public function build()
     {
         return $this
-            ->subject('【Linky】仮登録が完了しました')
+            ->subject('【ROLEMY】仮登録が完了しました')
             ->view('auth.email.pre_register')
             ->with(['token'=>$this->user->email_verify_token,]);
     }
