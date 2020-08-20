@@ -8666,8 +8666,8 @@ h1, h2, h3, h4, h5,
         background: #48d1cc;
         color: #fff; }
   .btn.btn-circle {
-    background: #f5f5f5 !important;
-    border: 1px solid #fff !important;
+    background: #c0c0c0 !important;
+    border: 2px solid #fff !important;
     color: #000000 !important;
     border-radius: 50%}
     .btn.btn-light:hover {
@@ -8675,14 +8675,13 @@ h1, h2, h3, h4, h5,
       background: #fff !important;
       color: #fff; }
     .btn.btn-light.btn-outline-primary {
-      border: 1px solid #48d1cc;
+      border: 1px solid #c0c0c0;
       background: transparent;
-      color: #48d1cc; }
+      color: #c0c0c0; }
       .btn.btn-light.btn-outline-primary:hover {
         border: 1px solid transparent;
-        background: #48d1cc;
+        background: #c0c0c0;
         color: #fff; }      
-  }    
 
 .staff {
   overflow: hidden;
