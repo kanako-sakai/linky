@@ -54,6 +54,10 @@ Route::group(['middleware' => ['auth']], function () {
         //プロフィール写真
         Route::get('/picture', 'UsersController@showPictureForm')->name('edit.picture');
         Route::post('/picture', 'UsersController@upload')->name('upload');
+        
+        //オフィシャルメンターリクエストのチケット回数表示
+        Route::get('official_status', 'OfficialRequestController@show_records')->name('official_status');
+        
     });
     
     //ユーザー一覧
@@ -68,12 +72,26 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('official_request/payment_failed', 'OfficialRequestController@payment_failed')->name('payment.failed');
         Route::post('official_request/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
         Route::post('official_request/complete', 'OfficialRequestController@complete')->name('official.complete');
+        Route::get('request_form', 'OfficialRequestController@request_form')->name('official.form');
+        Route::post('official_request/confirm_add_request', 'OfficialRequestController@confirm_add_request')->name('official.confirm_add_request');
         
     //グループ座談会
         Route::get('group/index', 'GroupController@index')->name('group_index');
         Route::get('group/form1', 'GroupController@form1')->name('group_form1');
-   
+        
+    //管理画面
+        Route::get('admin', 'AdminController@index')->name('admin');
+        Route::get('records/{id}', 'AdminController@records')->name('records');
+        Route::post('confirm_payment1/{id}', 'AdminController@confirm_payment1')->name('confirm_payment1');
+        Route::post('confirm_payment3/{id}', 'AdminController@confirm_payment3')->name('confirm_payment3');
+        Route::post('confirm_payment5/{id}', 'AdminController@confirm_payment5')->name('confirm_payment5');
+        Route::get('staff', 'AdminController@staff')->name('staff');
+        Route::post('conducted/{id}', 'AdminController@conducted')->name('conducted');
+        Route::get('schedule/{id}', 'AdminController@schedule')->name('schedule');
+        Route::post('register_schedule', 'AdminController@register_schedule')->name('register_schedule');
+        Route::get('schedule_index/{id}', 'AdminController@schedule_index')->name('schedule_index');
 });
+        
 
 //お問い合わせ
 Route::get('contact', 'ContactsController@index')->name('contact.index');

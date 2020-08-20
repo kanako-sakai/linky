@@ -8607,8 +8607,8 @@ h1, h2, h3, h4, h5,
     color: #fff !important; }
     .btn.btn-primary:hover {
       border: 1px solid #48d1cc;
-      background: #48d1cc;
-      color: #48d1cc; }
+      background: transparent !important;
+      color: #48d1cc !important; }
     .btn.btn-primary.btn-outline-primary {
       border: 2px solid #48d1cc !important;
       background: transparent !important;
@@ -8616,22 +8616,22 @@ h1, h2, h3, h4, h5,
       .btn.btn-primary.btn-outline-primary:hover {
         border: 2px solid transparent !important;
         background: #48d1cc !important;
-        color: #fff !important; }
+        color: #48d1cc !important; }
   .btn.btn-secondary {
-    background: #a0f669 !important;
-    border: 1px solid #a0f669 !important;
+    background: #00ff7f !important;
+    border: 1px solid #00ff7f !important;
     color: #fff !important; }
     .btn.btn-secondary:hover {
-      border: 1px solid #a0f669 !important;
+      border: 1px solid #00ff7f !important;
       background: transparent !important;
-      color: #a0f669 !important; }
+      color: #00ff7f !important; }
     .btn.btn-secondary.btn-outline-primary {
-      border: 1px solid #a0f669;
+      border: 1px solid #00ff7f;
       background: transparent;
-      color: #a0f669; }
+      color: #00ff7f; }
       .btn.btn-secondary.btn-outline-primary:hover {
         border: 1px solid transparent;
-        background: #a0f669;
+        background: #00ff7f;
         color: #fff; }
   .btn.btn-white {
     background: #fff !important;
@@ -8649,6 +8649,40 @@ h1, h2, h3, h4, h5,
         border: 1px solid transparent;
         background: #48d1cc;
         color: #fff; }
+  .btn.btn-light {
+    background: #c0c0c0 !important;
+    border: 1px solid #fff !important;
+    color: #000000 !important; }
+    .btn.btn-light:hover {
+      border: 1px solid #000000;
+      background: #fff !important;
+      color: #fff; }
+    .btn.btn-light.btn-outline-primary {
+      border: 1px solid #48d1cc;
+      background: transparent;
+      color: #48d1cc; }
+      .btn.btn-light.btn-outline-primary:hover {
+        border: 1px solid transparent;
+        background: #48d1cc;
+        color: #fff; }
+  .btn.btn-circle {
+    background: #f5f5f5 !important;
+    border: 1px solid #fff !important;
+    color: #000000 !important;
+    border-radius: 50%}
+    .btn.btn-light:hover {
+      border: 1px solid #000000;
+      background: #fff !important;
+      color: #fff; }
+    .btn.btn-light.btn-outline-primary {
+      border: 1px solid #48d1cc;
+      background: transparent;
+      color: #48d1cc; }
+      .btn.btn-light.btn-outline-primary:hover {
+        border: 1px solid transparent;
+        background: #48d1cc;
+        color: #fff; }      
+  }    
 
 .staff {
   overflow: hidden;

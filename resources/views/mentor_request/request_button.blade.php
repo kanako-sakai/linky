@@ -25,7 +25,9 @@
         {{ $user->name }}さんからのリクエストを承認または拒否してください。</p>
         
     @elseif (Auth::user()->is_requesting($user->id) && !Auth::user()->is_matching($user->id))
+        
         {{-- メッセージ --}}
+        
         <div class="box26">
             <span class="box-title">リクエストメッセージ</span>
             <p>{{ $request->message }}</p>

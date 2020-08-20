@@ -36,13 +36,7 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【ご購入プラン】</label>
-                                            <div class="col-md-6">
-                                                <span class="">{{$official_request->plan}}　回プラン</span>
                                                 <input type="hidden" name="plan" value="{{$official_request->plan}}">
-                                            </div>
-                                        </div>
                                         
                                         <div class="form-group row">
                                             <label for="name" class="col-md-4 col-form-label text-md-right">【ご希望のメンター】</label>

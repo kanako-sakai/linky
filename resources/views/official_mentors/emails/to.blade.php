@@ -12,7 +12,7 @@
 <br>
 ■プラン: <?php echo nl2br(htmlspecialchars($content['plan'])); ?><br>
 <br>
-■希望メンター: {{ $content['mentor_pref'] }}<br>
+■希望メンター: {{ $content['mentor_id'] }}<br>
 <br>
 ■メンタリングの目的:<br>
 <?php echo nl2br(htmlspecialchars($content['goal'])); ?><br>

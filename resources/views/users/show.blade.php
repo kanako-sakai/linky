@@ -15,12 +15,20 @@
                 <div class="col-md-12">
                     @include('users.card')
                 </div>
-                <hr class ="cp_hr05" />
-                
+
                 <div class="col-md-12">
                     @include('users.navtabs')
                 </div>    
+                
+                <hr class ="cp_hr05" />
+                
                 <div class="text-center">
+                    <div class="row pb-2">
+                        <div class="offset-3 offset-md-9">
+                        <a href="{{ route('users.edit', ['user' => $user]) }}" class="btn btn-primary">
+                        <i class="fas fa-pen"></i>　プロフィールを編集</a>
+                        </div>
+                    </div>
                     @include('users.profile')
                 </div>
             </div>
@@ -44,95 +52,7 @@
                 <div class= "pb-5 text-center">
                         <h3>プロフィール</h3>
                 
-                <div class= "col-md-12">
-                        <table class = "profile">
-                            <tbody>
-                                <tr>
-                                    <th>【最終学歴】</th>
-                                    <td class="text-left">{{ $profile->education }}</td>
-                                </tr>
-                                <tr>
-                                    <th>【社会人歴】</th>
-                                    <td class="text-left">{{ $profile->working_years }}</td>
-                                </tr>
-                                @if($profile->employer_display==1)
-                                
-                                @else
-                                <tr>
-                                    <th>【勤務先】</th>
-                                    <td class="text-left">{{ $profile->employee }}</td>
-                                </tr>
-                                @endif
-                                
-                                <tr>
-                                    <th>【業種】</th>
-                                    <td class="text-left">{{ $industry }}</td>
-                                </tr>
-                                <tr>
-                                    <th>【職種】</th>
-                                    <td class="text-left">{{ $job_category }}</td>
-                                </tr>
-                                <tr>
-                                    <th>【海外経験】</th>
-                                    <td class="text-left">
-                                        @if ($profile->expat == 0)<span></span>
-                                        @else
-                                            <span>海外駐在・トレーニー</span>
-                                        @endif    
-                                        @if ($profile->mba == 0)
-                                            <span></span>
-                                        @else
-                                            <span>| MBA留学</span>
-                                        @endif
-                                        @if ($profile->other_study_abroad == 0)
-                                            <span></span>
-                                        @else
-                                            <span>| その他海外留学</span>
-                                        @endif
-                                        @if ($profile->returnee == 0)
-                                            <span></span>
-                                        @else
-                                            <span>| 帰国子女</span>
-                                        @endif
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>【転職経験】</th>
-                                    <td class="text-left">
-                                        @if ($profile->career_change == 0)
-                                            <p>なし</p>
-                                        @else
-                                            <p>あり</p>
-                                        @endif
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>【既婚／未婚】</th>
-                                    <td class="text-left">
-                                        @if ($profile->marriage_status == 0)
-                                            <p>既婚</p>
-                                        @else
-                                            <p>未婚</p>
-                                        @endif
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>【子供の有無】</th>
-                                    <td class="text-left">
-                                        @if ($profile->child_status == 0)
-                                            <p>なし</p>
-                                        @else
-                                            <p>あり</p>
-                                        @endif
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>【自己紹介】</th>
-                                    <td class="text-left"> {{$profile->intro}}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                @include('users.profile')
                         
                     <hr class ="cp_hr05" />    
             

@@ -5,20 +5,10 @@
     	<div class="container">
     		<div class="row justify-content-center pb-5">
             	<div class="col-md-8 heading-section text-center">
-                	<h2 class="mb-4">マイページ</h2>
+                	<h2 class="mb-4">あなたへの相談依頼</h2>
           		</div>
         	</div>
-            
-            <div class="col-md-12">
-                @include('users.card')
-            </div>    
-            
-            <hr class ="cp_hr05" />
-            
-            <div class="col-md-12">
-                @include('users.navtabs')
-            </div>      
-            
+
             <div class="text-center">
                 {{-- ユーザ一覧 --}}
                 @if (count($requesters) > 0)
@@ -70,7 +60,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>    
+            </div> 
         @endif
         </div>    
 </section>    

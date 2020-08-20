@@ -57,12 +57,14 @@ table.profile{
     width: 100%;
 }
 
-th{
+table.profile th{
     width: 35%;
+    padding: 10px 0;
 }
 
-td{
+table.profile td{
     width: 65%;
+    padding: 10px 0;
 }
 
 p.intro {
@@ -219,12 +221,14 @@ input[type="checkbox"].search {
   border: 1px solid #d3d3d3;/* ラベルの境界線を実線で指定する */
   background-color:#fff;
   box-shadow: 2px 2px 4px gray;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .member-list {
   margin-top:30px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
   width: auto;
 }
@@ -234,3 +238,94 @@ input[type="checkbox"].search {
     border:0;
     box-shadow:0 30px 30px -30px #ccc inset;
 }
+
+.records {
+  width: 100%;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  border:1px solid;
+}
+
+table .records th, table .records td {
+  width:20%;
+  padding: 10px 0;
+  text-align:center;
+  border-collapse: collapse;
+  border:1px solid;
+}
+
+.official_icon {
+  color:#008b8b;
+  font-size: 10px;
+}
+
+.title_border_left{
+  border-left: thick solid #48d1cc;
+  padding-left:10px;
+}
+
+.fa-university {
+  color: #808080;
+}
+
+.fa-briefcase {
+  color: #808080;
+}
+
+.fa-building {
+  color: #808080;
+}
+
+.fa-certificate {
+  color: #808080;
+}
+
+.fa-bullseye {
+  color: #808080;
+}
+
+.fa-plane {
+  color: #808080;
+}
+
+.fa-exchange-alt {
+  color: #808080;
+}
+
+.fa-heart {
+  color: #808080;
+}
+
+.fa-baby {
+  color: #808080;
+}
+
+.fa-bullhorn {
+  color: #808080;
+}
+
+.oversea{
+  background:#696969;
+  color: #fff;
+  border-radius: 10px;
+  padding:5px;
+}
+
+.fa-ticket-alt{
+  color: #48d1cc;
+}
+
+.fa-clipboard{
+  color: #48d1cc;
+}
+
+.fa-calendar-alt{
+  color: #48d1cc;
+}
+
+.fa-video{
+  color: #48d1cc;
+}
+

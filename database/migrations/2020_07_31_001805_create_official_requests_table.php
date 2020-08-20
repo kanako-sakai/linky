@@ -19,12 +19,15 @@ class CreateOfficialRequestsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('plan');
-            $table->string('mentor_pref');
+            $table->unsignedBigInteger('mentor_id');
             $table->string('goal');
             $table->string('questions');
             $table->string('dates');
             $table->tinyInteger('precaution')->default(0);
             $table->timestamps();
+            
+            //外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

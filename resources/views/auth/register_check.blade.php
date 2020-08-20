@@ -9,7 +9,7 @@
           		</div>
         	</div>
 
-            <div class="offset-md-4 col-md-6">
+            <div class="offset-md-3 col-md-6">
                 <form method="POST" action="{{ route('signup.post') }}">
                     @csrf
 
@@ -33,7 +33,7 @@
 
                     <div class="form-group row mb-0">
                         <span class="col-md-6 offset-4">
-                           <input value= "前に戻る" onclick= "history.back();" type="button" class="btn btn-primary">
+                           <input value= "前に戻る" onclick= "history.back();" type="button" class="btn btn-light">
                         <span class="col-md-4">
                             <button type="submit" class="btn btn-primary">
                                 仮登録

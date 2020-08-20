@@ -27,17 +27,13 @@
             
             <div class="form-group">
                 {!! Form::label('plan', 'ご購入のプラン') !!}
-                {!! Form::hidden('plan', '3回プラン') !!}
+                {!! Form::hidden('plan', '3') !!}
                 <p>3回プラン</p>
             </div>
             
             <div class="form-group">
-                {!! Form::label('mentor_pref', 'ご希望のメンター') !!}
-                <select type="text" class="form-control" name="mentor_pref">
-                    @foreach(config('mentors') as $key => $mentor)
-                        <option value="{{ $mentor }}">{{ $mentor }}</option>
-                    @endforeach    
-                </select>
+                {!! Form::label('mentor_id', 'ご希望のメンター') !!}
+                {!! Form::select('mentor_id', $mentors, null, ['class' => 'form-control']) !!}
             </div>
             
             <div class="form-group">
@@ -57,7 +53,7 @@
             
             <div class="form-group">
                 {!! Form::checkbox('precaution', 1, null, ['class' => 'field']) !!}
-                {!! link_to_route('precaution', '注意事項') !!}に同意する。
+                <a href="/precaution" target="_blank" rel="noopener noreferrer">注意事項</a>に同意する。
             </div>
           
             {!! Form::submit('内容を確認する', ['class' => 'btn py-3 px-4 btn-primary']) !!}

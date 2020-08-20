@@ -4,17 +4,18 @@
 <section class="ftco-section" id="coaches-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
-            	<div class="col-md-8 heading-section text-center">
-                	<h2 class="mb-4">オフィシャルメンター</h2>
+            	<div class="col-md-10 heading-section">
+                	<h2 class="mb-4 text-center">オフィシャルメンター</h2>
             			<p>Rolemy公式のメンターです。</p>
             			<p>公式メンターに相談されたい場合は、以下のリクエストフォームをご入力ください。</p>
             			<p>1回からリクエストいただくことも可能ですが、1-2か月に1度のペースで3-5回継続的にお話しいただくことをオススメしております。途中でメンターを変更することも可能ですので、その際はお気軽にご連絡ください。</p>
+                     	<div class="col-md-12 text-center">
                      	{{-- リクエストページへのリンク --}}
     					{!! link_to_route('official.payment', 'リクエストを出す', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}
-    		
+    					</div>
           		</div>
         	</div>
-        <div class="row">
+        <div class="row m-1">
         	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/kanako_sakai.jpg);"></div>
           		<div class="text pl-md-5">
@@ -32,7 +33,7 @@
           		<div class="text pl-md-5">
           			<h2>Shoko Hamada</a></h2>
           			<p>【現職】外資系戦略コンサルティングファーム</p>
-          			<p>【社会人歴】9年目</p>
+          			<p>【社会人歴】8年目</p>
           			<p>【職歴】ハーバードビジネススクールMBA修了。MBA留学前はP＆Gシンガポール・アジア本社にて柔軟剤ブランドの中長期的な目標設定、経営戦略の策定、収益管理を行うブランドマーケティングを担当。卒業後は外資系コンサルティングファーム米国オフィスに入社し、企業の海外進出などの支援に従事。</p>
 					<p>【ライフ】大学時代より10年付き合った彼と５年ほどの遠距離を経て2020年に結婚。</p>
 					<p>【相談に乗れること】海外留学全般、就職活動、転職活動、グローバルキャリアの築き方・歩み方、夫婦共にキャリアを築くための実体験などをお話しできるかと思います。その他何でも気軽にご相談ください！</p>
@@ -45,7 +46,7 @@
           			<h2>Kei Takatsuka</a></h2>
           			<p>【現職】外資系戦略コンサルタント@ボストン</p>
           			<p>【社会人歴】5年目</p>
-          			<p>【職歴】名古屋大学大学院にて脳神経科学を研究の後、25歳の時に新卒で外資系戦略コンサルティングファーム(東京オフィス)に入社。外資系消費財メーカーや製薬企業の経営計画策定などに参画の後、米国ボストンオフィスに転籍・現職。2020年夏よりハーバードビジネススクールに進学予定。</p>
+          			<p>【職歴】名古屋大学大学院にて脳神経科学を研究の後、25歳の時に新卒で外資系戦略コンサルティングファーム(東京オフィス)に入社。外資系消費財メーカーや製薬企業の経営計画策定などに参画の後、米国ボストンオフィスに転籍。2020年夏よりハーバードビジネススクールに進学・在籍中。</p>
 					<p>【ライフ】長野県伊那市出身。小中高と地元の公立校を経て、名古屋大学へ。真剣に科学を学ぶにつれ、世界の広さを痛感。語学の習得や異文化の理解に奮闘するようになる。</p>
 					<p> 会社の先輩と昨年結婚。直後、彼はMBA取得の為に渡米。入籍1週間後から別居婚になるも、転勤を果たし約半年遅れで米国入り。夫婦それぞれが妥協することなく、自分なりのキャリアを選択しながら家族一緒に支え合って暮らすことを大切にしています。</p>
 					<p>【相談に乗れること】お仕事のことでも、人生設計のことでも、何とも言えないお悩みでも、お気軽にどうぞ！</p>
@@ -135,33 +136,39 @@
 					<p>【相談に乗れること】食品やコンシューマービジネスに興味のある方のキャリア相談、就活、MBA留学準備など。</p>
           		</div>
           	</div>
-          	
     	</div>
     </section>
     
     <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="procedure">
     	<div class="container">
     		<div class="row d-flex">
-    			<div class="col-md-6 col-lg-7 pl-lg-5 py-5">
+    			<div class="col-md-12 col-lg-12 pl-lg-5 py-5">
     				<div class="py-md-5">
 	    				<div class="row justify-content-start pb-3">
-			          <div class="col-md-12 heading-section ftco-animate">
-			          	<span class="subheading">ご利用されたい方へ</span>
-			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">ご利用方法の流れ</h2>
-			            <p>相談されたい回数分だけチケットを購入ください。後から回数を追加することも可能です。</p>
-			            <p>チケット購入後、お話しされたいメンターをご記載の上、リクエストフォームをお送りいただきます。どの方を選んでよいか分からない場合は、リクエストフォームで「指名なし」をご選択ください。ご相談されたい内容に合う方をご紹介させていただきます。</p>
-			            <p>リクエストをいただきましたら、メンターとお繋ぎいたしますので、日程調整をお願いいたします。</p>
-			            <p>日程調整が済みましたら、当日ご使用いただくZoomのリンクをお送りいたします。</p>
-			            <p>当日はそのZoomのリンクから入っていただき、メンターとお話しください。</p>
-			            
-			            <p>※メンターのスケジュール上、リクエストを頂いてから実際にメンタリングセッションを行っていただくまでにお時間を要することがございますがご了承ください。</p>
-						{{-- リクエストページへのリンク --}}
-    					{!! link_to_route('official.payment', 'リクエストを出す', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}
-			          </div>
-			        </div>
-		        </div>
-	        </div>
-        </div>
+				          <div class="col-md-12 heading-section ftco-animate">
+				          	<span class="subheading">ご利用されたい方へ</span>
+					            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">ご利用方法の流れ</h2>
+				          		
+				          		<div class="row m-2">
+						            <p><i class="fas fa-ticket-alt fa-3x"></i> 相談されたい回数分だけチケットを購入ください。後から回数を追加することも可能です。</p>
+						            <p><i class="far fa-clipboard fa-3x fa-pull-left"></i>チケット購入後、お話しされたいメンターをご記載の上、リクエストフォームをお送りいただきます。3回分・5回分のチケットを購入された場合は、初回に話したいメンターをお選びください。2回目以降別のメンターに変更することも可能です。</p>
+						            <p><i class="far fa-calendar-alt fa-3x fa-pull-left"></i>リクエストをいただきましたら、メンターとお繋ぎいたしますので、日程調整をお願いいたします。日程調整が済みましたら、当日ご使用いただくZoomのリンクをご登録のメールアドレスにお送りいたします。</p>
+						            <p><i class="fas fa-video fa-3x fa-pull-left"></i> 当日はそのZoomのリンクから入っていただき、メンターとお話しください。</p>
+			            		</div>
+				            	
+				            	<div class="row m-2">
+						            <p>※メンターのスケジュール上、リクエストを頂いてから実際にメンタリングセッションを行っていただくまでにお時間を要することがございますがご了承ください。</p>
+						            <p>※キャンセルされる場合は、XXXまで遅くとも24時間前までにメールをお送りください。24時間を過ぎますと振替できません。</p>
+						        </div>    
+				            <div class="col-md-12 text-center">
+	                     	{{-- リクエストページへのリンク --}}
+	    					{!! link_to_route('official.payment', 'リクエストを出す', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}
+	    					</div>
+				          </div>
+			        	</div>
+		        	</div>
+	        	</div>
+       		 </div>
     	</div>
     </section>
 @endsection    

@@ -18,14 +18,21 @@
           <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
           {{-- ログアウトへのリンク --}}
           <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
-          
+        {{--管理画面 --}}
+        @if (Auth::user()->role == 1)
+          <li class="nav-item">{!! link_to_route('admin', '管理画面',[],['class' => 'nav-link']) !!}</li>
+        @endif
+        @if (Auth::user()->role == 2)
+          <li class="nav-item">{!! link_to_route('staff', '管理画面', [], ['class' => 'nav-link']) !!}</li>
+        @endif
+        
         @else  
           {{-- ユーザ登録ページへのリンク --}}
           <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>
           {{-- ログインページへのリンク --}}
           <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
         @endif
-        
+      
           <li class="nav-item">{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'nav-link']) !!}</li>
         </ul>
       </div>

@@ -115,7 +115,7 @@
             
             <div class="form-group">
                 {!! Form::checkbox('agree', 1, null, ['class' => 'field']) !!}
-                {!! link_to_route('privacy_policy', 'プライバシーポリシー') !!}に同意する。
+                <a href="/privacy_policy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意する。
             </div>
             
             <div style="text-align: center">

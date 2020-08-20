@@ -12,7 +12,7 @@
             {{--エラーメッセージ--}}
             @include('commons.error_messages')   
             
-            {!! Form::open(['route' => ['official.confirm', $user->id]]) !!}
+            {!! Form::open(['route' => ['official.confirm_add_request', $user->id]]) !!}
       
            
             <div class="form-group">
@@ -26,9 +26,9 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('plan', 'ご購入のプラン') !!}
-                {!! Form::hidden('plan', '5') !!}
-                <p>5回プラン</p>
+                {!! Form::label('plan', '残りの回数：') !!}
+                {!! Form::hidden('plan', 0) !!}
+                {{ $latest_record->balance }}　回
             </div>
             
             <div class="form-group">

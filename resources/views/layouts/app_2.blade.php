@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/css/icomoon.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-2.css">
+    <script src="https://kit.fontawesome.com/5ae7394135.js" crossorigin="anonymous"></script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  

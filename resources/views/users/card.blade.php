@@ -3,9 +3,8 @@
         <div class=pb-2>
         <!--画像を表示-->
         @include('users.icon')
-        </div>
-        <div class=pb-2>
         {{-- メッセージ編集ページへのリンク --}}
-        {!! link_to_route('edit.picture', 'プロフィール画像を編集', ['id' => $user], ['class' => 'btn btn-primary']) !!}
+        <a href="{{ route('edit.picture', ['id' => $user]) }}" class="btn btn-circle">
+        <i class="fas fa-camera"></i></a>
         </div>
     </div> 

@@ -455,6 +455,4 @@ class UsersController extends Controller
         
         return $user->picture->exists();
     }
-    
-    
 }

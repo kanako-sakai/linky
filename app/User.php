@@ -281,4 +281,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(OfficialRequest::class);
     }
+    
+    // OfficialRecordモデルとの関係
+    public function official_records()
+    {
+        return $this->hasMany(OfficialRecord::class);
+    }
+    
+    //Schedulesモデルとの関係
+    public function schedules()
+    {
+        return $this->hasMany(Schedules::class);
+    }
 }   

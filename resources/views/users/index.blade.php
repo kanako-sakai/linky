@@ -10,37 +10,35 @@
         	</div>
         	
             {{-- 検索　--}}
-            <div class="row p-5 search-box">
+            <div class="col-md-10 p-5 search-box">
             
                 {!! Form::open(['route' => 'users.index', 'method' => 'get']) !!}
                     <div class="row">
-                        <h4>キーワードで探す</h4>
+                        <h4 class="title_border_left">キーワードで探す</h4>
                     </div>
                     <div class="form-group">
                         {!! Form::text('intro', empty($s_intro) ? null : $s_intro, ['class' => 'form-control']) !!}
                      </div>
                     
                     <div class="row">
-                        <h4>業種で探す</h4>
+                        <h4 class="title_border_left" >業種で探す</h4>
                     </div>
                     <div class="form-group">
                         {!! Form::select('industry_id', $industries->prepend('指定なし', ''), empty($s_industry) ? null : $s_industry, ['class' => 'form-control']) !!}
                      </div>
                     
                     <div class="row">
-                        <h4>職種で探す</h4>
+                        <h4 class="title_border_left">職種で探す</h4>
                     </div>
                     <div class="form-group">
                         {!! Form::select('job_category_id', $job_categories->prepend('指定なし', ''), empty($s_jobcategory) ? null : $s_jobcategory, ['class' => 'form-control']) !!}
                     </div>
                     
                     <div class="row">
-                        <h4>その他の項目から探す</h4>
+                        <h4 class="title_border_left">その他の項目から探す</h4>
                     </div>
                     
                     <div class="form-group">
-                   
-                    <h5>
                         {!! Form::checkbox('can_mentor', 1, empty($s_can_mentor) ? null : $s_can_mentor, ['class' => 'search', 'id'=>'can_mentor']) !!}
                         {!! Form::label('can_mentor', '積極的に相談に乗れる方', ['class' => 'label']) !!}
                 
@@ -64,20 +62,16 @@
                  
                         {!! Form::checkbox('child_status', 1, empty($s_child) ? null : $s_child, ['class' => 'search', 'id'=>'child_status']) !!}
                         {!! Form::label('child_status', '育児',['class' => 'label']) !!} 
-                    </h5>    
                     </div>
-                    
-                    <div class="form-group text-center">
-                        <h5>{!! Form::submit('検 索', ['class' => 'btn py-3 px-4 btn-primary']) !!}</h5>
+    
+                    <div class="form-group">
+                        {!! Form::submit('検 索', ['class' => 'btn py-3 px-4 btn-primary']) !!}
                 {!! Form::close() !!}
                     </div>
             </div>
             
             {{-- ユーザ一覧 --}}
-            <div class="row">
-                <div class="member-list">
-                    <h3>相談相手リスト</h3>
-                </div>
+            <div class="col-md-10 member-list">
 
                 <div class="container">
                     <!--検索ボタンが押された時に表示-->
@@ -95,10 +89,20 @@
                                     <div class="media-body">
                                         <div class = col-md-12>
                                             {{-- ユーザ詳細ページへのリンク --}}
-                                            <p>{!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!}</p>
+                                            <p>@if($user->role != 0)
+                                                {!! link_to_route('offical_mentors', $user->name) !!}
+                                                <span class ="official_icon">
+                                                <i class="fas fa-check-circle"></i>
+                                                公式メンター</span>
+                                                @else
+                                                {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!} 
+                                                @endif
+                                            </p>
                                             <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
                                             <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
+                                            @if($user->role == 0)
                                             <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
+                                            @endif
                                         </div>
                                          <hr class ="cp_hr05" />
                                     </div>
