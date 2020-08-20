@@ -72,7 +72,9 @@
                 {!! link_to_route('official.payment', 'チケットを購入する', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}</a>
             @endif
             
-            @if($latest_record->balance > 0)
+            @if(empty($latest_record))
+            
+            @elseif($latest_record->balance > 0)
                 {!! link_to_route('official.form', 'リクエスト', ['id' => Auth::id()], ['class' => 'btn btn-secondary']) !!}</a>
             </div>
             @endif
