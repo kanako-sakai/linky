@@ -353,3 +353,24 @@ table .records th, table .records td {
 .fa-video{
   color: #48d1cc;
 }
+
+.list-group-horizontal {
+  flex-direction: row;
+}
+
+.list-group-item {
+  width:100%;
+  padding:0;
+}
+
+@media (max-width: 767.98px) {
+  .nav_title {
+    display: block;
+    font-size:5px;
+  }
+  
+.clearfix::after {
+  content:"";
+  display:block;
+  clear:both;
+}

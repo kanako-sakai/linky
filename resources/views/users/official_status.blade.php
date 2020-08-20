@@ -11,7 +11,7 @@
             
             <div class="col-md-12">  
             <h5 class="title_border_left">スケジュール</h5>
-                <table class="records">
+                <table class="records table-bordered">
                     <tbody>
                         <tr>
                             <th>日時</th>
@@ -37,7 +37,7 @@
            
             <div class="col-md-12">
     　       　<h5 class="title_border_left">履歴</h5>
-               <table class="records">
+               <table class="records table-bordered">
                     <tbody>
                         <tr>
                             <th>日時</th>

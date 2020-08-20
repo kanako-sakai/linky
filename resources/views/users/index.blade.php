@@ -38,7 +38,7 @@
                         <h4 class="title_border_left">その他の項目から探す</h4>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group clearfix">
                         {!! Form::checkbox('can_mentor', 1, empty($s_can_mentor) ? null : $s_can_mentor, ['class' => 'search', 'id'=>'can_mentor']) !!}
                         {!! Form::label('can_mentor', '積極的に相談に乗れる方', ['class' => 'label']) !!}
                 
@@ -64,7 +64,7 @@
                         {!! Form::label('child_status', '育児',['class' => 'label']) !!} 
                     </div>
     
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         {!! Form::submit('検 索', ['class' => 'btn py-3 px-4 btn-primary']) !!}
                 {!! Form::close() !!}
                     </div>

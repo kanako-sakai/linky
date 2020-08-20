@@ -12,7 +12,7 @@
         
             <div class="col-md-12">  
                 @if(count($meetings) > 0) 
-                <table class="records">
+                <table class="records table-bordered">
                     <tbody>
                         <tr>
                             <th>日時</th>

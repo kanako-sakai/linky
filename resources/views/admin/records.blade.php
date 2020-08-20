@@ -12,7 +12,7 @@
         
             <div class="col-md-12">   
                 
-                <table class="records">
+                <table class="records table-bordered">
                     <tbody>
                         <tr>
                             <th>日時</th>
@@ -40,25 +40,25 @@
                 @endif
             </div> 
             
-            <div class="form-group">
-                <span class = "col-md-3">    
+            <div class="row">
+                <div class = "col-sm-4 text-center">    
                 {{-- 1回チケット入金確認 --}}
                 {!! Form::open(['route' => ['confirm_payment1', $user->id]]) !!}
-                    {!! Form::submit('1回分チケット入金確認', ['class' => "btn btn-primary btn-block"]) !!}
+                    {!! Form::submit('1回分チケット入金確認', ['class' => "btn btn-primary"]) !!}
                 {!! Form::close() !!}
-                </span>
-                <span class = "col-md-3">    
+                </div>
+                <div class = "col-sm-4 text-center">    
                 {{-- 3回チケット入金確認 --}}
                 {!! Form::open(['route' => ['confirm_payment3', $user->id]]) !!}
-                    {!! Form::submit('3回分チケット入金確認', ['class' => "btn btn-primary btn-block"]) !!}
+                    {!! Form::submit('3回分チケット入金確認', ['class' => "btn btn-primary"]) !!}
                 {!! Form::close() !!}
-                </span>
-                <span class = "col-md-3">    
+                </div>
+                <div class = "col-sm-4 text-center">    
                 {{-- 5回チケット入金確認 --}}
                 {!! Form::open(['route' => ['confirm_payment5', $user->id]]) !!}
-                    {!! Form::submit('5回分チケット入金確認', ['class' => "btn btn-primary btn-block"]) !!}
+                    {!! Form::submit('5回分チケット入金確認', ['class' => "btn btn-primary"]) !!}
                 {!! Form::close() !!}
-                </span>
+                </div>
             </div>
         </div>
 </section>        
