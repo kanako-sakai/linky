@@ -35,6 +35,13 @@
                     </div>
                     
                     <div class="row">
+                        <h4 class="title_border_left">社会人歴で探す</h4>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::select('working_years', $years, empty($s_working_years) ? null : $s_working_years, ['class' => 'form-control']) !!}
+                    </div>    
+      
+                    <div class="row">
                         <h4 class="title_border_left">その他の項目から探す</h4>
                     </div>
                     

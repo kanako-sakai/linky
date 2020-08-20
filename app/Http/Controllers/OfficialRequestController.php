@@ -161,8 +161,8 @@ class OfficialRequestController extends Controller
         \Mail::send(new OfficialRequestMail([
             'to' => $request->email,
             'to_name' => $request->name,
-            'from'=>'linky.register@gmail.com',
-            'from_name' => 'Linky',
+            'from'=>'rolemy.info@gmail.com',
+            'from_name' => 'ROLEMY',
             'subject' => '公式メンター相談申込受付完了のお知らせ',
             'plan'=>$request->plan,
             'mentor_id'=>$request->mentor_id,
@@ -173,8 +173,8 @@ class OfficialRequestController extends Controller
         
         //自分に送るメール
         \Mail::send(new OfficialRequestMail([
-            'to' => 'knksk.526@gmail.com',
-            'to_name'=>'Kanako',
+            'to' => 'rolemy.info@gmail.com',
+            'to_name'=>'ROLEMY',
             'from' => $request->email,
             'from_name' => $request->name,
             'subject' => '公式メンター申し込み',

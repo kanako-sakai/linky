@@ -29,6 +29,7 @@ class UsersController extends Controller
             $s_intro=$request->input('intro');
             $s_industry=$request->input('industry_id');
             $s_jobcategory=$request->input('job_category_id');
+            $s_working_years = $request->input('working_years');
             $s_expat=$request->input('expat');
             $s_mba=$request->input('mba');
             $s_otherstudyabroad=$request->input('other_study_abroad');
@@ -37,19 +38,6 @@ class UsersController extends Controller
             $s_marriage=$request->input('marriage_status');
             $s_child=$request->input('child_status');
             $s_can_mentor=$request->input('can_mentor');
-            
-            // $query->where('industry_id', $s_industry)
-            //     ->orWhere('job_category_id', $s_jobcategory)
-            //     ->orWhere('expat', $s_expat)
-            //     ->orWhere('mba', $s_mba)
-            //     ->orWhere('other_study_abroad', $s_otherstudyabroad)
-            //     ->orWhere('returnee',$s_returnee)
-            //     ->orWhere('career_change', $s_careerchange)
-            //     ->orWhere('marriage_status',$s_marriage)
-            //     ->orWhere('child_status', $s_child)
-            //     ->orWhere('intro', 'like', '%'.$s_intro.'%')
-            //     ->orWhere('can_mentor', $s_can_mentor);
-            // })->paginate(20);
         
             if($s_intro !== null) 
             {
@@ -62,6 +50,34 @@ class UsersController extends Controller
         
             if($s_jobcategory !== null && $s_jobcategory != '指定なし') {
                 $query->where('job_category_id', $s_jobcategory);
+            }
+            
+            if($s_working_years == 1) {
+                $query->where('working_years', '<', 5);
+            }
+            
+            if($s_working_years == 2) {
+                $query->whereBetween('working_years', [5,9]);
+            }
+            
+            if($s_working_years == 3) {
+                $query->whereBetween('working_years', [10,14]);
+            }
+            
+            if($s_working_years == 4) {
+                $query->whereBetween('working_years', [15,19]);
+            }
+            
+            if($s_working_years == 5) {
+                $query->whereBetween('working_years', [20,24]);
+            }
+            
+            if($s_working_years == 6) {
+                $query->whereBetween('working_years', [25,29]);
+            }
+            
+            if($s_working_years == 7) {
+                $query->where('working_years', '>=', 30);
             }
             
             if($s_expat !== null){
@@ -97,11 +113,13 @@ class UsersController extends Controller
             }
         })->paginate(10);
         
-        $s_intro = $request->input('intro');
-        $s_industry = $request -> input('industry_id');
-
         $industries = Industry::all()->pluck('name', 'id');
         $job_categories = JobCategory::all()->pluck('name', 'id');
+        $years = config('years');
+        
+        $s_intro = $request->input('intro');
+        $s_industry = $request -> input('industry_id');
+        $s_working_years = $request->input('working_years');
         $s_jobcategory=$request->input('job_category_id');
         $s_expat=$request->input('expat');
         $s_mba=$request->input('mba');
@@ -116,9 +134,11 @@ class UsersController extends Controller
             'users' => $users,
             'industries' => $industries, 
             'job_categories' => $job_categories,
+            'years'=>$years,
             's_intro' => $s_intro,
             's_industry' => $s_industry,
             's_jobcategory' => $s_jobcategory,
+            's_working_years'=>$s_working_years,
             's_expat'=> $s_expat,
             's_mba'=>$s_mba,
             's_otherstudyabroad' => $s_otherstudyabroad,
