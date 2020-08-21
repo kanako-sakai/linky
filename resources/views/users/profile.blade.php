@@ -1,7 +1,7 @@
 @if($profile->exists())
 
 <div class="col-md-12">
-    <table class="profile">
+    <table class="profile table-bordered">
         <tbody>
             <tr>
                 <th class="text-left"><i class="fas fa-university fa-lg"></i> 最終学歴</th>
