@@ -54,7 +54,9 @@
 }    
 
 table.profile{
-    width: 100%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table.profile th{
@@ -334,10 +336,12 @@ table .records th, table .records td {
 }
 
 .oversea{
+  display: inline-block;
   background:#696969;
   color: #fff;
   border-radius: 10px;
   padding:5px;
+  margin:1px;
 }
 
 .fa-ticket-alt{
@@ -369,7 +373,7 @@ table .records th, table .records td {
   .nav_title {
     display: block;
     font-size:5px;
-  }
+  }}
   
 .clearfix::after {
   content:"";
@@ -383,4 +387,52 @@ table .records th, table .records td {
 
 .staff_auth_button {
   display: inline;
+}
+
+.userlist {
+  width:100%;
+}
+
+table.userlist th {
+  width: 20%;
+  padding:10px;
+  vertical-align: top;
+  text-align: center;
+}
+
+table.userlist td {
+  width: 80%;
+  padding: 10px;
+}
+
+.confirm {
+  width:60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+table.confirm th{
+  width:30%;
+  padding:10px;
+  background: #d3d3d3;
+}
+
+table.confirm td{
+  width:70%;
+  padding:10px;
+}
+
+.contact-confirm {
+  width:80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+table.contact-confirm th{
+  width:30%;
+  padding:10px;
+  background: #d3d3d3;
+}
+
+table.contact-confirm td{
+  width:70%;
+  padding:10px;
 }

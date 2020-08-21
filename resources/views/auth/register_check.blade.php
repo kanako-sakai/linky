@@ -9,28 +9,23 @@
           		</div>
         	</div>
 
-            <div class="offset-md-3 col-md-6">
-                <form method="POST" action="{{ route('signup.post') }}">
+            <div class="col-md-12 m-5">
+                <table class="confirm table-bordered">
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td>{{$email}}</td>
+                    </tr>  
+                    <tr>
+                        <th>パスワード</th>
+                        <td>{{$password_mask}}</td>
+                    </tr>
+                        
+                </table>
+            </div>
+            <form method="POST" action="{{ route('signup.post') }}">
                     @csrf
-
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">メールアドレス</label>
-
-                        <div class="col-md-6">
-                            <span class="">{{$email}}</span>
-                            <input type="hidden" name="email" value="{{$email}}">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">パスワード</label>
-
-                        <div class="col-md-6">
-                            <span class="">{{$password_mask}}</span>
-                            <input type="hidden" name="password" value="{{$password}}">
-                        </div>
-                    </div>
-
+                    <input type="hidden" name="email" value="{{$email}}">
+                    <input type="hidden" name="password" value="{{$password}}">
                     <div class="form-group row mb-0">
                         <span class="col-md-6 offset-4">
                            <input value= "前に戻る" onclick= "history.back();" type="button" class="btn btn-light">

@@ -9,7 +9,7 @@
           		</div>
         	</div>
 
-            <div class="offset-md-2 col-md-6 text-center">
+            <div class="col-md-12 text-center">
                 <p>お問い合わせいただきありがとうございます。</p>
                 <p>2-3営業日以内にはご返信いたします。</p>
                 <p>万が一、返信のない場合は、rolemy.info@gmail.comまでご連絡ください。</p>

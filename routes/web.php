@@ -78,7 +78,9 @@ Route::group(['middleware' => ['auth']], function () {
     //グループ座談会
         Route::get('group/index', 'GroupController@index')->name('group_index');
         Route::get('group/form1', 'GroupController@form1')->name('group_form1');
-        
+});    
+
+Route::group(['middleware' => ['auth'=>'can:admin-higher']], function () {        
     //管理画面
         Route::get('admin', 'AdminController@index')->name('admin');
         Route::get('records/{id}', 'AdminController@records')->name('records');

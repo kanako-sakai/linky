@@ -17,7 +17,7 @@
                             
                     {!! Form::open(['route' => 'register.pre_check']) !!}
                         <div class="form-group">
-                            {!! Form::label('email', 'Email') !!}
+                            {!! Form::label('email', 'メールアドレス') !!}
                             {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
                         </div>
         

@@ -35,7 +35,7 @@ return [
     'digits'               => ':attributeは:digits桁にしてください',
     'digits_between'       => ':attributeは:min〜:max桁にしてください。',
     'email'                => ':attributeを正しいメールアドレスにしてください。',
-    'filled'               => ':attributeは必須です。',
+    'filled'               => ':attributeを入力してください。',
     'exists'               => '選択された:attributeは正しくありません。',
     'image'                => ':attributeは画像にしてください。',
     'in'                   => '選択された:attributeは正しくありません。',
@@ -57,7 +57,7 @@ return [
     'not_in'               => '選択された:attributeは正しくありません。',
     'numeric'              => ':attributeは数字にしてください。',
     'regex'                => ':attributeの書式が正しくありません。',
-    'required'             => ':attributeは必須です。',
+    'required'             => ':attributeを入力してください。',
     'required_if'          => ':otherが:valueの時、:attributeは必須です。',
     'required_with'        => ':valuesが存在する時、:attributeは必須です。',
     'required_with_all'    => ':valuesが存在する時、:attributeは必須です。',
@@ -103,6 +103,24 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '名前',
+        'working_years' => '社会人歴',
+        'education'=>'最終学歴',
+        'employee'=>'勤務先',
+        'industry_id'=> '業種',
+        'job_category_id'=> '職種',
+        'expat'=> '海外駐在',
+        'mba'=> 'MBA留学',
+        'other_study_abroad'=> 'その他海外留学',
+        'returnee'=> '帰国子女',
+        'career_change'=> '転職経験',
+        'marriage_status'=> '未婚/既婚',
+        'child_status'=> 'お子様の有無',
+        'can_mentor' => '他の方の相談にのることができるか',
+        'agree' => 'プライバシーポリシー',
+        'email'=>'メールアドレス',
+        'password'=>'パスワード',
+    ]    
 
 ];

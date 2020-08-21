@@ -1,6 +1,6 @@
 @if($profile->exists())
 
-<div class="col-md-6 offset-md-3">
+<div class="col-md-12">
     <table class="profile">
         <tbody>
             <tr>
@@ -23,8 +23,6 @@
                 @endif
                 </td>
             </tr>
-            
-            
             <tr>
                 <th class="text-left"><i class="fas fa-certificate fa-lg"></i> 業種</th>
                 <td class="text-left">{{ $industry }}</td>
@@ -36,17 +34,16 @@
             <tr>
                 <th class="text-left"><i class="fas fa-plane fa-lg"></i> 海外経験</th>
                 <td class="text-left">
-                    @if ($profile->expat == 0)<span></span>
-                    @else
+                    @if ($profile->expat == 1)
                         <span class=oversea>海外駐在・トレーニー</span>
                     @endif    
                     @if ($profile->mba == 1)
                         <span class=oversea>MBA留学</span>
                     @endif
-                    @if ($profile->other_study_abroad == 0)
+                    @if ($profile->other_study_abroad == 1)
                         <span class=oversea>その他海外留学</span>
                     @endif
-                    @if ($profile->returnee == 0)
+                    @if ($profile->returnee == 1)
                         <span class=oversea>帰国子女</span>
                     @endif
                 </td>

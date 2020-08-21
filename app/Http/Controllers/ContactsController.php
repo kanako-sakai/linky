@@ -20,12 +20,6 @@ class ContactsController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'title' => ['required', 'string'],
             'body'=> ['required', 'string'],
-        ],
-        [
-            'name.required' => '名前は必須です。',
-            'email.required'=>'メールアドレスは必須です。',
-            'title.required'=>'件名は必須です。',
-            'body.required'=>'お問い合わせ内容をご記載ください。'
         ]);
         
         $contact = new Contact($request->all());
@@ -70,8 +64,8 @@ class ContactsController extends Controller
             \Mail::send(new ContactSendmail([
                 'to' => $request->email,
                 'to_name' => $request->name,
-                'from'=>'linky.register@gmail.com',
-                'from_name' => 'Linky',
+                'from'=>'rolemy.info@gmail.com',
+                'from_name' => 'ROLEMY',
                 'subject' => 'お問い合わせ受付完了のお知らせ',
                 'title'=>$request->title,
                 'body' => $request->body
@@ -82,8 +76,8 @@ class ContactsController extends Controller
             
             //自分に送るメール
             \Mail::send(new ContactSendmail([
-                'to' => 'knksk.526@gmail.com',
-                'to_name'=>'Kanako',
+                'to' => 'rolemy.info@gmail.com',
+                'to_name'=>'ROLEMY',
                 'from' => $request->email,
                 'from_name' => $request->name,
                 'subject' => 'お客様からのお問い合わせ',

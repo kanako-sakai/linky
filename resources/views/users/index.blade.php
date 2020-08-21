@@ -79,52 +79,48 @@
             
             {{-- ユーザ一覧 --}}
             <div class="col-md-10 member-list">
-
-                <div class="container">
-                    <!--検索ボタンが押された時に表示-->
-                    @if(!empty($users))
-                        <ul class="list-unstyled">
-                            @foreach ($users as $user)
-                                <!--$user->profile()->first()-->
-                                <li class="media">
+                <!--検索ボタンが押された時に表示-->
+                @if(!empty($users))
+                    <table class="userlist">
+                        @foreach ($users as $user)
+                            <tr>
+                                <th>
                                     {{-- アイコン --}}
                                     @if(isset($user->picture))
                                     	<img src = "{{ $user->picture }}" class="profile_icon">
                                     @else
                                     	<p class="no_icon"></p> 
                                     @endif
-                                    <div class="media-body">
-                                        <div class = col-md-12>
-                                            {{-- ユーザ詳細ページへのリンク --}}
-                                            <p>@if($user->role != 0)
-                                                {!! link_to_route('offical_mentors', $user->name) !!}
-                                                <span class ="official_icon">
-                                                <i class="fas fa-check-circle"></i>
-                                                公式メンター</span>
-                                                @else
-                                                {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!} 
-                                                @endif
-                                                
-                                                @if(Auth::user()->role == 1 && $user->role == 0)
-                                                <span class="staff_auth_button">
-                                                    {{-- スタッフ権限を与えるボタン --}}
-                                                    {!! Form::open(['route' => ['staff_auth', $user->id], 'method' => 'put']) !!}
-                                                        {!! Form::submit('公式メンターにする', ['class' => "btn btn-primary"]) !!}
-                                                    {!! Form::close() !!}
-                                                </span>
-                                                @endif
-                                            </p>
-                                            <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
-                                            <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
-                                            @if($user->role == 0)
-                                            <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
-                                            @endif
-                                        </div>
-                                         <hr class ="cp_hr05" />
-                                    </div>
-                                </li>
-                            @endforeach    
-                        </ul>
+                                </th>    
+                                <td>
+                                    {{-- ユーザ詳細ページへのリンク --}}
+                                    @if($user->role != 0)
+                                        {!! link_to_route('offical_mentors', $user->name) !!}
+                                        <span class ="official_icon">
+                                        <i class="fas fa-check-circle"></i>
+                                        公式メンター</span>
+                                        @else
+                                        {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!} 
+                                        @endif
+                                        
+                                        @if(Auth::user()->role == 1 && $user->role == 0)
+                                        <span class="staff_auth_button">
+                                            {{-- スタッフ権限を与えるボタン --}}
+                                            {!! Form::open(['route' => ['staff_auth', $user->id], 'method' => 'put']) !!}
+                                                {!! Form::submit('公式メンターにする', ['class' => "btn btn-primary"]) !!}
+                                            {!! Form::close() !!}
+                                        </span>
+                                        @endif
+                                    </p>
+                                    <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
+                                    <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
+                                    @if($user->role == 0)
+                                    <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
+                                    @endif
+                                </td>
+                            <tr>    
+                            @endforeach
+                        </table>
                         {{-- ページネーションのリンク --}}
                         {{ $users->links() }}
                     </div>

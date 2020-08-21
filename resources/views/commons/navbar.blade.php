@@ -19,13 +19,12 @@
           {{-- ログアウトへのリンク --}}
           <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
         {{--管理画面 --}}
-        @if (Auth::user()->role == 1)
-          <li class="nav-item">{!! link_to_route('admin', '管理画面',[],['class' => 'nav-link']) !!}</li>
-        @endif
-        @if (Auth::user()->role == 2)
+        @can('system-only')
+          <li class="nav-item">{!! link_to_route('admin', '開発者画面',[],['class' => 'nav-link']) !!}</li>
+        @endcan
+        @can('admin-higher')
           <li class="nav-item">{!! link_to_route('staff', '管理画面', [], ['class' => 'nav-link']) !!}</li>
-        @endif
-        
+        @endif  
         @else  
           {{-- ユーザ登録ページへのリンク --}}
           <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>

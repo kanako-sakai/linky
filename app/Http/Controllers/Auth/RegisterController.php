@@ -81,7 +81,8 @@ class RegisterController extends Controller
         $user = User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'email_verify_token' => str_random(32) //base64_encode($data['email']),
+            'email_verify_token' => str_random(32), //base64_encode($data['email']),
+            'token_expiration'=>Carbon::now()->addHours(1),
         ]);
         
         $email = new EmailVerification($user);
@@ -99,12 +100,14 @@ class RegisterController extends Controller
     
     public function showForm($email_verify_token)
     {
+        $user = User::where('email_verify_token', $email_verify_token)->first();
+
         // 使用可能なトークンか
-        if ( !User::where('email_verify_token',$email_verify_token)->exists() )
+        if ( !User::where('email_verify_token',$email_verify_token)->where('token_expiration', '>', Carbon::now())->exists())
         {
             return view('auth.main.register')->with('message', '無効なトークンです。');
         } else {
-            $user = User::where('email_verify_token', $email_verify_token)->first();
+            // $user = User::where('email_verify_token', $email_verify_token)->first();
             // 本登録済みユーザーか
             if ($user->status == config('const.USER_STATUS.REGISTER')) //REGISTER=1
             {
@@ -130,7 +133,7 @@ class RegisterController extends Controller
     {   
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'working_years'=> ['required', 'numeric', 'max:60'],
+            'working_years'=> ['required', 'numeric', 'max:80'],
             'education' => ['required', 'string', 'max:255'],
             'employee'=> ['required', 'string', 'max:255'],
             'industry_id'=> ['required', 'string'],
@@ -146,16 +149,6 @@ class RegisterController extends Controller
             'agree' => ['required', 'numeric'],
         ],
         [
-            'name.required' => '名前は必須です。',
-            'working_years.required'=>'社会人歴は必須です。',
-            'education.required' => '最終学歴は必須です。',
-            'employee.required' => 'ご勤務先は必須です。',
-            'industry_id.required' => '業種は必須です。',
-            'job_category_id.required' => '職種は必須です。',
-            'career_change.required' => '転職経験は必須です。',
-            'marriage_status.required' => '既婚/未婚は必須です。',
-            'child_status.required' => 'お子様の有無は必須です。',
-            'can_mentor.required' => '他の方の相談に乗ることができるかは必須です。',
             'agree.required' => 'プライバシーポリシーに同意してください。',
         ]);
         
