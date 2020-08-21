@@ -28,12 +28,12 @@
 </style>
 <body>
 <h2>
-  【Linky】パスワード再設定について
+  【ROLEMY】パスワード再設定について
 </h2>
 
 <div="container">
 <p>
-  Linkyにご登録いただき、誠にありがとうございます。<br>
+  ROLEMYにご登録いただき、誠にありがとうございます。<br>
   このメールは、本メールアドレスで登録されている会員の<br>
   パスワード再設定手続を行われたお客様に送信させていただいております。<br>
   <br>
@@ -46,10 +46,8 @@
 </p>
 
 <footer>
-  <p>■Linky</p>
-  <!--TO DO: サイトのURLを挿入する-->
-  </p>
-
+  <p>■ROLEMY</p>
+  <p>www.rolemy.jp</p>
 </footer>
 </body>
 </html>

@@ -14,6 +14,7 @@
                 <div class="card">
                     <div class="card-header">お問い合わせフォームをご記載ください。</div>
                     
+                    <div class="card-body">
                     {{--エラーメッセージ--}}
                     @include('commons.error_messages')   
                     
@@ -23,7 +24,7 @@
                         {!! Form::label('name', 'お名前') !!}
                         {!! Form::text('name', null, ['class' => 'form-control']) !!}
                     </div>
-                    
+
                     <div class="form-group">
                         {!! Form::label('email', 'Email') !!}
                         {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}

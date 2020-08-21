@@ -83,11 +83,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'email_verify_token' => str_random(32) //base64_encode($data['email']),
         ]);
-            // 'email_auth_number' => $data['email_auth_number'],
-            // 'email_auth_valid_datetime' => $data['email_auth_valid_datetime'],
-            // 'valid_datetime' => $data['valid_datetime'],
-            // 'card_number' => $data['card_number'],
-            // 'stripe_token' => $data['stripe_token'],
         
         $email = new EmailVerification($user);
         Mail::to($user->email)->send($email);

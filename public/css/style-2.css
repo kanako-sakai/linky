@@ -94,6 +94,8 @@ p.intro {
 
 .card-header {
   background: #48d1cc;
+  color: #fff;
+  font-style: bold;
 }
 
 .card-title {
@@ -373,4 +375,12 @@ table .records th, table .records td {
   content:"";
   display:block;
   clear:both;
+}
+
+.alert-inline {
+  color: #721c24;
+}
+
+.staff_auth_button {
+  display: inline;
 }

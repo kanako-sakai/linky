@@ -20,6 +20,12 @@ class ContactsController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'title' => ['required', 'string'],
             'body'=> ['required', 'string'],
+        ],
+        [
+            'name.required' => '名前は必須です。',
+            'email.required'=>'メールアドレスは必須です。',
+            'title.required'=>'件名は必須です。',
+            'body.required'=>'お問い合わせ内容をご記載ください。'
         ]);
         
         $contact = new Contact($request->all());

@@ -90,6 +90,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('schedule/{id}', 'AdminController@schedule')->name('schedule');
         Route::post('register_schedule', 'AdminController@register_schedule')->name('register_schedule');
         Route::get('schedule_index/{id}', 'AdminController@schedule_index')->name('schedule_index');
+        Route::put('staff_auth/{id}', 'AdminController@staff_auth')->name('staff_auth');
 });
         
 

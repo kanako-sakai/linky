@@ -174,4 +174,14 @@ class AdminController extends Controller
             'meetings' => $meetings
         ]);
     }
+    
+    public function staff_auth($id) 
+    {
+        $user = User::findOrFail($id);
+        
+        $user->role = 2;
+        $user->save();
+        
+        return back();
+    }
 }

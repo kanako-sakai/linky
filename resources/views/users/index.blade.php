@@ -104,6 +104,15 @@
                                                 @else
                                                 {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!} 
                                                 @endif
+                                                
+                                                @if(Auth::user()->role == 1 && $user->role == 0)
+                                                <span class="staff_auth_button">
+                                                    {{-- スタッフ権限を与えるボタン --}}
+                                                    {!! Form::open(['route' => ['staff_auth', $user->id], 'method' => 'put']) !!}
+                                                        {!! Form::submit('公式メンターにする', ['class' => "btn btn-primary"]) !!}
+                                                    {!! Form::close() !!}
+                                                </span>
+                                                @endif
                                             </p>
                                             <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
                                             <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
