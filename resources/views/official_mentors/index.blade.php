@@ -19,7 +19,7 @@
         	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/kanako_sakai.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Kanako Sakai</a></h2>
+          			<h2 class="official-name">Kanako Sakai</h2>
           			<p>【現職】ハーバードビジネススクール在学中</p>
           			<p>【社会人歴】7年目</p>
           			<p>【職歴】「早くスキルを付けて、将来の選択肢を広げておきたい」という気持ちから、2014年新卒で外資系戦略コンサルティングファームに就職。主に日本国内で消費財・製薬企業のコンサルティングに従事。</p>
@@ -31,7 +31,7 @@
         	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/shoko_hamada.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Shoko Hamada</a></h2>
+          			<h2 class="official-name">Shoko Hamada</h2>
           			<p>【現職】外資系戦略コンサルティングファーム</p>
           			<p>【社会人歴】8年目</p>
           			<p>【職歴】ハーバードビジネススクールMBA修了。MBA留学前はP＆Gシンガポール・アジア本社にて柔軟剤ブランドの中長期的な目標設定、経営戦略の策定、収益管理を行うブランドマーケティングを担当。卒業後は外資系コンサルティングファーム米国オフィスに入社し、企業の海外進出などの支援に従事。</p>
@@ -43,7 +43,7 @@
 	        <div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/kei_takatsuka.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Kei Takatsuka</a></h2>
+          			<h2 class="official-name">Kei Takatsuka</h2>
           			<p>【現職】外資系戦略コンサルタント@ボストン</p>
           			<p>【社会人歴】5年目</p>
           			<p>【職歴】名古屋大学大学院にて脳神経科学を研究の後、25歳の時に新卒で外資系戦略コンサルティングファーム(東京オフィス)に入社。外資系消費財メーカーや製薬企業の経営計画策定などに参画の後、米国ボストンオフィスに転籍。2020年夏よりハーバードビジネススクールに進学・在籍中。</p>
@@ -56,7 +56,7 @@
 			<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/emiri_grimes.png);"></div>
           		<div class="text pl-md-5">
-          			<h2>Emiri Grimes</a></h2>
+          			<h2 class="official-name">Emiri Grimes</h2>
           			<p>【現職】外資系戦略コンサルティングファーム</p>
           			<p>【社会人歴】7年目</p>
           			<p>【職歴】京都大学薬学部卒業、薬剤師免許取得後、武田薬品の臨床開発部にて治験の管理に従事。産官学を通じた日本の医療システムの改善に興味を持ち、スイスチューリヒ工科大学にて医学産業薬学のマスターを取得。帰国後、外資系戦略コンサルティングファームにてコンサルタントとして働いています。</p>
@@ -68,7 +68,7 @@
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/itoko_shibata.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Itoko Shibata</a></h2>
+          			<h2 class="official-name">Itoko Shibata</h2>
           			<p>【現職】教育事業会社にて、講師・営業・事業開発などを担当</p>
           			<p>【社会人歴】8年目</p>
           			<p>【職歴】2013年新卒で外資系戦略コンサルティングファームに就職。通信・素材・エネルギーなどの業界に対するコンサルティングに従事。また、新卒採用・内定者フォローなどにも当時から関わる。戦略があっても、実行する「人」がいなければ実現しないことを痛感し、人材育成に関心を持ち、現職へ2018年転職。</p>
@@ -80,7 +80,7 @@
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/aki_ko.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Aki Ko</a></h2>
+          			<h2 class="official-name">Aki Ko</h2>
           			<p>【現職】ベンチャーキャピタル</p>
           			<p>【社会人歴】8年目</p>
           			<p>【職歴】コンサルティング会社で務めた後、ビジネススクールに入学。在学中はテックスタートアップやデザインコンサルでインターン。2019年にMBA卒業後、現職。</p>
@@ -92,7 +92,7 @@
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/eiko_ichikawa.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Eiko Ichikawa</a></h2>
+          			<h2 class="official-name">Eiko Ichikawa</h2>
           			<p>【現職】ランサーズ株式会社新しい働き方LAB所長</p>
           			<p>【社会人歴】8年目</p>
           			<p>【職歴】新卒で外資系戦略コンサルティングファームに入社。文部科学省「トビタテ！留学JAPAN」プロジェクトを経て、スタンフォード大学にMBA×教育学を学ぶ。現在は「生き生きとした大人を増やす」ことを目標に、「個のエンパワメント」をミッションに掲げるランサーズ株式会社にて教育×コミュニティ事業を運営。</p>
@@ -104,7 +104,7 @@
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/marie_oshioka.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Marie Oshioka</a></h2>
+          			<h2 class="official-name">Marie Oshioka</h2>
           			<p>【現職】フィンテックベンチャー　社長室長</p>
           			<p>【社会人歴】12年目</p>
           			<p>【職歴】2009年経済産業省入省、特許法、商品先物取引法、民法等の改正プロジェクトに従事。社会人一年目に司法試験合格。2017年ペンシルベニア大学ウォートン校でMBA取得。外資系戦略コンサルティングファーム東京オフィスにて金融業等のコンサルティングに従事した後、フィンテックベンチャーに入社。個人向けの新規サービス開発を担当し、事業開発部長を経た後、現職。</p>
@@ -116,7 +116,7 @@
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/kumiko_fukagawa.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Kumiko Fukagawa</a></h2>
+          			<h2 class="official-name">Kumiko Fukagawa</h2>
           			<p>【現職】外資系戦略コンサルティングファーム</p>
           			<p>【社会人歴】7年目</p>
           			<p>【職歴】大学院で国際開発を学んだ後、ソーシャルビジネスによる貧困問題の解決への関心から、ビジネススキルを習得するために外資コンサルに入社。消費財や金融業、プライベート・エクイティ投資のプロジェクトに従事する傍ら、NPOを無償で支援するプロボノ活動にも多数参加。日本と欧州にて4年半の勤務を経て、2020年にハーバード・ビジネス・スクールでMBAを取得。</p>
@@ -128,7 +128,7 @@
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/mari_tabata.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2>Mari Tabata</a></h2>
+          			<h2 class="official-name">Mari Tabata</h2>
           			<p>【現職】ハーバードビジネススクール在学中</p>
           			<p>【社会人歴】7年目</p>
           			<p>【職歴】新卒でコンサルティング会社に入社し、日系の食品、消費財メーカーのM&A支援に従事。MBA留学前は国内の水産商社にて海外事業拡大を担当。</p>

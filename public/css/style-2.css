@@ -213,6 +213,16 @@ p.intro {
     margin-left: auto;
     margin-right: auto;
 }
+  @media (max-width: 767.98px) {
+    .profile_icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-position: center center;
+      margin-left: auto;
+      margin-right: auto;
+}}
+  
 
 .no_icon {
     background-image: url('../images/green.png');
@@ -223,6 +233,16 @@ p.intro {
     margin-left: auto;
     margin-right: auto;
 }
+  @media (max-width: 767.98px) {
+    .no_icon {
+      background-image: url('../images/green.png');
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-position: center center;
+      margin-left: auto;
+      margin-right: auto;
+}}
 
 .users_icon {
     display:block;
@@ -383,7 +403,7 @@ table .records th, table .records td {
 @media (max-width: 767.98px) {
   .nav_title {
     display: block;
-    font-size:5px;
+    font-size:12px;
   }}
   
 .clearfix::after {
@@ -414,6 +434,31 @@ table.userlist th {
 table.userlist td {
   width: 80%;
   padding: 10px;
+}
+
+.requests_list {
+  width:100%;
+}
+
+table.requests_list th {
+  width: 20%;
+  padding:10px;
+  vertical-align: top;
+  text-align: center;
+}
+
+table.requests_list td {
+  padding: 10px;
+}
+
+.name-message{
+  width:50%;
+  padding:10px;
+}
+
+.accept-button {
+  width:30%;
+  padding:10px;
 }
 
 .confirm {
@@ -464,3 +509,23 @@ table.contact-confirm td{
   margin-right: auto;
   margin-left: auto;
 }
+
+.btn-left {
+  float: right;
+}
+@media (max-width: 767.98px) {
+  .btn-left {
+    vertical-align: bottom;
+    text-align: center;
+  }}
+  
+@media (max-width: 767.98px) {  
+  .official-name {
+    text-align: center;
+  }}
+  
+.timestamp{
+  font-size: 10px;
+  font-color: #dcdcdc;
+}  
+  

@@ -9,70 +9,55 @@
       		</div>
     	</div>
         
-        <div class="text-center">
+        <div class="col-md-10 member-list">
             {{-- ユーザ一覧 --}}
             @if (count($matches_from_me) > 0)
-                <ul class="list-unstyled">
+                <table class="requests_list">
                     @foreach ($matches_from_me as $match_from_me)
-                        <li class="media">
-                            <div class="col-md-2">
+                        <tr>
+                            <th>
                             {{-- アイコン --}}
                             @if(isset($match_from_me->receiver->picture))
                             	<img src = "{{ $match_from_me->receiver->picture }}" class="profile_icon">
                             @else
                             	<p class="no_icon"></p>
                             @endif
-                            </div>
-
-                            <div class="media-body col-md-5">
-                                <div>
-                                    {{ $match_from_me->receiver->name }}
-                                </div>
-                                <div>
-                                    {{-- ユーザ詳細ページへのリンク --}}
-                                    <p>{!! link_to_route('users.show', 'プロフィール詳細', ['user' => $match_from_me->receiver->id]) !!}</p>
-                                </div>
-                            </div>    
-                            
-                            <div class="col-md-4">
+                            </th>
+                            <td>
+                                {!! link_to_route('users.show', $match_from_me->receiver->name, ['user' => $match_from_me->receiver->id]) !!}
+                            </td>
+                            <td>
                                 {{-- ダイレクトメッセージページへのボタン --}}
-                                <p>{!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_me->receiver->id], ['class'=>'btn btn-primary']) !!}</p>
-                            </div>
-                        </li>
+                                {!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_me->receiver->id], ['class'=>'btn btn-primary']) !!}
+                            </td>
+                        </tr>
                     @endforeach
-                </ul>
+                </table>
             @endif
             
             @if (count($matches_from_others) > 0)
-                <ul class="list-unstyled">
+                <table class="requests_list">
                     @foreach ($matches_from_others as $match_from_others)
-                        <li class="media">
-                            <div class="col-md-2">
+                       <tr>
+                            <th>
                             {{-- アイコン --}}
                             @if(isset($match_from_others->sender->picture))
                             	<img src = "{{ $match_from_others->sender->picture }}" class="profile_icon">
                             @else
                             	<p class="no_icon"></p> 
                             @endif
-                            </div>
+                            </th>
                             
-                            <div class="media-body col-md-5">
-                                <div>
-                                    {{ $match_from_others->sender->name }}
-                                </div>
-                                <div>
-                                    {{-- ユーザ詳細ページへのリンク --}}
-                                    <p>{!! link_to_route('users.show', 'プロフィール詳細', ['user' => $match_from_others->sender->id]) !!}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4">
+                            <td>
+                                {!! link_to_route('users.show', $match_from_others->sender->name, ['user' => $match_from_others->sender->id]) !!}
+                            </td>
+                            <td>
                                 {{-- ダイレクトメッセージページへのボタン --}}
-                                <p>{!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_others->sender->id], ['class'=>'btn btn-primary']) !!}</p>
-                            </div>
-                        </li>
+                                {!! link_to_route('show.messages', 'メッセージ', ['id' => $match_from_others->sender->id], ['class'=>'btn btn-primary']) !!}
+                            </td>
+                        </tr>
                     @endforeach
-                </ul>
+                </table>
             @endif
         </div>
     </div>

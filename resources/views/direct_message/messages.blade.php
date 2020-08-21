@@ -16,27 +16,29 @@
                         <li class="media">
                             {{-- アイコン --}}
                             @if(isset($message->sender->picture))
-                            	<img src = "{{ $message->sender->picture }}" width=50 height=50>
+                            	<img src = "{{ $message->sender->picture }}" class="profile_icon">
                             @else
-                            	<img src = "/images/icon.png" alt="icon" width=50 height=50>
+                            	<p class="no_icon"></p>
                             @endif
                             <div class="media-body pb-5">
-                                <div>
+                                <div class="ml-3">
                                     <a href="{{ route('users.show', ['user'=>$message->sender->id]) }}"> {{ $message->sender->name }}</a>
                                 </div>
-                                <div>
+                                <div class="ml-3">
                                     {{ $message->message }}
                                 </div> 
-                                <span class="timestamp col-md-4">
-                                    {{ $message->created_at }}
-                                </span>
-                                <span class="col-md-4">
-                                    @if (Auth::id() == $message->sender->id)
-                                    {!! Form::open(['route' => ['delete.message', $message->id], 'method' => 'delete']) !!}
-                                        {!! Form::submit('削除', ['class' => 'btn btn-sm']) !!}
-                                    {!! Form::close() !!}    
-                                    @endif
-                                </span>
+                                <div class= "row">
+                                    <span class="col-md-2 timestamp ml-3">
+                                        {{ $message->created_at }}
+                                    </span>
+                                    <span class="col-md-2">
+                                        @if (Auth::id() == $message->sender->id)
+                                        {!! Form::open(['route' => ['delete.message', $message->id], 'method' => 'delete']) !!}
+                                            {!! Form::submit('削除', ['class' => 'btn btn-light btn-sm']) !!}
+                                        {!! Form::close() !!}    
+                                        @endif
+                                    </span>
+                                </div>
                             </div>
                         </li>
                     @endforeach

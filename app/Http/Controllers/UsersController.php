@@ -438,7 +438,7 @@ class UsersController extends Controller
         $form = $request->all();
         
         $request->validate([
-            'picture'=> 'required|file|image|max:1024|mimes:jpeg,png,jpg,gif',
+            'picture'=> 'required|file|image|mimes:jpeg,png,jpg,gif',
         ],
         [
             'picture.required' => '画像ファイルを選択してください。'

@@ -9,59 +9,55 @@
           		</div>
         	</div>
 
-            <div class="text-center">
-                {{-- ユーザ一覧 --}}
+            <div class="col-md-10 member-list">    
+            {{-- ユーザ一覧 --}}
                 @if (count($requesters) > 0)
-                <ul class="list-unstyled">
+                <table class="requests_list">
                     @foreach ($requesters as $requester)
-                        <li class="media">
-                            <div class="col-md-2">
+                        <tr>
+                            <th>
                             {{-- アイコン --}}
                             @if(isset($requester->sender->picture))
                             	<img src = "{{ $requester->sender->picture }}" class="profile_icon">
                             @else
                             	<p class="no_icon"></p>
                             @endif
-                            </div>
-                            
-                            <div class="media-body col-md-3">
-                                <div>
-                                    {{ $requester->sender->name }}
-                                </div>
-                                <div>
-                                    {{-- ユーザ詳細ページへのリンク --}}
-                                    <p>{!! link_to_route('users.show', 'プロフィール詳細', ['user' => $requester->sender->id]) !!}</p>
-                                </div>
-                            </div>    
-                            <div class="col-md-5">
-                            {{-- 承諾・拒否ボダン--}}
-                            @if (Auth::id() != $requester->sender->id)
+                            </th>
+                            <td class="name-message">
+                                {{-- ユーザ詳細ページへのリンク --}}
+                                {!! link_to_route('users.show',$requester->sender->name , ['user' => $requester->sender->id]) !!} <br>
+                                @if (Auth::id() != $requester->sender->id)
                                 @if (Auth::user()->is_matching($requester->sender->id))
                             
                                     @elseif (Auth::user()->is_requested($requester->sender->id))
                                         {{-- メッセージの表示 --}}
-                                        <p>{!! nl2br(e($requester->message)) !!}</p>
-                            </div>
-                            <div class="col-md-2">
-                                        {{-- 承認のボタン --}}
-                                        {!! Form::open(['route' => ['accept', $requester->sender->id], 'method' => 'put']) !!}
-                                            {!! Form::submit('承認', ['class' => "btn btn-primary btn-block"]) !!}
-                                        {!! Form::close() !!}
-                                        
-                                        {{-- 拒否ボタン --}}
-                                        {!! Form::open(['route' => ['decline', $requester->sender->id], 'method' => 'put']) !!}
-                                            {!! Form::submit('拒否', ['class' => "btn btn-danger btn-block"]) !!}
-                                        {!! Form::close() !!}
-                                    @else
-                            </div>
+                                        {!! nl2br(e($requester->message)) !!}
+                            </td>
+                            <td class="accept-button">
+                                <div class="row">
+                                    <div class = "col-md-4 text-center">     
+                                    {{-- 承認のボタン --}}
+                                    {!! Form::open(['route' => ['accept', $requester->sender->id], 'method' => 'put']) !!}
+                                        {!! Form::submit('承認', ['class' => "btn btn-primary btn-block"]) !!}
+                                    {!! Form::close() !!}
+                                    </div>
+                                    <div class = "col-md-4 text-center">
+                                    {{-- 拒否ボタン --}}
+                                    {!! Form::open(['route' => ['decline', $requester->sender->id], 'method' => 'put']) !!}
+                                        {!! Form::submit('拒否', ['class' => "btn btn-danger btn-block"]) !!}
+                                    {!! Form::close() !!}
+                                    </div>
+                            </td>
+                        </tr>
+                                @else
                                 @endif
-                            @endif 
-                            </div>
-                        </li>
+                            @endif
+                            </td>
+                        </tr>
                     @endforeach
-                </ul>
-            </div> 
-        @endif
-        </div>    
+                </table>    
+                @endif
+            </div>
+        </div>        
 </section>    
 @endsection
