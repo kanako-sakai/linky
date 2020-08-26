@@ -373,6 +373,7 @@ class UsersController extends Controller
             'marriage_status'=> ['required', 'numeric'],
             'child_status'=> ['required', 'numeric'],
             'can_mentor' => ['required', 'numeric'],
+            'intro'=>['max:1000']
         ]);
         
         //usersテーブルの情報の更新

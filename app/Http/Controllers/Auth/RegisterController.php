@@ -147,6 +147,7 @@ class RegisterController extends Controller
             'child_status'=> ['required', 'numeric'],
             'can_mentor' => ['required', 'numeric'],
             'agree' => ['required', 'numeric'],
+            'intro' => ['max:1000'],
         ],
         [
             'agree.required' => 'プライバシーポリシーに同意してください。',
