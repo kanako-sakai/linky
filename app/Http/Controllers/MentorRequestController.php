@@ -10,6 +10,9 @@ class MentorRequestController extends Controller
 {
     public function store(Request $request, $id)
     {
+        $request->validate([
+            'message'=>['string']]);
+            
         //メッセージの保存
         $message = $request->message;
         

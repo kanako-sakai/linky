@@ -52,8 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
+                    <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('再設定する') }}
                             </button>

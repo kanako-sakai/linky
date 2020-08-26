@@ -70,7 +70,7 @@ table.profile td{
     padding: 10px;
 }
 
-p.intro {
+.intro {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -510,15 +510,16 @@ table.contact-confirm td{
   margin-left: auto;
 }
 
-.btn-left {
-  float: right;
-}
+ .btn-left {
+    float: right;
+  }
 @media (max-width: 767.98px) {
   .btn-left {
+    display:block;
     vertical-align: bottom;
     text-align: center;
   }}
-  
+
 @media (max-width: 767.98px) {  
   .official-name {
     text-align: center;
@@ -528,4 +529,9 @@ table.contact-confirm td{
   font-size: 10px;
   font-color: #dcdcdc;
 }  
-  
+
+.error-message{
+  color:red;
+  font-size: 12px;
+  font-weight: bold;
+}

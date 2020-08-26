@@ -358,6 +358,27 @@ class UsersController extends Controller
         
         $profile = $user->profile()->first();
         
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'working_years'=> ['required', 'numeric', 'max:80'],
+            'education' => ['required', 'string', 'max:50'],
+            'employee'=> ['required', 'string', 'max:50'],
+            'industry_id'=> ['required', 'string'],
+            'job_category_id'=> ['required', 'string'],
+            'expat'=> ['required', 'numeric'],
+            'mba'=> ['required', 'numeric'],
+            'other_study_abroad'=> ['required', 'numeric'],
+            'returnee'=> ['required', 'numeric'],
+            'career_change'=> ['required', 'numeric'],
+            'marriage_status'=> ['required', 'numeric'],
+            'child_status'=> ['required', 'numeric'],
+            'can_mentor' => ['required', 'numeric'],
+        ]);
+        
+        //usersテーブルの情報の更新
+        $user->name = $request->name;
+        $user->save();
+        
         //プロフィールを更新
         $profile->user_id=$user->id;
         $profile->education = $request->education;
@@ -381,18 +402,18 @@ class UsersController extends Controller
         return redirect()->route('users.show', ['user' => \Auth::id()]);
     }
     
-    //退会フォームの表示
-    public function showCancelForm() 
-    {
-        $user = Auth::user();
+    // //退会フォームの表示
+    // public function showCancelForm() 
+    // {
+    //     $user = Auth::user();
         
-        $cancel_reasons = CancelReason::all()->pluck('name', 'id');
+    //     $cancel_reasons = CancelReason::all()->pluck('name', 'id');
         
-        return view('cancel.cancel_form', [
-            'user' => $user,
-            'cancel_reasons' => $cancel_reasons,
-        ]);
-    }
+    //     return view('cancel.cancel_form', [
+    //         'user' => $user,
+    //         'cancel_reasons' => $cancel_reasons,
+    //     ]);
+    // }
     
     // //退会処理
     // public function cancel(Request $request)
@@ -456,15 +477,6 @@ class UsersController extends Controller
         $user->picture = Storage::disk('s3')->url($storePath);
         
         $user->save();
-        
-        // //s3アップロード開始
-        // $image = $request->file('picture');
-        // // バケットの`linkyprofilepictures`フォルダへアップロード
-        // $path = Storage::disk('s3')->putFile('linkyprofilepictures', $image, 'public');
-        // // アップロードした画像のフルパスを取得
-        // $user->picture = Storage::disk('s3')->url($path);
-        
-        // $user->save();
 
       return redirect()->action('UsersController@show', ['user' => $user]);
     }

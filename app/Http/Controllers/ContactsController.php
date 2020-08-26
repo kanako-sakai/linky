@@ -19,7 +19,7 @@ class ContactsController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'title' => ['required', 'string'],
-            'body'=> ['required', 'string'],
+            'body'=> ['required', 'min:3', 'max:1000'],
         ]);
         
         $contact = new Contact($request->all());
@@ -44,7 +44,7 @@ class ContactsController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'title' => ['required', 'string'],
-            'body'=> ['required', 'string'],
+            'body'=> ['required', 'min:3', 'max:1000'],
         ]);
         
         //フォームから受け取ったactionの値を取得

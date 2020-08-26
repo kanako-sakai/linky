@@ -114,7 +114,9 @@
                                     <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
                                     <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
                                     @if($user->role == 0)
-                                    <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
+                                    <div class="intro">
+                                        <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
+                                    </div>    
                                     @endif
                                 </td>
                             <tr>    

@@ -71,9 +71,9 @@ class OfficialRequestController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'plan' => ['required', 'string'],
             'mentor_id'=> ['required'],
-            'goal'=> ['required', 'string'],
-            'questions'=> ['required', 'string'],
-            'dates'=> ['required', 'string'],
+            'goal'=> ['required', 'min:10','max:500'],
+            'questions'=> ['required', 'min:10', 'max:1000'],
+            'dates'=> ['required', 'min:10', 'max:500'],
             'precaution'=> ['required', 'numeric'],
         ]);
         
@@ -98,9 +98,9 @@ class OfficialRequestController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'plan' => ['required', 'string'],
             'mentor_id'=> ['required'],
-            'goal'=> ['required', 'string'],
-            'questions'=> ['required', 'string'],
-            'dates'=> ['required', 'string'],
+            'goal'=> ['required', 'min:10','max:500'],
+            'questions'=> ['required', 'min:10', 'max:1000'],
+            'dates'=> ['required', 'min:10', 'max:500'],
             'precaution'=> ['required', 'numeric'],
         ]);
         

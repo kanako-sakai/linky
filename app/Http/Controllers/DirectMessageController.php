@@ -9,6 +9,9 @@ class DirectMessageController extends Controller
 {
     public function store(Request $request, $id)
     {
+        $request->validate([
+            'message' => ['required', 'string']]);
+            
         //メッセージの保存
         $message = $request->message;
         

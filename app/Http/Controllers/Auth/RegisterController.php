@@ -134,8 +134,8 @@ class RegisterController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'working_years'=> ['required', 'numeric', 'max:80'],
-            'education' => ['required', 'string', 'max:255'],
-            'employee'=> ['required', 'string', 'max:255'],
+            'education' => ['required', 'string', 'max:50'],
+            'employee'=> ['required', 'string', 'max:50'],
             'industry_id'=> ['required', 'string'],
             'job_category_id'=> ['required', 'string'],
             'expat'=> ['required', 'numeric'],
