@@ -111,7 +111,6 @@
                                             {!! Form::close() !!}
                                         </span>
                                         @endif
-                                    </p>
                                     <p>【業種】{{ $user->profile->industry()->first()->name }}</p>
                                     <p>【職種】{{ $user->profile->job_category()->first()->name }}</p>
                                     @if($user->role == 0)
