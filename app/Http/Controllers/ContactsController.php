@@ -18,7 +18,7 @@ class ContactsController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'title' => ['required', 'string'],
+            'title' => ['required', 'string', 'max:50'],
             'body'=> ['required', 'min:3', 'max:1000'],
         ]);
         
@@ -27,23 +27,12 @@ class ContactsController extends Controller
         return view('contacts.confirm', ['contact'=>$contact]);
     }
     
-    // public function complete(Request $request)
-    // {
-    //     // データを保存
-    //     Contact::create($request->all());
- 
-    //     // 二重送信防止
-    //     $request->session()->regenerateToken();
-        
-    //     return view('contacts.complete');
-    // }
-    
     public function send(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'title' => ['required', 'string'],
+            'title' => ['required', 'string', 'max:50'],
             'body'=> ['required', 'min:3', 'max:1000'],
         ]);
         

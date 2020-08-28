@@ -122,8 +122,10 @@
                             <tr>    
                             @endforeach
                         </table>
+
                         {{-- ページネーションのリンク --}}
                         {{ $users->links() }}
+
                     </div>
                     @endif
                 </div>

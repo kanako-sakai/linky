@@ -11,40 +11,63 @@
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">お問い合わせフォームをご記載ください。</div>
-                    
-                    <div class="card-body">
-                    {{--エラーメッセージ--}}
-                    @include('commons.error_messages')   
-                    
-                    {!! Form::open(['route' => 'contact.confirm']) !!}
-                   
-                    <div class="form-group">
-                        {!! Form::label('name', 'お名前') !!}
-                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                <p class="text-center">お問い合わせフォームをご記載ください。</p>
+                
+                {!! Form::open(['route' => 'contact.confirm']) !!}
+                
+                <div class="form-group">
+                    {!! Form::label('name', 'お名前') !!}
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+                    <div class="invalid-feedback">
+                    @if($errors->has('name'))
+                        @foreach($errors->get('name') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
                     </div>
-
-                    <div class="form-group">
-                        {!! Form::label('email', 'Email') !!}
-                        {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
-                    </div>
-                    
-                    <div class="form-group">
-                        {!! Form::label('title', '件名') !!}
-                        {!! Form::text('title', null, ['class' => 'form-control']) !!}
-                    </div>
-                    
-                    <div class="form-group">
-                        {!! Form::label('body', 'お問い合わせ内容') !!}
-                        {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
-                    </div>
-                    
-                    <div class="form-group text-center">
-                    {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
-                    </div>
-                    {!! Form::close() !!}
                 </div>
+
+                <div class="form-group">
+                    {!! Form::label('email', 'Email') !!}
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                     <div class="invalid-feedback">
+                    @if($errors->has('email'))
+                        @foreach($errors->get('email') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('title', '件名') !!}
+                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}">
+                    <div class="invalid-feedback">
+                    @if($errors->has('title'))
+                        @foreach($errors->get('title') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('body', 'お問い合わせ内容') !!}
+                    <textarea class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" cols="50" rows="10" id="body"></textarea>
+                    <div class="invalid-feedback">
+                    @if($errors->has('body'))
+                        @foreach($errors->get('body') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                    </div>
+                </div>
+                
+                <div class="form-group text-center">
+                {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
+                </div>
+                {!! Form::close() !!}
+            </div>
             </div>
         </div>
 </div>

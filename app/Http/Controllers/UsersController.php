@@ -354,9 +354,11 @@ class UsersController extends Controller
     //プロフィール編集の更新処理
     public function update(Request $request, $id)
     {
-        $user = Auth::user();
+        $user=Auth::user();
         
-        $profile = $user->profile()->first();
+        $profile=$user->profile()->first();
+        
+        $old_intro=$request->input('intro');
         
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -400,7 +402,9 @@ class UsersController extends Controller
         $profile->save();
         
         //マイページに戻る
-        return redirect()->route('users.show', ['user' => \Auth::id()]);
+        return redirect()->route('users.show', [
+            'user' => \Auth::id(),
+            ]);
     }
     
     // //退会フォームの表示

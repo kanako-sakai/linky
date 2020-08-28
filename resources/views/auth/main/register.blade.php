@@ -8,18 +8,6 @@
                 	<h2 class="mb-4">本会員登録</h2>
           		</div>
         	</div>
-
-            @isset($message)
-                <div class="card-body">
-                    {{$message}}
-                </div>
-            @endisset
-
-            @empty($message)
-            
-            
-            {{--エラーメッセージ--}}
-            @include('commons.error_messages')                    
             
            {!! Form::open(['route' => 'register.main.check']) !!}
                @csrf
@@ -28,21 +16,50 @@
            
             <div class="form-group">
                 {!! Form::label('name', 'お名前') !!}
-                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $user->name }}">
+                <div class="invalid-feedback">
+                    @if($errors->has('name'))
+                        @foreach($errors->get('name') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                </div>
             </div>
+            
             <div class="form-group">
                 {!! Form::label('working_years', '社会人歴') !!}
-                {!! Form::number('working_years', null, ['class' => 'form-control', 'placeholder' => '例：1', 'min' => 1, 'max' => 80]) !!}
+                <input type="number" name="working_years" class="form-control @error('working_years') is-invalid @enderror">
+              　<div class="invalid-feedback">
+                    @if($errors->has('working_years'))
+                        @foreach($errors->get('working_years') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                </div>
             </div>
           
             <div class="form-group">
                 {!! Form::label('education', '最終学歴') !!}
-                {!! Form::text('education', null, ['class' => 'form-control', 'placeholder' => '例：早稲田大学']) !!}
+                <input type="text" name="education" class="form-control @error('education') is-invalid @enderror">
+                <div class="invalid-feedback">
+                    @if($errors->has('education'))
+                        @foreach($errors->get('education') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                </div>
             </div>
             
             <div class="form-group">
                 {!! Form::label('employee', 'ご勤務先') !!}
-                {!! Form::text('employee', null, ['class' => 'form-control']) !!}
+                <input type="text" name="employee" class="form-control @error('employee') is-invalid @enderror">
+                <div class="invalid-feedback">
+                    @if($errors->has('employee'))
+                        @foreach($errors->get('employee') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                </div>
             </div>
             
             <div class="form-group">
@@ -56,62 +73,69 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('expat', '海外経験 （ない場合は選択不要）') !!} <br>
+                <p>海外経験 （ない場合は選択不要） </p>
                 
                 {!! Form::hidden('expat', '0') !!}
-                {!! Form::checkbox('expat', 1, null, ['class' => 'field']) !!}
+                {!! Form::checkbox('expat', 1, null, ['class' => 'field', 'id'=>'expat']) !!}
                 {!! Form::label('expat', '海外駐在・トレーニー') !!} <br>
                 
                 {!! Form::hidden('mba', '0') !!}
-                {!! Form::checkbox('mba', 1, null, ['class' => 'field']) !!}
+                {!! Form::checkbox('mba', 1, null, ['class' => 'field', 'id'=>'mba']) !!}
                 {!! Form::label('mba', 'MBA留学') !!} <br>
                 
                 {!! Form::hidden('other_study_abroad', '0') !!}
-                {!! Form::checkbox('other_study_abroad', 1, null, ['class' => 'field']) !!}
+                {!! Form::checkbox('other_study_abroad', 1, null, ['class' => 'field', 'id'=>'other_study_abroad']) !!}
                 {!! Form::label('other_study_abroad', 'その他留学') !!} <br>
                 
                 {!! Form::hidden('returnee', '0') !!}
-                {!! Form::checkbox('returnee', 1, null, ['class' => 'field']) !!}
+                {!! Form::checkbox('returnee', 1, null, ['class' => 'field', 'id'=>'returnee']) !!}
                 {!! Form::label('returnee', '帰国子女') !!} 
             </div>
             
             <div class="form-group">
-                {!! Form::label('career_change', '転職経験') !!} <br>
-                {!! Form::radio('career_change', 0, false, ['class' => 'field']) !!}
-                {!! Form::label('0', 'なし') !!}
-                {!! Form::radio('career_change', 1, false, ['class' => 'field']) !!}
-                {!! Form::label('1', 'あり') !!}
+                <p>転職経験</p>
+                {!! Form::radio('career_change', 0, false, ['class' => 'field', 'id'=>'career-0']) !!}
+                {!! Form::label('career-0', 'なし') !!}
+                {!! Form::radio('career_change', 1, false, ['class' => 'field', 'id'=>'career-1']) !!}
+                {!! Form::label('career-1', 'あり') !!}
             </div>
             
             <div class="form-group">
                 {!! Form::label('marriage_status', '既婚／未婚') !!} <br>
-                {!! Form::radio('marriage_status', 0, false, ['class' => 'field']) !!}
-                {!! Form::label('0', '未婚') !!}
-                {!! Form::radio('marriage_status', 1, false, ['class' => 'field']) !!}
-                {!! Form::label('1', '既婚') !!}
+                {!! Form::radio('marriage_status', 0, false, ['class' => 'field', 'id'=>'marriage-0']) !!}
+                {!! Form::label('marriage-0', '未婚') !!}
+                {!! Form::radio('marriage_status', 1, false, ['class' => 'field', 'id'=>'marriage-1']) !!}
+                {!! Form::label('marriage-1', '既婚') !!}
             </div>
             
             <div class="form-group">
                 {!! Form::label('child_status', 'お子様の有無') !!} <br>
-                {!! Form::radio('child_status', 0, false, ['class' => 'field']) !!}
-                {!! Form::label('0', 'なし') !!}
-                {!! Form::radio('child_status', 1, false, ['class' => 'field']) !!}
-                {!! Form::label('1', 'あり') !!}
+                {!! Form::radio('child_status', 0, false, ['class' => 'field', 'id'=>'child-0']) !!}
+                {!! Form::label('child-0', 'なし') !!}
+                {!! Form::radio('child_status', 1, false, ['class' => 'field', 'id'=>'child-1']) !!}
+                {!! Form::label('child-1', 'あり') !!}
             </div>
             
             <div class="form-group">
                 {!! Form::label('can_mentor', '他の方の相談に乗ることができますか？') !!} <br>
-                {!! Form::radio('can_mentor', 1, false, ['class' => 'field']) !!}
-                {!! Form::label('1', '可') !!}
-                {!! Form::radio('can_mentor', 0, false, ['class' => 'field']) !!}
-                {!! Form::label('0', '不可') !!}
+                {!! Form::radio('can_mentor', 1, false, ['class' => 'field', 'id'=>'can-1']) !!}
+                {!! Form::label('can-1', '可') !!}
+                {!! Form::radio('can_mentor', 0, false, ['class' => 'field', 'id'=>'can-0']) !!}
+                {!! Form::label('can-0', '不可') !!}
             </div>
             
             <div class="form-group">
                 {!! Form::label('intro', '自己紹介文(後から変更することができます)') !!}
-                {!! Form::textarea('intro', null, ['class' => 'form-control', 'placeholder' => '【経歴】新卒でIT企業に入社。営業を3年経験した後に、金融業界に転職。
-【趣味】旅行']) !!}
-            </div>    
+                <textarea class="form-control @error('intro') is-invalid @enderror" name="intro" cols="50" rows="10" id="intro"></textarea>
+
+                <div class="invalid-feedback">
+                    @if($errors->has('intro'))
+                        @foreach($errors->get('intro') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                </div>
+            </div>   
             
             <div class="form-group">
                 {!! Form::checkbox('agree', 1, null, ['class' => 'field']) !!}
