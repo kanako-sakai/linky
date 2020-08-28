@@ -7,6 +7,41 @@
               <p>女性プロフェッショナルのキャリアをより自由に、より前向きに</p>
             </div>
           </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li class="nav-item">{!! link_to_route('home', 'ホーム',[],['class' => 'nav-link']) !!}</li>
+                
+                
+                @if (Auth::check())
+                {{-- ユーザ一覧ページへのリンク --}}
+                <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
+                <li class="nav-item">{!! link_to_route('offical_mentors', '公式メンターリスト',[],['class' => 'nav-link']) !!}</li>
+                <li class="nav-item">{!! link_to_route('group_index', 'グループ座談会', [], ['class' => 'nav-link']) !!}</li>
+                {{-- マイページへのリンク --}}
+                <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
+                {{-- ログアウトへのリンク --}}
+                <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
+                {{--管理画面 --}}
+                @can('system-only')
+                  <li class="nav-item">{!! link_to_route('admin', '開発者画面',[],['class' => 'nav-link']) !!}</li>
+                @endcan
+                @can('admin-higher')
+                  <li class="nav-item">{!! link_to_route('staff', '管理画面', [], ['class' => 'nav-link']) !!}</li>
+                @endif  
+                @else  
+                  {{-- ユーザ登録ページへのリンク --}}
+                  <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>
+                  {{-- ログインページへのリンク --}}
+                  <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
+                @endif
+                
+                <li class="nav-item">{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'nav-link']) !!}</li>
+                <li class="nav-item">{!! link_to_route('tokushoho', '特定商取引法に基づく表記', [], ['class' => 'nav-link']) !!}</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
