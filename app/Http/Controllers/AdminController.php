@@ -146,7 +146,7 @@ class AdminController extends Controller
     {
         $schedule = Schedule::findOrFail($id);
         
-        if($schedule->mentor_id !== Auth::id()) {
+        if($schedule->mentor_id !== Auth::id() && Auth::user()->role != 1) {
             return redirect('/');
         }
         
