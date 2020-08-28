@@ -16,6 +16,7 @@ Route::get('/', 'PagesController@getHome')->name('home');
 Route::get('/about', 'PagesController@getAbout')->name('about');
 Route::get('/privacy_policy', 'PagesController@getPrivacyPolicy')->name('privacy_policy');
 Route::get('/precaution', 'PagesController@getPrecaution')->name('precaution');
+Route::get('/tokushoho', 'PagesController@getTokushoho')->name('tokushoho');
 
 //ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -81,18 +82,21 @@ Route::group(['middleware' => ['auth']], function () {
 });    
 
 Route::group(['middleware' => ['auth'=>'can:admin-higher']], function () {        
-    //管理画面
+    //開発者と公式メンターがアクセスできる画面
         Route::get('admin', 'AdminController@index')->name('admin');
         Route::get('records/{id}', 'AdminController@records')->name('records');
-        Route::post('confirm_payment1/{id}', 'AdminController@confirm_payment1')->name('confirm_payment1');
-        Route::post('confirm_payment3/{id}', 'AdminController@confirm_payment3')->name('confirm_payment3');
-        Route::post('confirm_payment5/{id}', 'AdminController@confirm_payment5')->name('confirm_payment5');
         Route::get('staff', 'AdminController@staff')->name('staff');
         Route::post('conducted/{id}', 'AdminController@conducted')->name('conducted');
         Route::get('schedule/{id}', 'AdminController@schedule')->name('schedule');
         Route::post('register_schedule', 'AdminController@register_schedule')->name('register_schedule');
         Route::get('schedule_index/{id}', 'AdminController@schedule_index')->name('schedule_index');
         Route::put('staff_auth/{id}', 'AdminController@staff_auth')->name('staff_auth');
+});
+
+Route::group(['middleware' => ['auth'=>'can:system-only']], function() {
+        Route::post('confirm_payment1/{id}', 'AdminController@confirm_payment1')->name('confirm_payment1');
+        Route::post('confirm_payment3/{id}', 'AdminController@confirm_payment3')->name('confirm_payment3');
+        Route::post('confirm_payment5/{id}', 'AdminController@confirm_payment5')->name('confirm_payment5');
 });
         
 
@@ -106,3 +110,4 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+

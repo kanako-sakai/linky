@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PagesController extends Controller
 {
@@ -17,8 +18,11 @@ class PagesController extends Controller
     }
     
     //プライバシーポリシーを表示
-    public function getPrivacyPolicy(){
-        return view('privacy_policy');
+    public function getPrivacyPolicy()
+    {
+        $file_path = storage_path('app/pdf/privacy.pdf');
+        $headers=['Content-disposition' => 'inline; filename="privacy.pdf"'];
+        return response()->file($file_path, $headers);
     }
     
     //注意事項を表示
@@ -26,5 +30,9 @@ class PagesController extends Controller
         return view('precaution');
     }
     
+    //特定商取引法を表示
+    public function getTokushoho(){
+        return view('tokushoho');
+    }
    
 }

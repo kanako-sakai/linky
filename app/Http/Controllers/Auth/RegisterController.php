@@ -105,7 +105,7 @@ class RegisterController extends Controller
         // 使用可能なトークンか
         if ( !User::where('email_verify_token',$email_verify_token)->where('token_expiration', '>', Carbon::now())->exists())
         {
-            return view('auth.main.register')->with('message', '無効なトークンです。');
+            return view('auth.main.register')->with('message', 'URLが無効です。別のメールアドレスで再度登録されるか、お問い合わせください。');
         } else {
             // $user = User::where('email_verify_token', $email_verify_token)->first();
             // 本登録済みユーザーか

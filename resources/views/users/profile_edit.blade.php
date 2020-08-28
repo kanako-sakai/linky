@@ -133,7 +133,7 @@
                 
                 <div class="form-group">
                     {!! Form::label('intro', '自己紹介文') !!}
-                    <textarea class="form-control @error('intro') is-invalid @enderror" name="intro" cols="50" rows="10" id="intro">{{ old('intro') }}</textarea>
+                    <textarea class="form-control @error('intro') is-invalid @enderror" name="intro" cols="50" rows="10" id="intro">@if($errors->has('intro')) {{ old('intro') }} @else {{ $profile->intro }} @endif</textarea>
 
                     <div class="invalid-feedback">
                         @if($errors->has('intro'))

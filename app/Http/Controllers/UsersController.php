@@ -472,7 +472,7 @@ class UsersController extends Controller
         
         $imagefile = $request->file('picture');
         $name = $imagefile->getClientOriginalName();
-        $storePath="linkyprofilepictures/".$name;
+        $storePath="linkyprofilepictures/".$user->id.".".$imagefile->getClientOriginalExtension();
         $image=Image::make($imagefile)
             ->resize(300, null, function($constraint) {
                 $constraint->aspectRatio();

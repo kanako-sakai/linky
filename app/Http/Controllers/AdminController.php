@@ -8,6 +8,7 @@ use Auth;//追加
 use App\User; //追加
 use App\OfficialRecord;//
 use App\Schedule;
+use App\Mail\AdminEmail;
 
 class AdminController extends Controller
 {
@@ -164,6 +165,27 @@ class AdminController extends Controller
         $official_record->action = 2; // 0: リクエスト送付 / 1: 入金確認 / 2: 実施
         $official_record->balance = $previous_record->balance;
         $official_record->save();
+        
+        //メールを送る
+        //入力されたメールアドレスにメールを送信
+        \Mail::send(new AdminEmail([
+            'to' => $user->email,
+            'to_name' => $user->name,
+            'from'=>'rolemy.info@gmail.com',
+            'from_name' => 'ROLEMY',
+            'subject' => '公式メンター相談実施のお知らせ',
+            'schedule'=>$schedule->dates."".$schedule->times,
+        ], 'to'));
+        
+        //自分に送るメール
+        \Mail::send(new AdminEmail([
+            'to' => 'rolemy.info@gmail.com',
+            'to_name'=>'ROLEMY',
+            'from' => $user->email,
+            'from_name' => $user->name,
+            'subject' => '公式メンター相談実施履歴',
+            'schedule'=>$schedule->dates."".$schedule->times,
+        ], 'from'));
         
         return back();
     }
