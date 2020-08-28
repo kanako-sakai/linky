@@ -128,7 +128,8 @@ return [
         'questions'=>'お話しされたい内容',
         'dates'=>'ご希望日時',
         'precaution'=>'注意事項',
-        
+        'times'=>'時間',
+        'zoom_link'=>'Zoomリンク'
     ]    
 
 ];

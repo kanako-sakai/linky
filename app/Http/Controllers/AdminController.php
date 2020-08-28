@@ -112,6 +112,14 @@ class AdminController extends Controller
     
     public function register_schedule(Request $request)
     {
+        $request->validate([
+            'from_user_id'=>['required'],
+            'mentor_id'=>['required'],
+            'dates'=>['required'],
+            'times'=>['required'],
+            'zoom_link'=>['required']
+        ]);
+        
         $schedule = new Schedule();
         $schedule->from_user_id = $request->from_user_id;
         $schedule->mentor_id = $request->mentor_id;
