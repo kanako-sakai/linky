@@ -20,7 +20,7 @@
                             <th>メンター</th>
                             <th>リンク</th>
                             <th>ステータス</th>
-                            <th></th>
+                            <th>アクション</th>
                         </tr>
                 
                         @foreach($meetings as $meeting)    

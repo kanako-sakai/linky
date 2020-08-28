@@ -5,7 +5,7 @@
     	<div class="container">
     		<div class="row justify-content-center pb-5">
             	<div class="col-md-8 heading-section text-center">
-                	<h2 class="mb-4">管理者画面</h2>
+                	<h2 class="mb-4">開発者画面</h2>
           		</div>
         	</div>
             
