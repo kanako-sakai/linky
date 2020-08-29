@@ -179,7 +179,7 @@ class AdminController extends Controller
         
         //自分に送るメール
         \Mail::send(new AdminEmail([
-            'to' => 'rolemy.info@gmail.com',
+            'to' => 'rolemy.official.requests@gmail.com',
             'to_name'=>'ROLEMY',
             'from' => $user->email,
             'from_name' => $user->name,

@@ -176,7 +176,7 @@ class OfficialRequestController extends Controller
         
         //自分に送るメール
         \Mail::send(new OfficialRequestMail([
-            'to' => 'rolemy.info@gmail.com',
+            'to' => 'rolemy.official.requests@gmail.com',
             'to_name'=>'ROLEMY',
             'from' => $request->email,
             'from_name' => $request->name,
