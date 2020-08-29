@@ -23,7 +23,7 @@
 		
     <section class="ftco-section ftco-services ftco-no-pt ftco-no-pb">
       <div class="container">
-        <div class="row no-gutters services-section">
+        <div class="row no-gutters services-section mb-5">
           <div class="col-md-4 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services text-center d-block">
               <div class="icon"><img src="/images/iconmonstr-friend-4-240.png" width:"70", height="70" alt="friend"></div>
@@ -60,7 +60,7 @@
     		<div class="row d-flex">
   				<div class="py-md-5">
       				<div class="row justify-content-start pb-3">
-  			          <div class="offset-1 col-10 heading-section ftco-animate">
+  			          <div class="col-12 heading-section ftco-animate">
   			          	<span class="subheading">About Us</span>
   			            <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Mission</h2>
     			            <p>「身近に女性のロールモデルがいない」</p>
@@ -83,7 +83,7 @@
       		<div class="row d-flex"> 
       		  <div class="py-md-5">
   	    				<div class="row justify-content-start pb-3">
-			             <div class="offset-1 col-10 heading-section ftco-animate">
+			             <div class="col-12 heading-section ftco-animate">
 			               <span class="subheading">運営者から皆さまへ</span>
 			               <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Founder</h2>
     			            <h3>坂井華奈子 | Kanako Sakai</h3>
@@ -101,7 +101,7 @@
       		<div class="row d-flex"> 
       		  <div class="py-md-5">
   	    				<div class="row justify-content-start pb-3">
-			             <div class="offset-1 col-10 heading-section ftco-animate">
+			             <div class="col-12 heading-section ftco-animate">
 			               <span class="subheading">ご利用前にお読みください</span>
 			               <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">Q&A</h2>
 			               <div class="card" style="mb-3">
@@ -142,6 +142,14 @@
 			                 </div>
 			                 <div class="card-body">
 			                   大変申し訳ございませんが、こちらは女性限定のサービスです。キャリアに悩む女性のご友人やパートナーの方に是非お勧めいただければ幸いです。
+			                 </div>
+			               </div>
+			               <div class="card">
+			                 <div class="card-header">
+			                   <h5 class="card-title">Q. 退会したい場合はどうしたらいいですか？</h5>
+			                 </div>
+			                 <div class="card-body">
+			                   お問い合わせフォームより退会の旨をお伝えください。
 			                 </div>
 			               </div>
 			             </div>
