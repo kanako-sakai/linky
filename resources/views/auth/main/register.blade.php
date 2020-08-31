@@ -16,7 +16,7 @@
            
             <div class="form-group">
                 {!! Form::label('name', 'お名前') !!}
-                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $user->name }}">
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
                 <div class="invalid-feedback">
                     @if($errors->has('name'))
                         @foreach($errors->get('name') as $message)
@@ -147,7 +147,6 @@
             
             {!! Form::close() !!}
             </div>
-            @endempty
         </div>
 </section>    
 @endsection
