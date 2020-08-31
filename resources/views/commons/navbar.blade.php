@@ -13,7 +13,7 @@
           {{-- ユーザ一覧ページへのリンク --}}
           <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
           <li class="nav-item">{!! link_to_route('offical_mentors', '公式メンターリスト',[],['class' => 'nav-link']) !!}</li>
-          <li class="nav-item">{!! link_to_route('group_index', 'グループ座談会', [], ['class' => 'nav-link']) !!}</li>
+          <li class="nav-item">{!! link_to_route('group_index', 'グループ相談会', [], ['class' => 'nav-link']) !!}</li>
           {{-- マイページへのリンク --}}
           <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
           {{-- ログアウトへのリンク --}}

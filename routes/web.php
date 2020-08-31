@@ -58,7 +58,6 @@ Route::group(['middleware' => ['auth']], function () {
         
         //オフィシャルメンターリクエストのチケット回数表示
         Route::get('official_status', 'OfficialRequestController@show_records')->name('official_status');
-        
     });
     
     //ユーザー一覧
@@ -78,7 +77,8 @@ Route::group(['middleware' => ['auth']], function () {
         
     //グループ座談会
         Route::get('group/index', 'GroupController@index')->name('group_index');
-        Route::get('group/form1', 'GroupController@form1')->name('group_form1');
+        Route::get('group/payment', 'GroupController@payment')->name('group_payment');
+        Route::get('group/thankyou', 'GroupController@thankyou')->name('thankyou');
 });    
 
 Route::group(['middleware' => ['auth'=>'can:admin-higher']], function () {        

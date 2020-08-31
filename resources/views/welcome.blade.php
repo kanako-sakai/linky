@@ -46,7 +46,7 @@
             <div class="media block-6 services services-2 text-center d-block">
               <div class="icon"><img src="/images/iconmonstr-idea-14-240.png" width:"70", height="70" alt="idea"></div>
               <div class="media-body">
-                <h3 class="heading mb-3">グループ座談会</h3>
+                <h3 class="heading mb-3">グループ相談会</h3>
                 <p>テーマごとのオンライン座談会で悩みを解決しましょう。</p>
               </div>
             </div>    

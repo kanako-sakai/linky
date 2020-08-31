@@ -11,7 +11,11 @@ class GroupController extends Controller
         return view('group_sessions.index');
     }
     
-    public function form1(){
-        return view('group_sessions.form1');
+    public function payment(){
+        return view('group_sessions.payment');
+    }
+    
+    public function thankyou(){
+        return view('group_sessions.thankyou');
     }
 }
