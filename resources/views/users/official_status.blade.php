@@ -11,6 +11,7 @@
             
             <div class="col-md-12">  
             <h5 class="title_border_left">スケジュール</h5>
+            <p>※振替される場合は、遅くとも7日前までにrolemy.info@gmail.comまでメールをお送りください。日程変更のご要望は、各メンタリング日に対して１回までとさせていただきます。7日前を過ぎますと振替できませんのでご注意ください。</p>
                 <table class="records table-bordered">
                     <tbody>
                         <tr>

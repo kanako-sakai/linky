@@ -5,7 +5,7 @@
     	<div class="container">
     		<div class="row justify-content-center pb-5">
             	<div class="col-md-8 heading-section text-center">
-                	<h2 class="mb-4">リクエストを送ったユーザー</h2>
+                	<h2 class="mb-4">リクエスト申請中</h2>
           		</div>
         	</div>
             

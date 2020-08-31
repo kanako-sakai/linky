@@ -66,9 +66,6 @@ class OfficialRequestController extends Controller
     //初回リクエストの際の確認
     public function confirm(Request $request)
     {
-        
-        //dd($request);
-        
         $request->validate([
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:255'],

@@ -70,7 +70,7 @@
               		</div>
               	</div>
                 <h3 class="heading"><a href="single.html">10月3日(土)午前11:00-12:00(日本時間)</a></h3>
-                <p>「社会人になっての海外留学は意味がある？」。</p>
+                <p>「社会人になっての海外留学は意味がある？」</p>
                 <div class="d-flex align-items-center mt-4 meta">
 	                <p class="mb-0">
 	                    {{-- リクエストページへのリンク --}}
