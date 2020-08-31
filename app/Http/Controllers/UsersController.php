@@ -407,45 +407,31 @@ class UsersController extends Controller
             ]);
     }
     
-    // //退会フォームの表示
-    // public function showCancelForm() 
-    // {
-    //     $user = Auth::user();
+    //退会フォームの表示
+    public function showCancelForm() 
+    {
+        $user = Auth::user();
         
-    //     $cancel_reasons = CancelReason::all()->pluck('name', 'id');
-        
-    //     return view('cancel.cancel_form', [
-    //         'user' => $user,
-    //         'cancel_reasons' => $cancel_reasons,
-    //     ]);
-    // }
+        return view('cancel.cancel_form', [
+            'user' => $user,
+        ]);
+    }
     
-    // //退会処理
-    // public function cancel(Request $request)
-    // {
-    //     $user = Auth::user();
+    //退会処理
+    public function cancel(Request $request)
+    {
+        $user = Auth::user();
         
-    //     $user->cancel_reason_id = $request->cancel_reason_id;
-    //     $user->save();
+        $user->cancel_reason = $request->cancel_reason;
+        $user->save();
         
-    //     Auth::logout(); //ログアウト
-    //     $user->delete();
+        Auth::logout(); //ログアウト
+        $user->delete();
         
-    //     //トップページへリダイレクト
-    //     return redirect('/');    
-    // }
-    
-    // //リレーションも削除
-    // protected static function boot()
-    // {
-    //     parent::boot();
-        
-    //     static::deleted(function ($user) {
-    //         $user->profile()->delete();
-    //         $user->mentor_requests()->delete();
-    //         $user->direct_messages()->delete();
-    //     });
-    // }
+        //トップページへリダイレクト
+        return redirect('/');    
+    }
+
     
     //プロフィール写真
     public function showPictureForm()

@@ -15,21 +15,10 @@
                 
                 
                 @if (Auth::check())
-                {{-- ユーザ一覧ページへのリンク --}}
-                <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
-                <li class="nav-item">{!! link_to_route('offical_mentors', '公式メンターリスト',[],['class' => 'nav-link']) !!}</li>
-                <li class="nav-item">{!! link_to_route('group_index', 'グループ座談会', [], ['class' => 'nav-link']) !!}</li>
                 {{-- マイページへのリンク --}}
                 <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
                 {{-- ログアウトへのリンク --}}
                 <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
-                {{--管理画面 --}}
-                @can('system-only')
-                  <li class="nav-item">{!! link_to_route('admin', '開発者画面',[],['class' => 'nav-link']) !!}</li>
-                @endcan
-                @can('admin-higher')
-                  <li class="nav-item">{!! link_to_route('staff', '管理画面', [], ['class' => 'nav-link']) !!}</li>
-                @endif  
                 @else  
                   {{-- ユーザ登録ページへのリンク --}}
                   <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>

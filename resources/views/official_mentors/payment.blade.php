@@ -75,6 +75,48 @@
                       });
                     })();
                     </script>
+                    <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-price_1HMDtCJ8nw5c3j7mk9XNG9dC"
+  role="link"
+  type="button"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_51HMDZpJ8nw5c3j7m8r9FG9mtn2JBaRAD0dC9wKqukLbybU4BfahO0OaYQzI6rZbtMFDHZtFOcUpXfNgj0vbrEpws00QJrxXZXt');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1HMDtCJ8nw5c3j7mk9XNG9dC');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1HMDtCJ8nw5c3j7mk9XNG9dC', quantity: 1}],
+      mode: 'payment',
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//www.rolemy.jp/success',
+      cancelUrl: window.location.protocol + '//www.rolemy.jp/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
                   </p>  
                 </div>
               </div>
