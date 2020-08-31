@@ -12,11 +12,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class User extends Authenticatable
 {
     use Notifiable;
-    
-    use SoftDeletes;
-    
-    protected $table='users';
-    protected $dates=['deleted_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -300,18 +295,18 @@ class User extends Authenticatable
         return $this->hasMany(Schedules::class);
     }
     
-    //userの論理削除に伴うリレーションの論理削除のため
-    protected static function boot()
-    {
-        parent::boot();
+    // //userの論理削除に伴うリレーションの論理削除のため
+    // protected static function boot()
+    // {
+    //     parent::boot();
         
-        static::deleted(function ($user) {
-            $user->profile()->delete();
-            $user->mentor_requests()->delete();
-            $user->direct_messages()->delete();
-            $user->official_requests()->delete();
-            $user->official_records()->delete();
-            $user->schedules()->delete();
-        });
-    }
+    //     static::deleted(function ($user) {
+    //         $user->profile()->delete();
+    //         $user->mentor_requests()->delete();
+    //         $user->direct_messages()->delete();
+    //         $user->official_requests()->delete();
+    //         $user->official_records()->delete();
+    //         $user->schedules()->delete();
+    //     });
+    // }
 }   
