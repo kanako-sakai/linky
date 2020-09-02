@@ -84,11 +84,11 @@
           <div class="col-md-8 heading-section text-center ftco-animate">
           	<span class="subheading">Our Team</span>
             <h2 class="mb-4">公式メンター</h2>
-            <p>素晴らしいご経験を持たれている方々にメンターとしてご協力いただいております。</p>
+            <p>様々なご経験を持たれている方々にメンターとしてご協力いただいております。</p>
           </div>
         </div>
         <div class="row">
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/kanako_sakai.jpg);"></div>
@@ -102,7 +102,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/eiko_ichikawa.jpg);"></div>
@@ -111,12 +111,12 @@
 								<div>
 									<h3 class="mb-2">Eiko Ichikawa</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">新卒で外資系戦略コンサルに入社。文部科学省「トビタテ！留学JAPAN」プロジェクトを経て、スタンフォード大学にMBA×教育学を学ぶ。現在はランサーズ株式会社にて教育×コミュニティ事業を運営。</p>
+									<p class="top-intro">新卒で外資系戦略コンサルに入社。文部科学省「トビタテ！留学JAPAN」プロジェクトを経て、スタンフォード大学にてMBA×教育学を学ぶ。現在はランサーズ株式会社にて教育×コミュニティ事業を運営。</p>
 		            </div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/shoko_hamada.jpg);"></div>
@@ -130,7 +130,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/marie_oshioka.jpg);"></div>
@@ -144,7 +144,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/kei_takatsuka.jpg);"></div>
@@ -158,7 +158,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/itoko_shibata.jpg);"></div>
@@ -172,7 +172,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/emiri_grimes.png);"></div>
@@ -187,7 +187,7 @@
 						</div>
 					</div>
 					
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/aki_ko.jpg);"></div>
@@ -201,7 +201,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/kumiko_fukagawa.jpg);"></div>
@@ -215,7 +215,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/mari_tabata.jpg);"></div>
@@ -224,7 +224,7 @@
 								<div>
 									<h3 class="mb-2">Mari Tabata</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">新卒でコンサルティング会社に入社し、日系の食品、消費財メーカーのM&A支援に従事。MBA留学前は国内の水産商社にて海外事業拡大を担当。現在ハーバードMBA在籍中。</p>
+									<p class="top-intro">新卒でコンサルティング会社に入社。日系食品、消費財メーカーのM&A支援に従事。MBA留学前は国内の水産商社にて海外事業拡大を担当。現在ハーバードMBA在籍中。</p>
 		            </div>
 							</div>
 						</div>
