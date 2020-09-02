@@ -125,7 +125,7 @@
 								<div>
 									<h3 class="mb-2">Shoko Hamada</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">ハーバードMBA修了。MBA留学前はP＆Gシンガポール・アジア本社にて経営戦略の策定、ブランドマーケティング等を担当。MBA修了後は外資系戦略コンサル米国オフィスに勤務。</p>
+									<p class="top-intro">ハーバードMBA修了。MBA留学前はP＆Gシンガポール・アジア本社にて柔軟剤ブランドの経営戦略の策定、ブランドマーケティング等を担当。MBA修了後は外資系戦略コンサル米国オフィスに勤務。</p>
 		            </div>
 							</div>
 						</div>
@@ -139,7 +139,7 @@
 								<div>
 									<h3 class="mb-2">Marie Oshioka</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">経済産業省入省。社会人一年目に司法試験合格。ウォートンMBA修了。外資系戦略コンサルに勤務後、フィンテックベンチャーに入社。個人向けの新規サービス開発を担当し、事業開発部長を経た後、現在社長室長。一児の母。</p>
+									<p class="top-intro">2009年経済産業省入省、特許法、商品先物取引法、民法等の改正プロジェクトに従事。社会人一年目に司法試験合格。ウォートンMBA修了。外資系戦略コンサルに勤務後、フィンテックベンチャーに入社。個人向けの新規サービス開発を担当し、事業開発部長を経た後、現在社長室長。一児の母。</p>
 		            </div>
 							</div>
 						</div>
@@ -153,7 +153,7 @@
 								<div>
 									<h3 class="mb-2">Kei Takatsuka</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">名古屋大学大学院にて脳神経科学を研究の後、新卒で外資系戦略コンサルに入社。後に米国ボストンオフィスに転籍。現在ハーバードMBA在籍中。</p>
+									<p class="top-intro">名古屋大学大学院にて脳神経科学を研究の後、新卒で外資系戦略コンサル(東京オフィス)に入社。後に米国ボストンオフィスに転籍。現在ハーバードMBA在籍中。</p>
 		            </div>
 							</div>
 						</div>
@@ -196,7 +196,7 @@
 								<div>
 									<h3 class="mb-2">Aki Ko</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">コンサルティング会社で務めた後、スタンフォードビジネススクールに入学。在学中はテックスタートアップやデザインコンサルでインターン。2019年にMBA卒業後西海岸のVCに勤務。</p>
+									<p class="top-intro">新卒でコンサルティング会社に入社し、その後スタンフォードビジネススクールに入学。在学中はテックスタートアップやデザインコンサルでインターン。2019年にMBA修了後、西海岸のVCに勤務。</p>
 		            </div>
 							</div>
 						</div>
@@ -210,7 +210,7 @@
 								<div>
 									<h3 class="mb-2">Kumiko Fukagawa</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">ソーシャルビジネスによる貧困問題の解決への関心から、ビジネススキルを習得するために外資系戦略コンサルに入社。本業に従事する傍ら、NPOを無償で支援するプロボノ活動にも多数参加。日本と欧州にて4年半の勤務を経て、2020年にハーバードMBAを取得。</p>
+									<p class="top-intro">ソーシャルビジネスによる貧困問題の解決への関心から、ビジネススキルを習得するため外資系戦略コンサルに入社。本業に従事する傍ら、NPOを無償で支援するプロボノ活動にも多数参加。日本と欧州にて4年半の勤務を経て、2020年ハーバードMBAを取得。</p>
 		            </div>
 							</div>
 						</div>
