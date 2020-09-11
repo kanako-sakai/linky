@@ -103,7 +103,7 @@
                                         {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!} 
                                         @endif
                                         
-                                        @if(Auth::user()->role == 1 && $user->role == 0)
+                                         @if(Auth::user()->role == 1 && $user->role == 0)
                                         <span class="staff_auth_button">
                                             {{-- スタッフ権限を与えるボタン --}}
                                             {!! Form::open(['route' => ['staff_auth', $user->id], 'method' => 'put']) !!}
@@ -118,6 +118,7 @@
                                         <p class="intro">【自己紹介】{{ $user->profile->intro }}</p>
                                     </div>    
                                     @endif
+                                   
                                 </td>
                             <tr>    
                             @endforeach

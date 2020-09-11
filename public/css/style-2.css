@@ -600,3 +600,8 @@ table.contact-confirm td{
   width: 75px;
   height: 75px;
 }}    
+
+.staff_auth_button {
+  display: flex;
+  justify-content: flex-end;
+}
