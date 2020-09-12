@@ -38,7 +38,7 @@
     <meta property="og:url" content="https://www.rolemy.jp/" />
     <meta property="og:title" content="rolemy" />
     <meta property="og:description" content="女性向けメンターマッチングサービス。会員メンバーへの相談、公式メンターへの相談、グループ相談会でキャリアや人生の悩みを解決しましょう。" />
-    <meta property="og:image" content="/images/rolemy_icon.png" />
+    <meta property="og:image" content="https://www.rolemy.jp/images/rolemy_icon.png" />
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
