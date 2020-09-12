@@ -7,8 +7,6 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav nav ml-auto">
-          <li class="nav-item">{!! link_to_route('home', 'ホーム',[],['class' => 'nav-link']) !!}</li>
-          
         @if (Auth::check())
           {{-- ユーザ一覧ページへのリンク --}}
           <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
@@ -16,6 +14,7 @@
           <li class="nav-item">{!! link_to_route('group_index', 'グループ相談会', [], ['class' => 'nav-link']) !!}</li>
           {{-- マイページへのリンク --}}
           <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
+          <li class="nav-item">{!! link_to_route('how_to', '使い方', [], ['class' => 'nav-link']) !!}</li>
           {{-- ログアウトへのリンク --}}
           <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
         {{--管理画面 --}}

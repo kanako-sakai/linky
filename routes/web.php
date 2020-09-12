@@ -79,6 +79,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('group/index', 'GroupController@index')->name('group_index');
         Route::get('group/payment', 'GroupController@payment')->name('group_payment');
         Route::get('group/thankyou', 'GroupController@thankyou')->name('thankyou');
+        
+    //使い方
+        Route::get('how_to', 'PagesController@getHowTo')->name('how_to');
 });    
 
 Route::group(['middleware' => ['auth'=>'can:admin-higher']], function () {        

@@ -610,3 +610,7 @@ table.contact-confirm td{
   display:flex;
   justify-content: flex-end;
 }
+
+.how-to-title {
+  color:#48d1cc;
+}

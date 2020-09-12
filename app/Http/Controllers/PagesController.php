@@ -32,5 +32,10 @@ class PagesController extends Controller
     public function getTokushoho(){
         return view('tokushoho');
     }
+    
+    //How toを表示
+    public function getHowTo() {
+        return view('how_to');
+    }
    
 }
