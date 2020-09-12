@@ -138,10 +138,16 @@
             </div>   
             
             <div class="form-group">
-                {!! Form::checkbox('agree', 1, null, ['class' => 'field']) !!}
-                <a href="/privacy_policy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意する。
+                <input class="accept-checkbox @error('agree') is-invalid @enderror" name="agree" type="checkbox" value="1" id="agree">
+                <label for="agree"><a href="/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー・利用規約</a>に同意する。</label>
+                <div class="invalid-feedback">
+                    @if($errors->has('agree'))
+                        @foreach($errors->get('agree') as $message)
+                        {{ $message }}
+                        @endforeach    
+                    @endif 
+                </div>
             </div>
-            
             <div style="text-align: center">
             {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
             
@@ -150,5 +156,3 @@
         </div>
 </section>    
 @endsection
-    
-    

@@ -18,11 +18,9 @@ class PagesController extends Controller
     }
     
     //プライバシーポリシーを表示
-    public function getPrivacyPolicy()
+    public function getPrivacy()
     {
-        $file_path = storage_path('app/pdf/privacy.pdf');
-        $headers=['Content-disposition' => 'inline; filename="privacy.pdf"'];
-        return response()->file($file_path, $headers);
+        return view('privacy_policy');
     }
     
     //注意事項を表示

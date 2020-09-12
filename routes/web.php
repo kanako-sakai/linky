@@ -14,7 +14,7 @@
 //Aboutやプライバシーポリシー
 Route::get('/', 'PagesController@getHome')->name('home');
 Route::get('/about', 'PagesController@getAbout')->name('about');
-Route::get('/privacy_policy', 'PagesController@getPrivacyPolicy')->name('privacy_policy');
+Route::get('/privacy', 'PagesController@getPrivacy')->name('privacy');
 Route::get('/precaution', 'PagesController@getPrecaution')->name('precaution');
 Route::get('/tokushoho', 'PagesController@getTokushoho')->name('tokushoho');
 

@@ -605,3 +605,8 @@ table.contact-confirm td{
   display: flex;
   justify-content: flex-end;
 }
+
+.privacy_dates {
+  display:flex;
+  justify-content: flex-end;
+}
