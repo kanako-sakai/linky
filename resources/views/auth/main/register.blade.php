@@ -4,8 +4,9 @@
 <section class="ftco-section" id="coaches-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
-            	<div class="col-md-8 heading-section text-center">
+            	<div class="col-md-10 heading-section text-center">
                 	<h2 class="mb-4">本会員登録</h2>
+                	<p>登録会員のみ以下のご登録情報を見ることができます。<br>ご勤務先を非表示にされたい場合は、登録後マイページより「プロフィール編集」に進みご設定ください。</p>
           		</div>
         	</div>
             
@@ -51,7 +52,7 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('employee', 'ご勤務先') !!}
+                {!! Form::label('employee', 'ご勤務先（ご登録後マイページより公開・非公開を設定ください）') !!}
                 <input type="text" name="employee" class="form-control @error('employee') is-invalid @enderror">
                 <div class="invalid-feedback">
                     @if($errors->has('employee'))
