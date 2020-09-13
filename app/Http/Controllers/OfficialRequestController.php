@@ -179,7 +179,7 @@ class OfficialRequestController extends Controller
             'from_name' => $request->name,
             'subject' => '公式メンター申し込み',
             'plan'=>$request->plan,
-            'mentor_id'=>$request->id,
+            'mentor_id'=>$request->mentor_id,
             'goal'=>$request->goal,
             'questions'=>$request->questions,
             'dates'=>$request->dates,

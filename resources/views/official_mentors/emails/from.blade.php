@@ -7,8 +7,7 @@
 <br>
 ■メールアドレス: {{ $content['from'] }}<br>
 <br>
-■プラン:<br>
-<?php echo nl2br(htmlspecialchars($content['plan'])); ?><br>
+■プラン:{{ $content['plan'] }}<br> 回
 <br>
 ■希望メンター: {{ $content['mentor_id'] }}<br>
 <br>
