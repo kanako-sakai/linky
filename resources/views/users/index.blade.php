@@ -125,7 +125,7 @@
                         </table>
 
                         {{-- ページネーションのリンク --}}
-                        {{ $users->links() }}
+                        {{ $users->appends(request()->input())->links() }}
 
                     </div>
                     @endif
