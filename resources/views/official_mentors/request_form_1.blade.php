@@ -85,7 +85,7 @@
             
             <div class="form-group">
                 <input class="accept-checkbox @error('precaution') is-invalid @enderror" name="precaution" type="checkbox" value="1" id="precaution">
-                <label for="precaution"><a href="/precaution" target="_blank" rel="noopener noreferrer">注意事項</a>に同意する。</label>
+                <label for="precaution">以下の注意事項に同意する。</label>
                 <div class="invalid-feedback">
                     @if($errors->has('precaution'))
                         @foreach($errors->get('precaution') as $message)
@@ -93,6 +93,19 @@
                         @endforeach    
                     @endif 
                 </div>
+                
+                <div class="card precaution">
+                    <div class="card-body">
+                	<p>・本サービスは、様々な経験・知識を有する先輩社会人（メンター）をご紹介し、同人が利用者（メンティー）との双方向の対話を通じて、利用者（メンティー）のキャリア形成上の悩みの解消をサポートするものです。</p>
+                    <p>・本サービスにおいて援助・支援の対象となるのはキャリア形成上の課題や悩みであり、個別の医療相談(疾患や障害等に関わる相談)や法律相談は対象外となります。</p>
+                    <p>・利用者の悩みの解消を保証するものではありません。</p>
+                    <p>・ご入金後のキャンセル、返金は、別途規定した場合を除いて、応じられません。</p>
+                    <p>・メンタリング日決定後の日程変更は必ず７日前までにメンターに直接ご連絡ください。日程変更のご要望は、各メンタリング日に対して１回までとさせていただきます。７日前までのご連絡がない場合や２回以上の日程変更のご要望には応じられませんし、ご返金させていただくことはできませんので、ご注意ください。</p>
+                    <p>・当日は15分以上遅刻されますと、キャンセル扱いとなり、返金には応じられません。</p>
+                    <p>・メンタリング日決定後、メンターの都合に基づく日程変更の要請によりメンタリングの実施が困難になった場合は、当該メンタリングに対応する料金をご返金いたします。</p>
+                    <p>・本サービスの所定の手続をおとりいただけない場合や、利用規約上の禁止事由に該当する等の場合は、本サービスをご利用いただけません。</p>
+                    </div>
+                </div>    
             </div>
           
             {!! Form::submit('内容を確認する', ['class' => 'btn py-3 px-4 btn-primary']) !!}

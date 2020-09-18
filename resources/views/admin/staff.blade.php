@@ -6,6 +6,7 @@
     		<div class="row justify-content-center pb-5">
             	<div class="col-md-8 heading-section text-center">
                 	<h2 class="mb-4">管理画面</h2>
+                	<a href="https://docs.google.com/document/d/1rB4L4SR-KSIe4vuEXKAA17zJFXzaA5wl1BJPmPr8rJk/edit?usp=sharing" target="_blank" class="btn btn-primary">公式メンターガイド</a>
           		</div>
         	</div>
         	
