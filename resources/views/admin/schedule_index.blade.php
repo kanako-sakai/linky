@@ -15,28 +15,35 @@
                 <table class="records table-bordered">
                     <tbody>
                         <tr>
-                            <th>日時</th>
-                            <th>ユーザー</th>
-                            <th>メンター</th>
-                            <th>リンク</th>
-                            <th>ステータス</th>
-                            <th>アクション</th>
+                            <th>Dates</th>
+                            <th>Mentor</th>
+                            <th>Link</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                 
                         @foreach($meetings as $meeting)    
                         <tr>
                             <td>{{ $meeting->dates }} {{ $meeting->times }}</td>
-                            <td>{{ $meeting->sender->name }}</td>
                             <td>{{ $meeting->mentor->name }}</td>
                             <td>{{ $meeting->zoom_link }}</td>
-                            <td>@if($meeting->conducted) 実行済み
-                                @else 未実行
+                            <td>@if($meeting->conducted) <span class="label label-success">実施済</span>
+                                @else <span class="label label-unconducted">未実施</span>
                                 @endif
                             </td>
-                            <td>@if($meeting->conducted == 0)
+                            <td>
+                                @if($meeting->conducted == 0)
                                 {!! Form::open(['route' => ['conducted', $meeting->id]]) !!}
-                                {!! Form::submit('実施', ['class' => "btn btn-primary btn-block"]) !!}
+                                {!! Form::submit('実施', ['class' => "btn btn-primary btn-conducted m-1"]) !!}
                                 {!! Form::close() !!}
+                                @endif
+                                
+                                @if($meeting->conducted ==0)    
+                                @if (Auth::id() == $meeting->mentor_id)
+                                {!! Form::open(['route' => ['delete_schedule', $meeting->id], 'method' => 'delete']) !!}
+                                    {!! Form::submit('削除', ['class' => 'btn btn-danger btn-delete m-1']) !!}
+                                {!! Form::close() !!}    
+                                @endif
                                 @endif
                             </td>
                         </tr>    

@@ -37,7 +37,7 @@
             </div>
             
             <div class="form-group">
-            {!! Form::submit('確認画面へ', ['class' => 'btn py-3 px-4 btn-primary']) !!}
+            {!! Form::submit('登録', ['class' => 'btn py-3 px-4 btn-primary']) !!}
             
             {!! Form::close() !!}
             </div>

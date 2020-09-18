@@ -230,4 +230,16 @@ class AdminController extends Controller
         
         return back();
     }
+    
+    public function cancel_schedule($id)
+    {
+        $schedule = Schedule::findOrFail($id);
+        
+        //メンターである場合は、削除
+        if(\Auth::id() === $schedule->mentor_id) {
+            $schedule->delete();
+        }
+        
+        return back();
+    }
 }

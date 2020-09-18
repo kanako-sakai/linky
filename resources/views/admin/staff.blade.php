@@ -11,51 +11,44 @@
         	
         	<ul class="list-group list-group-horizontal">
     
-                {{--　リクエスト申請中一覧タブ --}}
+                {{--　メンティー一覧タブ --}}
                 <li class="list-group-item">
                     <a href="{{ route('staff') }}" class="nav-link mypage-link {{ Request::routeIs('staff') ? 'active' : '' }}">
                         <span class="nav_title">メンティー一覧</span>
                     </a>
                 </li>
-                {{-- リクエスト依頼一覧タブ --}}
+                {{-- スケジュール一覧タブ --}}
                 <li class="list-group-item">
                     <a href="{{ route('staff_schedule') }}" class="nav-link mypage-link {{ Request::routeIs('staff_schedule') ? 'active' : '' }}">
-                        <span class="nav_title">スケジュール一覧</span>
+                        <span class="nav_title">未実施のメンタリング一覧</span>
                     </a>
                 </li>
             </ul>
             
-            <div class="text-center m-5">
+            <div class="text-center mt-5">
                 {{-- ユーザ一覧 --}}
                 @if (count($users) > 0)
-                <ul class="list-unstyled">
+                <table>
                     @foreach ($users as $user)
-                        <li class="media">
-                            <div class="col-md-2">
+                    <tr>
+                        <th>
                             {{-- アイコン --}}
                             @if(isset($user->sender->picture))
                             	<img src = "{{ $user->sender->picture }}" class="profile_icon">
                             @else
                             	<p class="no_icon"></p>
                             @endif
-                            </div>
-                            
-                            <div class="media-body col-md-3">
-                                <div>
-                                    {{ $user->name }}
-                                </div>
-                                <div>
-                                    {{-- ユーザ詳細ページへのリンク --}}
-                                    <p>{!! link_to_route('users.show', 'プロフィール詳細', ['user' => $user->id]) !!}</p>
-                                </div>
-                            </div>  
-                            <div class="col-md-7">
-                                {{-- スケジュールのページへのリンク --}}
-                                {!! link_to_route('schedule_index', 'スケジュール一覧', ['id' => $user->id], ['class'=> 'btn btn-secondary']) !!}
-                            </div>
-                        </li>
+                        </th>
+                        <td>
+                            {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!}
+                        </td>
+                        <td>
+                            {{-- スケジュールのページへのリンク --}}
+                            {!! link_to_route('schedule_index', 'スケジュール', ['id' => $user->id], ['class'=> 'btn btn-secondary']) !!}
+                        </td>
+                    <tr>    
                     @endforeach
-                </ul>
+                </table>
             </div>    
         @endif
         </div>    

@@ -313,6 +313,11 @@ input[type="checkbox"].search {
   border:1px solid;
 }
 
+@media (max-width: 767.98px) {
+  .records {
+    font-size:12px;
+  }}
+
 table .records th, table .records td {
   width:20%;
   padding: 10px 0;
@@ -320,6 +325,7 @@ table .records th, table .records td {
   border-collapse: collapse;
   border:1px solid;
 }
+
 
 .official_icon {
   color:#008b8b;
@@ -614,3 +620,40 @@ table.contact-confirm td{
 .how-to-title {
   color:#48d1cc;
 }
+
+.label-success {
+  background-color:#5cb85c;
+  color: #fff;
+  border-color:#5cb85c;
+  border-radius: .25em;
+  line-height: 30px;
+  height: auto;
+}
+@media (max-width: 767.98px) {
+  .label-success {
+    font-size:9px;
+}}
+
+.label-unconducted {
+  background-color:#d3d3d3;
+  color: #000000;
+  border-color:#d3d3d3;
+  border-radius: .25em;
+  line-height: 30px;
+  height: auto;
+}
+@media (max-width: 767.98px) {
+  .label-unconducted {
+    font-size:10px;
+}}
+
+@media (max-width: 767.98px) {
+  .btn-conducted {
+    font-size:10px;
+}}
+
+@media (max-width: 767.98px) {
+  .btn-delete {
+    font-size:10px;
+}}
+

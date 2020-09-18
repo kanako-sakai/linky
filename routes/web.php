@@ -91,6 +91,7 @@ Route::group(['middleware' => ['auth'=>'can:admin-higher']], function () {
         Route::get('staff', 'AdminController@staff')->name('staff');
         Route::get('staff/schedule', 'AdminController@staffSchedule')->name('staff_schedule');
         Route::post('conducted/{id}', 'AdminController@conducted')->name('conducted');
+        Route::delete('delete_schedule/{id}', 'AdminController@cancel_schedule')->name('delete_schedule');
         Route::get('schedule/{id}', 'AdminController@schedule')->name('schedule');
         Route::post('register_schedule', 'AdminController@register_schedule')->name('register_schedule');
         Route::get('schedule_index/{id}', 'AdminController@schedule_index')->name('schedule_index');
