@@ -44,7 +44,7 @@
                     </tbody>
                 </table>
                 @else
-                 <p class="text-center">公式メンターへのリクエストはありません。</p>
+                 <p class="text-center">登録されているメンタリングセッションはありません。</p>
                 @endif
             </div>    
                 

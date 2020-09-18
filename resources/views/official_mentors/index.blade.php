@@ -39,7 +39,7 @@
 					<p>【相談に乗れること】モヤモヤを行動にうつす方法、ライフ・キャリアのつくりかた、海外留学・生活、等。</p>
           		</div>
           	</div>
-	              	
+	             	
         	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/shoko_hamada.jpg);"></div>
           		<div class="text pl-md-5">
@@ -136,6 +136,18 @@
 					<p>【相談に乗れること】食品やコンシューマービジネスに興味のある方のキャリア相談、就活、MBA留学準備など。</p>
           		</div>
           	</div>
+          	
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/green.png);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Chihiro Shibata</h2>
+          			<p>【現職】上場バイオベンチャー役員</p>
+          			<p>【社会人歴】15年目</p>
+          			<p>【職歴】公認会計士二次試験に大学4年で合格。4年間監査法人勤務後、アメリカ短期留学。帰国後、外資系生命保険会社に9年間勤務し、内部監査・コンプライアンス・IT開発プロジェクト管理等に従事。会計士協会の推薦で神奈川県や横浜市の委員を副業として務める。2020年に上場バイオベンチャーの監査役就任。</p>
+					<p>【ライフ】小1、3歳、1歳の三姉妹の母。子育ての合間を見つけて、2019年にボリビアのウユニ塩湖、2017年にアイスランドへ1人でツアー旅行。</p>
+					<p>【相談に乗れること】子育てと仕事の両立、ママの自分時間の作り方、キャリア相談、人脈の作り方。その他なんでもお気軽にお話してくださいね！</p>
+          		</div>
+          	</div> 
     	</div>
     </section>
     

@@ -21,6 +21,7 @@ class AdminController extends Controller
             'users' => $users,
         ]);
     }
+
     
     public function records($id)
     {
@@ -190,7 +191,22 @@ class AdminController extends Controller
         return back();
     }
     
+        
     public function staff()
+    {
+        $staff = Auth::user();
+        
+        $users = User::whereHas('official_requests', function($query) use($staff) {
+            $query->where('mentor_id', $staff->id);
+        })->get();
+        
+        return view('admin.staff',[
+            'staff' => $staff,
+            'users' => $users
+        ]);
+    }
+
+    public function staffSchedule()
     {
         $user = Auth::user();
         
@@ -199,7 +215,7 @@ class AdminController extends Controller
             $query->where('conducted', 0);
         })->orderBy('dates', 'asc')->get();
         
-        return view('admin.staff',[
+        return view('admin.staff_schedule',[
             'user' => $user,
             'meetings' => $meetings
         ]);
