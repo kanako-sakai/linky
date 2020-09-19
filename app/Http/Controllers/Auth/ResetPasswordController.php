@@ -41,8 +41,9 @@ class ResetPasswordController extends Controller
 
         $email = $request->input('email');
         $validator->after(function ($validator) use ($email) {
-            if ($this->isRegisterdEmailCheck($email) === false) {
-                $validator->errors()->add('register', '本登録が完了しておりません。仮登録の際に送られたURLから本登録をお願いします。<br>仮登録から1時間以上経っている場合にはお手数ですがrolemy.info@gmail.comまでお問い合わせいただけますと幸いです。');
+            $checkResult = $this->isRegisterdEmailCheck($email);
+            if ($checkResult[0] === false) {
+                $validator->errors()->add('register', $checkResult[1]);
             }
         });
         if ($validator->fails()) {
@@ -76,13 +77,13 @@ class ResetPasswordController extends Controller
                 ->first();
         if ($result === null) {
             // 仮登録もしていない
-            return false;
+            return array(false, 'このメールアドレスは登録されていません。');
         }
         $status = $result->status;
         if (in_array((int) $status, array(0, 2))) {
             // 仮登録のみであれば、
-            return false;
+            return array(false, '本登録が完了しておりません。仮登録の際に送られたURLから本登録をお願いします。<br>仮登録から1時間以上経っている場合にはお手数ですがrolemy.info@gmail.comまでお問い合わせいただけますと幸いです。');
         }
-        return true;
+        return array(true, '');
     }
 }
