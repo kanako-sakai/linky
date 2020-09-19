@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('official_request/complete', 'OfficialRequestController@complete')->name('official.complete');
         Route::get('request_form', 'OfficialRequestController@request_form')->name('official.form');
         Route::post('official_request/confirm_add_request', 'OfficialRequestController@confirm_add_request')->name('official.confirm_add_request');
+        Route::get('offical_mentors_maintenance', 'OfficialRequestController@maintenance')->name('offical_mentors_maintenance');
         
     //グループ座談会
         Route::get('group/index', 'GroupController@index')->name('group_index');

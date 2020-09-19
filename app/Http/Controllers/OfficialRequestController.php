@@ -240,4 +240,8 @@ class OfficialRequestController extends Controller
             'latest_record'=>$latest_record
             ]);
     }
+    
+    public function maintenance() {
+        return view('official_mentors.maintenance');
+    }
 }

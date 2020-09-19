@@ -661,3 +661,11 @@ table.contact-confirm td{
   border-color: #a9a9a9;
 }
 
+.reika {
+  color: #0000ff;
+}
+
+.maintenance-message {
+  color: #ff4500;
+  font-weight: bold;
+}
