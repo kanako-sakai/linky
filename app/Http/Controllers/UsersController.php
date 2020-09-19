@@ -193,10 +193,13 @@ class UsersController extends Controller
             $query->where('to_user_id', Auth::id());
             $query->where('status',9);
         })->first();
-
+        
+        $date = date_format(date_create(), 'YmdHis');
+        $picture = $user->picture . '?' . $date;
          
         // ユーザ詳細ビューでそれを表示
         return view('users.show', [
+            'picture' => $picture,
             'user' => $user,
             'profile' => $profile,
             'industry' => $industry,

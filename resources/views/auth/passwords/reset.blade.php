@@ -15,7 +15,11 @@
                     @csrf
 
                     <input type="hidden" name="token" value="{{ $token }}">
-
+                    @error('register')
+                        <ul class="alert alert-danger" role="alert">
+                            <li class="ml-4">{!! nl2br($message) !!}</li>
+                        </ul>
+                    @enderror
                     <div class="form-group row">
                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
 

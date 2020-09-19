@@ -3,7 +3,7 @@
         <div class="icon_area">
         <!--画像を表示-->
         @if(isset($user->picture))
-        	<img src = "{{ $user->picture }}" class="mypage_icon">
+        	<img src = "{{ $picture }}" class="mypage_icon">
         @else
         	<p class="mypage_no_icon"></p> 
         @endif
