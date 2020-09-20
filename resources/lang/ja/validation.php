@@ -129,7 +129,8 @@ return [
         'dates'=>'ご希望日時',
         'precaution'=>'注意事項',
         'times'=>'時間',
-        'zoom_link'=>'Zoomリンク'
+        'zoom_link'=>'Zoomリンク',
+        'message'=>'リクエストメッセージ'
     ]    
 
 ];

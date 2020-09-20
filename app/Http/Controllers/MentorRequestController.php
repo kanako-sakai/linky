@@ -11,7 +11,7 @@ class MentorRequestController extends Controller
     public function store(Request $request, $id)
     {
         $request->validate([
-            'message'=>['max:300']]);
+            'message'=>['max:500']]);
             
         //メッセージの保存
         $message = $request->message;

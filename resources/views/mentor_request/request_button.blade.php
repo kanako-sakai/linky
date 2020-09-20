@@ -10,6 +10,15 @@
         <div class="form-group">
             {!! Form::textarea('message',null, ['class' => 'form-control', 'placeholder' => 'リクエストのメッセージをご記入ください。']) !!}
         </div>
+        <textarea class="form-control @error('message') is-invalid @enderror" name="message" cols="50" rows="10" id="message" placeholder='リクエストのメッセージをご記入ください'>{{old('message')}}</textarea>
+
+            <div class="invalid-feedback">
+                @if($errors->has('message'))
+                    @foreach($errors->get('message') as $message)
+                    {{ $message }}
+                    @endforeach    
+                @endif 
+            </div>
         
         <div class="form-group">
             {!! Form::submit('リクエスト送信', ['class' => "btn btn-primary btn-block"]) !!}
@@ -40,9 +49,16 @@
     @else    
         {{-- リクエスト送信ボタンのフォーム --}}
         {!! Form::open(['route' => ['user.mentor.request', $user->id]]) !!}
-        <div class="form-group">
-            {!! Form::textarea('message',null, ['class' => 'form-control', 'placeholder' => 'リクエストのメッセージをご記入ください。']) !!}
-        </div>
+
+        <textarea class="form-control @error('message') is-invalid @enderror" name="message" cols="50" rows="10" id="message" placeholder='リクエストのメッセージをご記入ください'>{{old('message')}}</textarea>
+
+            <div class="invalid-feedback">
+                @if($errors->has('message'))
+                    @foreach($errors->get('message') as $message)
+                    {{ $message }}
+                    @endforeach    
+                @endif 
+            </div>
         
         <div class="form-group">
             {!! Form::submit('リクエスト送信', ['class' => "btn btn-primary btn-block"]) !!}
