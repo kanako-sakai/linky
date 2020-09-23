@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
         
         //オフィシャルメンターリクエストのチケット回数表示
         Route::get('official_status', 'OfficialRequestController@show_records')->name('official_status');
+        Route::get('mentor_list', 'OfficialRequestController@show_mentors')->name('show_mentors');
     });
     
     //ユーザー一覧
@@ -75,6 +76,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('request_form', 'OfficialRequestController@request_form')->name('official.form');
         Route::post('official_request/confirm_add_request', 'OfficialRequestController@confirm_add_request')->name('official.confirm_add_request');
         Route::get('offical_mentors_maintenance', 'OfficialRequestController@maintenance')->name('offical_mentors_maintenance');
+        Route::get('{id}/official/messages', 'UsersController@official_messages')->name('official_messages');
+        Route::post('{id}/send_official_message', 'DirectMessageController@official_store')->name('official_store');
         
     //グループ座談会
         Route::get('group/index', 'GroupController@index')->name('group_index');
