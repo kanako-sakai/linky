@@ -32,7 +32,14 @@
     
       gtag('config', 'UA-177863081-1');
     </script>
-    
+    <!-- google recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("demo-form").submit();
+       }
+     </script>
+     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@KanamamaH" />
     <meta property="og:url" content="https://www.rolemy.jp/" />

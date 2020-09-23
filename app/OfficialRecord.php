@@ -14,4 +14,5 @@ class OfficialRecord extends Model
     {
         return $this->belongsTo(User::class, 'from_user_id');
     }
+    
 }

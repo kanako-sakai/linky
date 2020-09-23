@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\User;
+use App\Mail\MentorRequestMail;
+use App\Mail\AcceptMail;
 
 class MentorRequestController extends Controller
 {
@@ -18,6 +19,18 @@ class MentorRequestController extends Controller
         
         //認証済みのユーザがidのユーザにリクエストを送る
         \Auth::user()->mentor_request($id, $request->message);
+        
+        //メール送信
+        $to_user=User::findOrFail($id);
+        
+        \Mail::send(new MentorRequestMail([
+            'to' => $to_user->email,
+            'to_name' => $to_user->name,
+            'from'=>'rolemy.info@gmail.com',
+            'from_name' => \Auth::user()->name,
+            'subject' => '【rolemy】相談リクエストが届きました！',
+            'message'=>$request->message,
+        ]));
         //前のURLへリダイレクトさせる
         return back();
     }
@@ -34,6 +47,17 @@ class MentorRequestController extends Controller
     {
         //承認済のユーザがidのユーザからのリクエストを承諾する
         \Auth::user()->accept($id);
+        
+        //メール送信
+        $to_user=User::findOrFail($id);
+        
+        \Mail::send(new AcceptMail([
+            'to' => $to_user->email,
+            'to_name' => $to_user->name,
+            'from'=>'rolemy.info@gmail.com',
+            'from_name' => \Auth::user()->name,
+            'subject' => '【rolemy】相談リクエストが承認されました！',
+        ]));
         
         return back();
     }

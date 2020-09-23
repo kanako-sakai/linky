@@ -47,6 +47,10 @@
                             {{-- スケジュールのページへのリンク --}}
                             {!! link_to_route('schedule_index', 'スケジュール', ['id' => $user->id], ['class'=> 'btn btn-secondary']) !!}
                         </td>
+                        <td>
+                             {{-- ダイレクトメッセージページへのボタン --}}
+                             {!! link_to_route('official_messages', 'メッセージ', ['id' => $user->id], ['class'=>'btn btn-primary']) !!}
+                        </td>
                     <tr>    
                     @endforeach
                 </table>

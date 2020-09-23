@@ -9,6 +9,7 @@ use App\User; //追加
 use App\Mail\OfficialRequestMail;
 use App\OfficialRecord;
 use App\Schedule;
+use App\MentorRequest;
 
 class OfficialRequestController extends Controller
 {
@@ -184,6 +185,14 @@ class OfficialRequestController extends Controller
             'questions'=>$request->questions,
             'dates'=>$request->dates,
         ], 'from'));
+        
+        //公式メンターとマッチさせる
+        $is_matching = $user->is_official_matching($request->mentor_id);
+        
+        if($is_matching){
+        }else {
+            $user->mentor_requestings()->attach($request->mentor_id, ['status'=>'2']); // 2=official mentorとのマッチング
+        }    
     
         return view('official_mentors.complete', [
             'user' => $user
@@ -244,4 +253,27 @@ class OfficialRequestController extends Controller
     public function maintenance() {
         return view('official_mentors.maintenance');
     }
+    
+    public function show_mentors() 
+    {
+        $user=Auth::user();
+        
+    //     // メンター一覧の取得
+    //   $raw_records = OfficialRequest::where(function($query) use($user){
+    //         $query->where('user_id', $user->id);
+    //   })->get();
+      
+    //   $records = $raw_records->groupBy('mentor_id');
+      
+        $records= MentorRequest::where(function($query) use ($user) {
+            $query->where('from_user_id', $user->id);
+            $query->where('status',2);
+        })->get();
+        
+        return view('users.mentor_list', [
+            'user'=>$user,
+            'records'=>$records,
+            ]);
+    }
+    
 }

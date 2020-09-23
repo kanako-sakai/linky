@@ -60,7 +60,7 @@
                 @endif 
             </div>
         
-        <div class="form-group">
+        <div class="form-group mt-3">
             {!! Form::submit('リクエスト送信', ['class' => "btn btn-primary btn-block"]) !!}
         </div>    
         {!! Form::close() !!}

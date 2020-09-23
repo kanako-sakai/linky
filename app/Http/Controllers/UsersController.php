@@ -481,4 +481,29 @@ class UsersController extends Controller
         
         return $user->picture->exists();
     }
+    
+    //ダイレクトメッセージの表示
+    public function official_messages($id)
+    {
+        
+        //自分のid
+        $its_me = Auth::user();
+        
+        // idの値でユーザを検索して取得
+        $user = User::findOrFail($id);
+        
+        $messages = DirectMessage::where(function($query) use($id, $its_me) {
+            $query->where('from_user_id', $id);
+            $query->where('to_user_id', $its_me->id);
+        })
+            ->orWhere(function($query) use($id, $its_me) {
+                $query->where('to_user_id', $id);
+                $query->where('from_user_id', $its_me->id);
+            })->orderBy('created_at', 'asc')->get();
+        
+        return view('official_mentors.official_messages',[
+            'user' => $user,
+            'messages'=> $messages,
+            ]);
+    }    
 }

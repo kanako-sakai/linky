@@ -228,6 +228,16 @@ class User extends Authenticatable
         })->exists();
     }
     
+    //公式メンターとマッチングしているか
+    public function is_official_matching($userId)
+    {
+        return MentorRequest::where(function($query) use($userId) {
+            $query->where('from_user_id', $this->id);
+            $query->where('to_user_id', $userId);
+            $query->where('status',2);
+        })->exists();
+    }   
+    
     public function matchings()
     {
         return MentorRequest::where(function($query) {
@@ -260,7 +270,6 @@ class User extends Authenticatable
     {
         $is_matching = $this->is_matching($userId);
         
-        // if ($is_matching_from_me || $is_matching_from_others) {
         if($is_matching) {
             // マッチングしていたらメッセージを送る
             $this->messages_sent()->attach($userId, ['message'=> $message]);
@@ -269,6 +278,11 @@ class User extends Authenticatable
         }else {
             return false;
         }
+    }
+    
+    public function send_official_message($userId, $message)
+    {
+        $this->messages_sent()->attach($userId, ['message'=> $message]);
     }
     
     //パスワードリセット

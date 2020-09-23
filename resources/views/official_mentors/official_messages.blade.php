@@ -46,9 +46,9 @@
             @endif    
             
             <!--メッセージ送信フォーム-->
-            {!! Form::open(['route' => ['send.message', $user->id]]) !!}
+            {!! Form::open(['route' => ['official_store', $user->id]]) !!}
                 {!! Form::textarea('message',null, ['class' => 'form-control']) !!}
-             <div class="form-group mt-3">    
+            <div class="form-group mt-3">     
                 {!! Form::submit('送信', ['class' => "btn btn-primary btn-block"]) !!}
             </div>    
             {!! Form::close() !!}

@@ -9,7 +9,23 @@
           		</div>
         	</div>
             
-            <div class="col-md-12">  
+            <ul class="list-group list-group-horizontal">
+    
+                {{--　履歴一覧タブ --}}
+                <li class="list-group-item">
+                    <a href="{{ route('official_status', ['id' => $user->id]) }}" class="nav-link mypage-link {{ Request::routeIs('official_status') ? 'active' : '' }}">
+                        <span class="nav_title">履歴・スケジュール</span>
+                    </a>
+                </li>
+                {{-- メッセージ一覧タブ --}}
+                <li class="list-group-item">
+                    <a href="{{ route('show_mentors', ['id' => $user->id]) }}" class="nav-link mypage-link {{ Request::routeIs('show_mentors') ? 'active' : '' }}">
+                        <span class="nav_title">メッセージ</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="col-md-12 mt-5">  
             <h5 class="title_border_left">スケジュール</h5>
             <p>※振替される場合は、遅くとも7日前までにrolemy.info@gmail.comまでメールをお送りください。日程変更のご要望は、各メンタリング日に対して１回までとさせていただきます。7日前を過ぎますと振替できませんのでご注意ください。</p>
                 <table class="records table-bordered">
