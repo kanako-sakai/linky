@@ -309,7 +309,7 @@
 								<div>
 									<h3 class="mb-2">Mikiko Suzuki</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">MSInc.株式会社 取締役。ナチュラルスキンケア&ソーシャルビジネスを展開。NHKアナウンサーとして7年勤務後、フリーアナウンサーに。2018年バブソンカレッジMBA修了。</p>
+									<p class="top-intro">ハーバード・ジャーナリズム大学院に在籍中。NHKアナウンサーとして7年勤務後、フリーアナウンサーに。2018年バブソンカレッジMBA修了後は、女性起業家としてソーシャルビジネスも展開。</p>
 		            			</div>
 							</div>
 						</div>
