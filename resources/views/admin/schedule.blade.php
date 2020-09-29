@@ -15,15 +15,10 @@
            {!! Form::open(['route' => 'register_schedule']) !!}
                @csrf
            
-            <div class="form-group">
-                {!! Form::label('from_user_id', 'ユーザーid') !!}
-                {!! Form::text('from_user_id', $user->id, ['class' => 'form-control']) !!}
-            </div>
+
+                {!! Form::hidden('from_user_id', $user->id, ['class' => 'form-control']) !!}
             
-            <div class="form-group">
-                {!! Form::label('mentor_id', 'メンター') !!}
-                {!! Form::select('mentor_id', $mentors, null, ['class' => 'form-control']) !!}
-            </div>
+                {!! Form::hidden('mentor_id', $mentor->id, null, ['class' => 'form-control']) !!}
 
             <div class="form-group">
                 {!! Form::label('dates', '日時') !!}
@@ -33,7 +28,7 @@
             
             <div class="form-group">
                 {!! Form::label('zoom_link', 'Zoomリンク') !!}
-                {!! Form::text('zoom_link', null, ['class' => 'form-control']) !!}
+                {!! Form::text('zoom_link', $mentor->zoom, ['class' => 'form-control']) !!}
             </div>
             
             <div class="form-group">

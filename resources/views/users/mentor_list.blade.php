@@ -25,10 +25,10 @@
                 </li>
             </ul>
             
-            <div class="text-center mt-5">
+            <div class="col-md-12 mt-5">
                 {{-- ユーザ一覧 --}}
                 @if (count($records) > 0)
-                <table>
+                <table class="mentor-list">
                     @foreach ($records as $record)
                         <tr>
                             <th>
@@ -40,7 +40,7 @@
                                 @endif
                             </th>
                             <td>
-                                {!! link_to_route('users.show', $record->receiver->name, ['user' => $record->receiver->id]) !!}
+                                {{ $record->receiver->name }}
                             </td>
                             <td>
                                  {{-- ダイレクトメッセージページへのボタン --}}

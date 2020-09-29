@@ -25,7 +25,7 @@
                                     <a href="{{ route('users.show', ['user'=>$message->sender->id]) }}"> {{ $message->sender->name }}</a>
                                 </div>
                                 <div class="ml-3">
-                                    {{ $message->message }}
+                                    {!! nl2br(e($message->message)) !!}
                                 </div> 
                                 <div class= "row">
                                     <span class="col-md-2 timestamp ml-3">

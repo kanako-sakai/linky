@@ -28,28 +28,26 @@
             
             <div class="text-center mt-5">
                 {{-- ユーザ一覧 --}}
-                @if (count($users) > 0)
-                <table>
-                    @foreach ($users as $user)
+                @if (count($records) > 0)
+                <table class="mentee-list">
+                    @foreach ($records as $record)
                     <tr>
                         <th>
                             {{-- アイコン --}}
-                            @if(isset($user->sender->picture))
-                            	<img src = "{{ $user->sender->picture }}" class="profile_icon">
+                            @if(isset($record->sender->picture))
+                            	<img src = "{{ $record->sender->picture }}" class="profile_icon">
                             @else
                             	<p class="no_icon"></p>
                             @endif
                         </th>
                         <td>
-                            {!! link_to_route('users.show', $user->name, ['user' => $user->id]) !!}
+                            {!! link_to_route('users.show', $record->sender->name, ['user' => $record->sender->id]) !!}
                         </td>
                         <td>
                             {{-- スケジュールのページへのリンク --}}
-                            {!! link_to_route('schedule_index', 'スケジュール', ['id' => $user->id], ['class'=> 'btn btn-secondary']) !!}
-                        </td>
-                        <td>
+                            {!! link_to_route('schedule_index', 'スケジュール', ['id' => $record->sender->id], ['class'=> 'btn btn-secondary mb-1']) !!} 
                              {{-- ダイレクトメッセージページへのボタン --}}
-                             {!! link_to_route('official_messages', 'メッセージ', ['id' => $user->id], ['class'=>'btn btn-primary']) !!}
+                             {!! link_to_route('official_messages', 'メッセージ', ['id' => $record->sender->id], ['class'=>'btn btn-primary mb-1']) !!}
                         </td>
                     <tr>    
                     @endforeach

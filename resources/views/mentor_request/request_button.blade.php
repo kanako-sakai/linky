@@ -27,7 +27,7 @@
         
     @elseif (Auth::user()->is_matching($user->id))
         <p>すでに{{ $user->name }}さんとのマッチングが成立しています。<br>
-        マッチング一覧でご確認ください。</p>    
+        マッチング一覧でご確認ください。</p>   
     
     @elseif (Auth::user()->is_requested($user->id) && !Auth::user()->is_matching($user->id) && !$request_received_denied)
         <p>既に{{ $user->name }}さんからリクエストが届いています。<br>

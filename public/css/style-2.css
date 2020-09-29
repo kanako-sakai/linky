@@ -215,8 +215,8 @@ table.profile td{
 }
   @media (max-width: 767.98px) {
     .profile_icon {
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background-position: center center;
       margin-left: auto;
@@ -668,4 +668,65 @@ table.contact-confirm td{
 .maintenance-message {
   color: #ff4500;
   font-weight: bold;
+}
+
+.official_icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  @media (max-width: 767.98px) {
+    .official_icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-position: center center;
+      margin-left: auto;
+      margin-right: auto;
+}}
+
+.bold-name {
+  font-weight: bold;
+  color: #48d1cc ;
+}
+
+.official-mentor-list {
+  border-spacing: 2px;
+  background-color: #f0fff0;
+}
+
+.official-mentor-list td{
+  border-spacing: 2px;
+  background-color: #f0fff0;
+  border-bottom: 10px solid white;
+}
+
+.official-mentor-list th{
+  width:20%;
+  border-bottom: 10px solid white;
+}
+
+.top {
+  vertical-align: top;
+}
+
+.mentor-list th{
+  width: 20%;
+}
+
+.mentor-list td{
+  width: 40%;
+  padding-left: 20px;
+}
+
+.mentee-list th{
+  width:20%;
+}
+
+.mentee-list td{
+  padding-left:5px;
+  width:40%;
 }

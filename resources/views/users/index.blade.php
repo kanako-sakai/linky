@@ -95,7 +95,7 @@
                                 <td>
                                     {{-- ユーザ詳細ページへのリンク --}}
                                     @if($user->role != 0)
-                                        {!! link_to_route('offical_mentors', $user->name) !!}
+                                        {!! link_to_route('official_mentors', $user->name) !!}
                                         <span class ="official_icon">
                                         <i class="fas fa-check-circle"></i>
                                         公式メンター</span>

@@ -12,7 +12,7 @@
 ==============================<br>
 【リクエスト内容】
 <br>
-■お名前: {{ $content['from_name_content'] }}　様<br>
+■お名前: {{ $content['from_name'] }}　様<br>
 <br>
 ■メールアドレス: {{ $content['from'] }}<br>
 <br>

@@ -378,11 +378,15 @@ class UsersController extends Controller
             'marriage_status'=> ['required', 'numeric'],
             'child_status'=> ['required', 'numeric'],
             'can_mentor' => ['required', 'numeric'],
-            'intro'=>['max:2000']
+            'intro'=>['max:2000'],
+            'limit'=>['numeric'],
+            'zoom'=>['string', 'max:100']
         ]);
         
         //usersテーブルの情報の更新
         $user->name = $request->name;
+        $user->limit=$request->limit;
+        $user->zoom = $request->zoom;
         $user->save();
         
         //プロフィールを更新

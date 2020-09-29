@@ -6,9 +6,9 @@
 
 ==============================<br>
 <br>
-■お名前: {{ $content['from_name'] }}<br>
+■お名前: {{ $content['to_name'] }}<br>
 <br>
-■メールアドレス: {{ $content['from'] }}<br>
+■メールアドレス: {{ $content['to'] }}<br>
 <br>
 ■実施日時：{{ $content['schedule'] }}<br>
 

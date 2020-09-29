@@ -65,20 +65,20 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('users', 'UsersController');
      
     //オフィシャルメンターリクエスト
-        Route::get('official_mentors', 'OfficialRequestController@official_mentors')->name('offical_mentors');
+        Route::get('official_mentors', 'OfficialRequestController@official_mentors')->name('official_mentors');
         Route::get('official_request/payment', 'OfficialRequestController@payment')->name('official.payment');
-        Route::get('request_form_1', 'OfficialRequestController@request_form_1')->name('official.form1');
+        Route::get('{id}/request_form_1', 'OfficialRequestController@request_form_1')->name('official.form1');
         Route::get('request_form_3', 'OfficialRequestController@request_form_3')->name('official.form3');
         Route::get('request_form_5', 'OfficialRequestController@request_form_5')->name('official.form5');
         Route::get('official_request/payment_failed', 'OfficialRequestController@payment_failed')->name('payment.failed');
         Route::post('official_request/confirm', 'OfficialRequestController@confirm')->name('official.confirm');
-        Route::post('official_request/complete', 'OfficialRequestController@complete')->name('official.complete');
+        Route::post('official_request/complete/payment', 'OfficialRequestController@complete')->name('official.complete');
+        Route::get('official_request/complete', 'OfficialRequestController@paymentDone')->name('payment.done');
         Route::get('request_form', 'OfficialRequestController@request_form')->name('official.form');
         Route::post('official_request/confirm_add_request', 'OfficialRequestController@confirm_add_request')->name('official.confirm_add_request');
         Route::get('offical_mentors_maintenance', 'OfficialRequestController@maintenance')->name('offical_mentors_maintenance');
         Route::get('{id}/official/messages', 'UsersController@official_messages')->name('official_messages');
         Route::post('{id}/send_official_message', 'DirectMessageController@official_store')->name('official_store');
-        
     //グループ座談会
         Route::get('group/index', 'GroupController@index')->name('group_index');
         Route::get('group/payment', 'GroupController@payment')->name('group_payment');

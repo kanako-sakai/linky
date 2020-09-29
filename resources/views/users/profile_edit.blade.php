@@ -131,6 +131,63 @@
                     {!! Form::label('can-0', '不可') !!}
                 </div>
                 
+                @if($user->role != 0 && !empty($user->limit))
+                <div class="form-group">
+                    {!! Form::label('limit', '1ヵ月に相談できる回数') !!}
+                    <input type="number" name="limit" class="form-control @error('limit') is-invalid @enderror" value="{{ $user->limit }}">
+                   <div class="invalid-feedback">
+                        @if($errors->has('limit'))
+                            @foreach($errors->get('limit') as $message)
+                            {{ $message }}
+                            @endforeach    
+                        @endif 
+                    </div>
+                </div>
+                @endif
+                
+                @if($user->role != 0 && empty($user->limit))
+                <div class="form-group">
+                    {!! Form::label('limit', '1ヵ月に相談できる回数') !!}
+                    <input type="number" name="limit" class="form-control @error('limit') is-invalid @enderror">
+                   <div class="invalid-feedback">
+                        @if($errors->has('limit'))
+                            @foreach($errors->get('limit') as $message)
+                            {{ $message }}
+                            @endforeach    
+                        @endif 
+                    </div>
+                </div>
+                @endif
+                
+                @if($user->role != 0 && !empty($user->zoom))
+                <div class="form-group">
+                    {!! Form::label('zoom', 'Zoomのリンク') !!}
+                    <input type="text" name="zoom" class="form-control @error('zoom') is-invalid @enderror" value="{{ $user->zoom }}">
+                   <div class="invalid-feedback">
+                        @if($errors->has('zoom'))
+                            @foreach($errors->get('zoom') as $message)
+                            {{ $message }}
+                            @endforeach    
+                        @endif 
+                    </div>
+                </div>
+                @endif
+                
+                @if($user->role != 0 && empty($user->zoom))
+                <div class="form-group">
+                    {!! Form::label('zoom', 'Zoomのリンク') !!}
+                    <input type="text" name="zoom" class="form-control @error('zoom') is-invalid @enderror" value="{{ $user->zoom }}">
+                   <div class="invalid-feedback">
+                        @if($errors->has('zoom'))
+                            @foreach($errors->get('zoom') as $message)
+                            {{ $message }}
+                            @endforeach    
+                        @endif 
+                    </div>
+                </div>
+                @endif
+                
+                
                 <div class="form-group">
                     {!! Form::label('intro', '自己紹介文') !!}
                     <textarea class="form-control @error('intro') is-invalid @enderror" name="intro" cols="50" rows="10" id="intro">@if($errors->has('intro')) {{ old('intro') }} @else {{ $profile->intro }} @endif</textarea>

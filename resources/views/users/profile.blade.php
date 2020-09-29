@@ -75,6 +75,16 @@
                     @endif
                 </td>
             </tr>
+            @if($user->role != 0)
+            <tr>
+                <th class="text-left">1ヵ月に相談に乗れる回数</th>
+                <td class="text-left">@if(!empty($user->limit)) {{ $user->limit }} @else '0' @endif 回</td>
+            </tr>
+            <tr>
+                <th class="text-left">Zoomのリンク</th>
+                <td class="text-left">@if(!empty($user->zoom)) {{ $user->zoom }} @else '' @endif</td>
+            </tr>
+            @endif
             <tr>
                 <th class="text-left" valign="top"><i class="fas fa-bullhorn fa-lg"></i> 自己紹介</th>
                 <td class="text-left"> {!! nl2br(e($profile->intro)) !!}

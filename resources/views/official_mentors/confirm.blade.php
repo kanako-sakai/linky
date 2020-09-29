@@ -21,6 +21,14 @@
                                         @csrf
                                         
                                         <div class="form-group row">
+                                            <label for="name" class="col-md-4 col-form-label text-md-right">【ご希望のメンター】</label>
+                                            <div class="col-md-6">
+                                                <span class="">{{$official_request->mentor->name }}</span>
+                                                <input type="hidden" name="mentor_id" value="{{$official_request->mentor_id}}">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group row">
                                             <label for="name" class="col-md-4 col-form-label text-md-right">【お名前】</label>
                                             <div class="col-md-6">
                                                 <span class="">{{$official_request->name}}</span>
@@ -29,29 +37,15 @@
                                         </div>
                                         
                                         <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【ご連絡先メールアドレス】</label>
+                                            <label for="name" class="col-md-4 col-form-label text-md-right">【メールアドレス】</label>
                                             <div class="col-md-6">
                                                 <span class="">{{$official_request->email}}</span>
                                                 <input type="hidden" name="email" value="{{$official_request->email}}">
                                             </div>
                                         </div>
                                         
-                                        <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【ご購入プラン】</label>
-                                            <div class="col-md-6">
-                                                <span class="">{{$official_request->plan}}　回プラン</span>
                                                 <input type="hidden" name="plan" value="{{$official_request->plan}}">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group row">
-                                            <label for="name" class="col-md-4 col-form-label text-md-right">【ご希望のメンター】</label>
-                                            <div class="col-md-6">
-                                                <span class="">{{$official_request->mentor->name }}</span>
-                                                <input type="hidden" name="mentor_id" value="{{$official_request->mentor_id}}">
-                                            </div>
-                                        </div>
-                                        
+
                                         <div class="form-group row">
                                             <label for="name" class="col-md-4 col-form-label text-md-right">【メンタリングの目的】</label>
                                             <div class="col-md-6">
@@ -81,7 +75,7 @@
                                         
                                         <div class="col-md-6 offset-md-4">
                                             <button type="submit" name="action" value="submit" class="btn btn-primary">
-                                                送信する
+                                                お支払いに進む
                                             </button>
                                         </div>
                                     </form>

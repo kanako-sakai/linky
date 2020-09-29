@@ -27,7 +27,19 @@
 					<p>【相談に乗れること】就活、外資コンサルでの働き方、MBA留学、育児・出産とキャリアの両立、夫婦関係の在り方など。その他キャリアや人生に関するお悩み等何でもお話しください！</p>
           		</div>
           	</div>
-
+          	
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/green.png);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Chihiro Shibata</h2>
+          			<p>【現職】上場バイオベンチャー役員</p>
+          			<p>【社会人歴】15年目</p>
+          			<p>【職歴】公認会計士二次試験に大学4年で合格。4年間監査法人勤務後、アメリカ短期留学。帰国後、外資系生命保険会社に9年間勤務し、内部監査・コンプライアンス・IT開発プロジェクト管理等に従事。会計士協会の推薦で神奈川県や横浜市の委員を副業として務める。2020年に上場バイオベンチャーの監査役就任。</p>
+					<p>【ライフ】小1、3歳、1歳の三姉妹の母。子育ての合間を見つけて、2019年にボリビアのウユニ塩湖、2017年にアイスランドへ1人でツアー旅行。</p>
+					<p>【相談に乗れること】子育てと仕事の両立、ママの自分時間の作り方、キャリア相談、人脈の作り方。その他なんでもお気軽にお話してくださいね！</p>
+          		</div>
+          	</div> 
+          	
           	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/eiko_ichikawa.jpg);"></div>
           		<div class="text pl-md-5">
@@ -39,7 +51,19 @@
 					<p>【相談に乗れること】モヤモヤを行動にうつす方法、ライフ・キャリアのつくりかた、海外留学・生活、等。</p>
           		</div>
           	</div>
-	             	
+	        
+	        <div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/yuri_hamamura.jpg);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Yuri Hamamura</h2>
+          			<p>【現職】プライベート・エクイティ</p>
+          			<p>【社会人歴】9年目</p>
+          			<p>【職歴】バレエのアシスタント講師（在学中）、金融庁、シカゴ大学ビジネススクールを経てプライベート・エクイティ勤務。</p>
+					<p>【ライフ】パフォーミングアーツ他、芸術全般が好きです。</p>
+					<p>【相談に乗れること】何か一歩踏み出してみること。Non-traditionalなキャリアパス、転職、女性の少ない業界、日本育ちからの海外留学。</p>
+          		</div>
+          	</div> 
+          	
         	<div class="coach-wrap d-sm-flex">
           		<div class="img coach-img" style="background-image: url(/images/shoko_hamada.jpg);"></div>
           		<div class="text pl-md-5">
@@ -136,18 +160,78 @@
 					<p>【相談に乗れること】食品やコンシューマービジネスに興味のある方のキャリア相談、就活、MBA留学準備など。</p>
           		</div>
           	</div>
-          	
+          
           	<div class="coach-wrap d-sm-flex">
-          		<div class="img coach-img" style="background-image: url(/images/green.png);"></div>
+          		<div class="img coach-img" style="background-image: url(/images/reika_katsumata.jpg);"></div>
           		<div class="text pl-md-5">
-          			<h2 class="official-name">Chihiro Shibata</h2>
-          			<p>【現職】上場バイオベンチャー役員</p>
-          			<p>【社会人歴】15年目</p>
-          			<p>【職歴】公認会計士二次試験に大学4年で合格。4年間監査法人勤務後、アメリカ短期留学。帰国後、外資系生命保険会社に9年間勤務し、内部監査・コンプライアンス・IT開発プロジェクト管理等に従事。会計士協会の推薦で神奈川県や横浜市の委員を副業として務める。2020年に上場バイオベンチャーの監査役就任。</p>
-					<p>【ライフ】小1、3歳、1歳の三姉妹の母。子育ての合間を見つけて、2019年にボリビアのウユニ塩湖、2017年にアイスランドへ1人でツアー旅行。</p>
-					<p>【相談に乗れること】子育てと仕事の両立、ママの自分時間の作り方、キャリア相談、人脈の作り方。その他なんでもお気軽にお話してくださいね！</p>
+          			<h2 class="official-name">Reika Katsumata</h2>
+          			<p>【現職】大学教員としてソフトマター/ナノテク研究室を主宰しています。</p>
+          			<p>【社会人歴】3年目</p>
+          			<p>【職歴】日本の大学で修士を収めた後、いち早く独立できるアメリカでラボを持ちたいと思い、一念発起してアメリカにて博士留学。ポスドクを経て現職。研究室のHPは<a href="https://katsumata4.wixsite.com/home" target="_blank" class="reika">こちら</a>です。</p>
+					<p>【ライフ】ソフトボールとバンド活動が大好きです。最近、大学院時代の同級生と国際結婚しました。</p>
+					<p>【相談に乗れること】アメリカ博士留学、アメリカの理工系アカデミアにおけるサバイバルなどなど、一緒にお話させて下さい！</p>
           		</div>
           	</div> 
+          	
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/kae_okoshi.jpg);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Kae Okoshi</h2>
+          			<p>【現職】日本外科学会専門医、消化器外科学会専門医・指導医</p>
+          			<p>【社会人歴】21年目</p>
+          			<p>【職歴】日本外科学会専門医、消化器外科学会専門医・指導医です。消化器外科医としてずっと働いてきました。</p>
+					<p>【ライフ】夫と小学生の子ども2人の4人家族です。</p>
+					<p>【相談に乗れること】数少ない女性外科医（特に消化器外科医）なので、細々と生き延びているだけでも絶滅危惧種ではないかと思います。妊娠・出産・育児を経て外科医として研鑽を積む難しさを共有できる相談相手として考えていただければと思います。私自身、何が正解とかいうこともなく、まな道半ばで全く答えは見えていません。</p>
+          		</div>
+          	</div> 
+          	
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/anna_nakayasu.jpg);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Anna Nakayasu</h2>
+          			<p>【現職】Stanford Graduate School of Business在籍中</p>
+          			<p>【社会人歴】4年目</p>
+          			<p>【職歴】東京大学医学部卒業後、都内で初期研修・産婦人科後期研修</p>
+					<p>【ライフ】学生時代から医療とマネジメントに興味を持ったことをきっかけに、MBA留学にきています。趣味はヨガ、テニス、料理です。</p>
+					<p>【相談に乗れること】まだ社会人歴が浅いので微力ですが、医療関係の方、MBA留学に興味がある方、それ以外のお悩みでもお力になれそうであればご相談ください！</p>
+          		</div>
+          	</div> 
+          	
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/shizuka_kato.jpg);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Shizuka Kato</h2>
+          			<p>【現職】OECD教育政策アナリスト</p>
+          			<p>【社会人歴】7年目</p>
+          			<p>【職歴】DeNA（営業・マーケティング・休職）→ 大学職員（留学関連業務）→ オックスフォード大学院留学（教育学）→ 現職</p>
+					<p>【ライフ】日本生まれ、日本育ち。25歳で大学院留学をするまで、海外経験はほぼなし。外国籍のパートナーと5年間同棲中。現在、パリ在住。</p>
+					<p>【相談に乗れること】休職をはじめ、今までたくさん躓いてきたので、今エネルギーレベルが落ちている、誰かのパワーを貰いたい、特ににそんな人の力になれたらと思います。</p>
+          		</div>
+          	</div>
+          	
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/yurie_mizukami.png);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Makiko Suzuki</h2>
+          			<p>【現職】フリーアナウンサー。ナチュラルスキンケア&ソーシャルビジネスを展開するMS Inc.株式会社 取締役。</p>
+          			<p>【社会人歴】12年目（NHKアナウンサー7年、MSInc.株式会社5年目)</p>
+          			<p>【職歴】▼NHK仙台キャスター(日本語) ▼NHK World キャスター(英語) ▼MS Inc.株式会社 取締役</p>
+					<p>【ライフ】▼ハーバード・ジャーナリズム在籍中。▼2018年バブソンカレッジMBA修了。</p>
+					<p>【相談に乗れること】▼人前で話すプレゼンテーション・コミュニケーションについて（仕事のスキル）▼キャリアチェンジ（全く違う世界に飛び込んだ経験より）▼起業・スタートアップ（失敗談より話せるエピソード）▼ソーシャルビジネス（ソーシャルインパクトや社会貢献に興味がある人の輪を広げたい）▼30歳超えての恋愛・結婚について（経験より！笑）</p>
+          		</div>
+          	</div>
+          	<div class="coach-wrap d-sm-flex">
+          		<div class="img coach-img" style="background-image: url(/images/yurie_mizukami.png);"></div>
+          		<div class="text pl-md-5">
+          			<h2 class="official-name">Yurie Mizukami</h2>
+          			<p>【現職】教育系スタートアップ HLAB, Inc. Director</p>
+          			<p>【社会人歴】5年目</p>
+          			<p>【職歴】1991年生まれ、東京育ち。慶大法学部在学中、英エディンバラ大学に交換留学。ロンドン大学大学院社会学部人権学科修士課程修了。2013年にHLAB東京実行委員、2014年にHLAB徳島サマースクール設立、委員長を務める。(独)国際協力機構アフリカ部にて勤務しマラウイ国協力戦略立案やザンビア国円借款業務に従事。WeWorkコミュニティマネジメント部を経て、2019年4月よりHLABにてレジデンシャル・カレッジのパートナーシップ構築とコミュニティマネジメント業務などを担当。</p>
+					<p>【ライフ】未婚・最近子どもはほしいと思うように。母が三児を育てながら今でもフルタイムで働いているので、自分も自然とそうなりたいと思うようになりました。</p>
+					<p>【相談に乗れること】海外大学院進学（特にMBA以外、英国）/ 国際協力業界におけるキャリア /ベンチャー（外資系・日系）と大企業のキャリアの考え方の違い /ソーシャルセクター（教育・人材系）の営業職</p>
+          		</div>
+          	</div>
+         
     	</div>
     </section>
     

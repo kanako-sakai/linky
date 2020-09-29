@@ -229,6 +229,105 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/chihiro_shibata.jpg);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Chihiro Shibata</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">公認会計士二次試験に大学4年で合格。4年間監査法人勤務後、アメリカ短期留学。帰国後、外資系生命保険会社に9年間勤務。会計士協会の推薦で神奈川県や横浜市の委員を副業として務める。2020年に上場バイオベンチャーの監査役就任。</p>
+		            </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/yuri_hamamura.jpg);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Yuri Hamamura</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">在学中はバレエのアシスタント講師を経験。金融庁に勤めた後、シカゴ大学ビジネススクールを経て、現在プライベート・エクイティ勤務。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/kae_okoshi.jpg);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Kae Okoshi</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">日本外科学会専門医、消化器外科学会専門医・指導医。消化器外科医として20年以上勤務。二児の母。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/anna_nakayasu.jpg);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Anna Nakayasu</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">東京大学医学部卒業後、都内で初期研修・産婦人科後期研修。現在スタンフォードMBAに在籍中。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/shizuka_kato.jpg);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Shizuka Kato</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">DeNAで勤務後、大学職員として留学関連業務に従事。オックスフォード大学院留学(教育学)を経て、現在OECD教育政策アナリストとして勤務。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/makiko_suzuki.jpg);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Makiko Suzuki</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">DeNAで勤務後、大学職員として留学関連業務に従事。オックスフォード大学院留学(教育学)を経て、現在OECD教育政策アナリストとして勤務。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/yurie_mizukami.png);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Yurie Mizukami</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">慶大法学部在学中、英エディンバラ大学に交換留学。ロンドン大学大学院社会学部人権学科修士課程修了。HLAB東京実行委員、HLAB徳島サマースクール設立・委員長、(独)国際協力機構アフリカ部、WeWorkコミュニティマネジメント部を経て、現在HLABディレクター。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
 				</div>
     	</div>
     </section>
@@ -247,7 +346,7 @@
 			                   <h5 class="card-title">Q. 会員登録は無料ですか？</h5>
 			                 </div>
 			                 <div class="card-body">
-			                   はい、会員登録は無料です。また登録会員の中から相談相手を見つけ、お話しされる場合は全て無料でご利用いただくことができます。公式メンターとの面談、グループ座談会のみ有料となります。
+			                   はい、会員登録は無料です。また登録会員の中から相談相手を見つけ、お話しされる場合は全て無料でご利用いただくことができます。公式メンターとの面談、グループ相談会のみ有料となります。
 			                 </div>
 			               </div>
 			               

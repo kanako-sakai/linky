@@ -10,14 +10,37 @@ use App\Mail\OfficialRequestMail;
 use App\OfficialRecord;
 use App\Schedule;
 use App\MentorRequest;
+use App\Carbon;
+use App\Profile;
 
 class OfficialRequestController extends Controller
 {
     //公式メンターリストを表示
     public function official_mentors()
     {
-        return view('official_mentors.index');
+        //公式メンターのデータを取得
+        $users = User::where('role', 2)->orWhere('role', 1)->orderBy('limit','asc')->get();
+        
+        return view('official_mentors.index2',[
+            'users' => $users,
+        ]);
     }
+    
+    // //公式メンターの具体的プロフィール
+    // public function show_official_profiles($id)
+    // {
+    //     $user= User::findOrFail($id);
+        
+    //     $profile = $user->profile()->first();
+        
+    //     $requests= OfficialRequest::whereBetween('created_at', [$dt_from, $dt_to])->where('mentor_id', $user->id)->get();
+        
+    //     return view('official_mentors.official_profile',[
+    //         'user'=>$user,
+    //         'profile'=>$profile,
+    //         'requests'=>$requests
+    //     ]);
+    // }
     
     //支払い画面
     public function payment()
@@ -26,16 +49,35 @@ class OfficialRequestController extends Controller
     }
     
     //1回プランの場合
-    public function request_form_1()
+    public function request_form_1($id)
     {
+        $mentor=User::findOrFail($id);
+        
         $user = Auth::user();
         
-        $mentors = User::where('role', 2)->orWhere('role', 1)->get()->pluck('name', 'id');
+        //各公式メンターのその月のリクエスト数をカウント
+        $dt_from = new\Carbon\Carbon();
+        $dt_from->startOfMonth();
         
+        $dt_to=new\Carbon\Carbon();
+        $dt_to->endOfMonth();
+
+        $requests= OfficialRequest::whereBetween('created_at', [$dt_from, $dt_to])->where('mentor_id', $mentor->id)->get();
+        
+        $limit=$mentor->limit;
+        
+        // $mentors = User::where('role', 2)->orWhere('role', 1)->get()->pluck('name', 'id');
+
+        if(count($requests)<$limit) {
         return view('official_mentors.request_form_1', [
             'user' => $user,
-            'mentors'=>$mentors
+            'mentor'=>$mentor
         ]);
+        }else{
+            return view('official_mentors.full',[
+                'mentor'=>$mentor
+            ]);
+        }
     }
     
     //3回プランの場合
@@ -155,6 +197,8 @@ class OfficialRequestController extends Controller
             $official_record->save();
         }
         
+        $mentor = User::findOrFail($request->mentor_id);
+        
         // 二重送信防止
         $request->session()->regenerateToken();
         
@@ -162,11 +206,10 @@ class OfficialRequestController extends Controller
         \Mail::send(new OfficialRequestMail([
             'to' => $request->email,
             'to_name' => $request->name,
-            'from'=>'rolemy.info@gmail.com',
+            'from'=>'rolemy.official.requests@gmail.com',
             'from_name' => 'ROLEMY',
-            'subject' => '公式メンター相談申込受付完了のお知らせ',
-            'plan'=>$request->plan,
-            'mentor_id'=>$request->mentor_id,
+            'subject' => '【rolemy】公式メンター相談申込受付完了のお知らせ',
+            'mentor_name'=>$mentor->name,
             'goal'=>$request->goal,
             'questions'=>$request->questions,
             'dates'=>$request->dates,
@@ -178,12 +221,28 @@ class OfficialRequestController extends Controller
             'to_name'=>'ROLEMY',
             'from' => $request->email,
             'from_name' => $request->name,
+            'from_name_content' => $request->name,
             'subject' => '公式メンター申し込み',
-            'plan'=>$request->plan,
-            'mentor_id'=>$request->mentor_id,
+            'mentor_name'=>$mentor->name,
             'goal'=>$request->goal,
             'questions'=>$request->questions,
             'dates'=>$request->dates,
+            'zoom'=>$mentor->zoom,
+        ], 'from'));
+        
+        //メンターに送るメール
+        \Mail::send(new OfficialRequestMail([
+            'to' => $mentor->email,
+            'to_name'=>$mentor->name,
+            'from' => $request->email,
+            'from_name' => "rolemy",
+            'from_name_content' => $request->name,
+            'subject' => '【rolemy】公式メンター申し込みがありました',
+            'mentor_name'=>$mentor->name,
+            'goal'=>$request->goal,
+            'questions'=>$request->questions,
+            'dates'=>$request->dates,
+            'zoom'=>$mentor->zoom,
         ], 'from'));
         
         //公式メンターとマッチさせる
@@ -194,9 +253,11 @@ class OfficialRequestController extends Controller
             $user->mentor_requestings()->attach($request->mentor_id, ['status'=>'2']); // 2=official mentorとのマッチング
         }    
     
-        return view('official_mentors.complete', [
-            'user' => $user
-            ]);
+        return view('official_mentors.payment');
+    }
+    
+    public function paymentDone(){
+        return view('official_mentors.complete');
     }
     
     public function show_records() 

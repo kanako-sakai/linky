@@ -82,18 +82,13 @@
                 </table>
             </div>
             
-            @if (count($records) > 0)
             <div class="text-center">    
-                {!! link_to_route('official.payment', '追加購入する', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}</a>
-            @else
-                {!! link_to_route('official.payment', 'チケットを購入する', ['id' => Auth::id()], ['class' => 'btn btn-primary']) !!}</a>
-            @endif
+                {!! link_to_route('official_mentors', 'リクエストを出す', [], ['class' => 'btn btn-primary']) !!}</a>
             
             @if(empty($latest_record))
             
             @elseif($latest_record->balance > 0)
                 {!! link_to_route('official.form', 'リクエスト', ['id' => Auth::id()], ['class' => 'btn btn-secondary']) !!}</a>
-            </div>
             @endif
         </div>
 </section>

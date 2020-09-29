@@ -9,6 +9,7 @@ use App\User; //追加
 use App\OfficialRecord;//
 use App\Schedule;
 use App\Mail\AdminEmail;
+use App\MentorRequest;
 
 class AdminController extends Controller
 {
@@ -104,11 +105,14 @@ class AdminController extends Controller
     {
         $user = User::findOrFail($id);
         
+        $mentor=Auth::user();
+        
         $mentors = User::where('role', 2)->orWhere('role', 1)->get()->pluck('name', 'id');
         
         return view('admin.schedule', [
             'user'=>$user,
-            'mentors'=>$mentors
+            'mentors'=>$mentors,
+            'mentor'=>$mentor,
         ]);
     }
     
@@ -167,12 +171,15 @@ class AdminController extends Controller
         $official_record->balance = $previous_record->balance;
         $official_record->save();
         
+        //マッチングのステータスを元に戻す
+        \Auth::user()->requesters()->updateExistingPivot($user->id, ['status' => '0']);
+            
         //メールを送る
         //入力されたメールアドレスにメールを送信
         \Mail::send(new AdminEmail([
             'to' => $user->email,
             'to_name' => $user->name,
-            'from'=>'rolemy.info@gmail.com',
+            'from'=>'rolemy.official.requests@gmail.com',
             'from_name' => 'ROLEMY',
             'subject' => '公式メンター相談実施のお知らせ',
             'schedule'=>$schedule->dates."".$schedule->times,
@@ -196,13 +203,18 @@ class AdminController extends Controller
     {
         $staff = Auth::user();
         
-        $users = User::whereHas('official_requests', function($query) use($staff) {
-            $query->where('mentor_id', $staff->id);
+        // $users = User::whereHas('official_requests', function($query) use($staff) {
+        //     $query->where('mentor_id', $staff->id);
+        // })->get()
+        
+        $records= MentorRequest::where(function($query) use ($staff) {
+            $query->where('to_user_id', $staff->id);
+            $query->where('status',2);
         })->get();
         
         return view('admin.staff',[
             'staff' => $staff,
-            'users' => $users
+            'records'=>$records,
         ]);
     }
 

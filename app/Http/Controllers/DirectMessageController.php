@@ -57,6 +57,19 @@ class DirectMessageController extends Controller
         
         //認証済みのユーザがidのユーザにリクエストを送る
         \Auth::user()->send_official_message($id, $request->message);
+        
+        //メール送信
+        $to_user=User::findOrFail($id);
+        
+        \Mail::send(new DirectMessageMail([
+            'to' => $to_user->email,
+            'to_name' => $to_user->name,
+            'from'=>'rolemy.info@gmail.com',
+            'from_name' => \Auth::user()->name,
+            'subject' => '【rolemy】メッセージが届きました！',
+            'message'=>$request->message,
+        ]));    
+        
         //前のURLへリダイレクトさせる
         return back();
     }
