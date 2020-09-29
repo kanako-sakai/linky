@@ -238,7 +238,7 @@
 								<div>
 									<h3 class="mb-2">Chihiro Shibata</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">公認会計士二次試験に大学4年で合格。4年間監査法人勤務後、アメリカ短期留学。帰国後、外資系生命保険会社に9年間勤務。会計士協会の推薦で神奈川県や横浜市の委員を副業として務める。2020年に上場バイオベンチャーの監査役就任。</p>
+									<p class="top-intro">4年間監査法人勤務後、アメリカ短期留学。帰国後、外資系生命保険会社に9年間勤務。会計士協会の推薦で神奈川県や横浜市の委員を副業として務める。2020年に上場バイオベンチャーの監査役就任。</p>
 		            </div>
 							</div>
 						</div>
@@ -252,7 +252,7 @@
 								<div>
 									<h3 class="mb-2">Yuri Hamamura</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">在学中はバレエのアシスタント講師を経験。金融庁に勤めた後、シカゴ大学ビジネススクールを経て、現在プライベート・エクイティ勤務。</p>
+									<p class="top-intro">金融庁に勤めた後、シカゴ大学ビジネススクールを経て、現在プライベート・エクイティ勤務。</p>
 		            			</div>
 							</div>
 						</div>
@@ -307,9 +307,9 @@
 							</div>
 							<div class="text d-flex align-items-center pt-3 text-center">
 								<div>
-									<h3 class="mb-2">Makiko Suzuki</h3>
+									<h3 class="mb-2">Mikiko Suzuki</h3>
 									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">DeNAで勤務後、大学職員として留学関連業務に従事。オックスフォード大学院留学(教育学)を経て、現在OECD教育政策アナリストとして勤務。</p>
+									<p class="top-intro">MSInc.株式会社 取締役。ナチュラルスキンケア&ソーシャルビジネスを展開。NHKアナウンサーとして7年勤務後、フリーアナウンサーに。2018年バブソンカレッジMBA修了。</p>
 		            			</div>
 							</div>
 						</div>
