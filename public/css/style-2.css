@@ -674,8 +674,8 @@ table.contact-confirm td{
 }
   @media (max-width: 767.98px) {
     .official_icon {
-      width: 70px;
-      height: 70px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       background-position: center center;
       margin-left: auto;
@@ -692,10 +692,10 @@ table.contact-confirm td{
     margin-right: auto;
 }
   @media (max-width: 767.98px) {
-    .no-icon_official {
+    .no_icon_official {
       background-image: url('../images/green.png');
-      width: 70px;
-      height: 70px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       background-position: center center;
       margin-left: auto;
@@ -719,6 +719,12 @@ table.contact-confirm td{
 }
 
 .official-mentor-list th{
+  width:20%;
+  border-bottom: 10px solid white;
+}
+
+@media (max-width: 767.98px) {
+  .official-mentor-list th{
   width:20%;
   border-bottom: 10px solid white;
 }

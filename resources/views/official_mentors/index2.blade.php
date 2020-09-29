@@ -13,30 +13,21 @@
         	</div>
         	
         	{{-- ユーザ一覧 --}}
-            <div class="col-md-12 member-list">
+            <div class="row m-1">
                 @if(count($users)>0)
-                    <table class='official-mentor-list'>
-                        @foreach ($users as $user)
-                            <tr>
-                                <th class='top'>
-                                    {{-- アイコン --}}
-                                    @if(isset($user->picture))
-                                    	<img src = "{{ $user->picture }}" class="official_icon p-2">
-                                    @else
-                                    	<p class="no_icon_official"></p> 
-                                    @endif
-                                </th>    
-                                <td>
-                                    <p class="bold-name">{{ $user -> name }}</p>
-                                    <p>{!! nl2br(e($user->profile->intro)) !!}</p>
-                                    <p class="text-center">{!! link_to_route('official.form1', 'リクエストを出す', ['id' => $user->id], ['class' => 'btn btn-primary']) !!}</p>
-                                </td>
-                            <tr>    
-                            @endforeach
-                        </table>
+                @foreach ($users as $user)
+                <div class="coach-wrap d-sm-flex">
+                    <div class="img coach-img">@if(isset($user->picture)) <img src ="{{ $user->picture }}" class="official_icon"></div> @else<p class="no_icon"></p>@endif
+           
+                	<div class="text pl-md-5">
+                         <h2 class="official-name">{{ $user -> name }}</h2>
+                        <p>{!! nl2br(e($user->profile->intro)) !!}</p>
+                        <p class="text-center">{!! link_to_route('official.form1', 'リクエストを出す', ['id' => $user->id], ['class' => 'btn btn-primary']) !!}</p>
                     </div>
-                    @endif
                 </div>
+                @endforeach
+                @endif
+            
             </div> 
         </div>
 </section> 
