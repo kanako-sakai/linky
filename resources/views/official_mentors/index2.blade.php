@@ -23,7 +23,7 @@
                                     @if(isset($user->picture))
                                     	<img src = "{{ $user->picture }}" class="official_icon p-2">
                                     @else
-                                    	<p class="no_icon"></p> 
+                                    	<p class="no_icon_official"></p> 
                                     @endif
                                 </th>    
                                 <td>

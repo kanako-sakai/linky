@@ -326,12 +326,6 @@ table .records th, table .records td {
   border:1px solid;
 }
 
-
-.official_icon {
-  color:#008b8b;
-  font-size: 10px;
-}
-
 .title_border_left{
   border-left: thick solid #48d1cc;
   padding-left:10px;
@@ -680,6 +674,24 @@ table.contact-confirm td{
 }
   @media (max-width: 767.98px) {
     .official_icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-position: center center;
+      margin-left: auto;
+      margin-right: auto;
+}}
+
+.no_icon_official{
+  width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  @media (max-width: 767.98px) {
+    .no-icon_official {
       width: 70px;
       height: 70px;
       border-radius: 50%;
