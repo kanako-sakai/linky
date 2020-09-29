@@ -19,7 +19,7 @@ class OfficialRequestController extends Controller
     public function official_mentors()
     {
         //公式メンターのデータを取得
-        $users = User::where('role', 2)->orWhere('role', 1)->orderBy('limit','asc')->get();
+        $users = User::where('role', 2)->orWhere('role', 1)->orderBy('limit','desc')->get();
         
         return view('official_mentors.index2',[
             'users' => $users,
