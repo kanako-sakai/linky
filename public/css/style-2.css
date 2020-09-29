@@ -683,7 +683,8 @@ table.contact-confirm td{
 }}
 
 .no_icon_official{
-  width: 150px;
+    background-image: url('../images/green.png');
+    width: 150px;
     height: 150px;
     border-radius: 50%;
     background-position: center center;
@@ -692,6 +693,7 @@ table.contact-confirm td{
 }
   @media (max-width: 767.98px) {
     .no-icon_official {
+      background-image: url('../images/green.png');
       width: 70px;
       height: 70px;
       border-radius: 50%;
