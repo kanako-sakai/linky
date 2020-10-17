@@ -16,10 +16,12 @@ class AdminController extends Controller
     public function index()
     {
         //公式リクエストを出しているユーザーを抽出
-        $users = User::has('official_requests')->get();
+        // $users = User::has('official_requests')->get();
+        
+        $records= MentorRequest::where('status',2)->get();
         
         return view('admin.index',[
-            'users' => $users,
+            'records' => $records,
         ]);
     }
 
