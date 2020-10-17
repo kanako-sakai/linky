@@ -24,15 +24,15 @@
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">第1回</span>
+              			<span class="day">第4回</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">9月20日(日)午前11:00-12:00(日本時間)</a></h3>
-                <p>「若手のうちに何をしておくといいの？」</p>
+                <h3 class="heading"><a href="single.html">11月7日(土) 午前11:00-12:00</a></h3>
+                <p>担当メンター：Kanako Sakai</p>
                 <div class="d-flex align-items-center mt-4 meta">
 	                <p class="mb-0">
 	                    {{-- リクエストページへのリンク --}}
-        					<a href="https://forms.gle/6ZNDJrtzQvsCpcXq7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">参加申し込み</a>
+        					<a href="https://forms.gle/XeGL78tvVe8odhmX9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">参加申し込み</a>
         				  </p>
       				  </div>
       				</div>
@@ -45,15 +45,15 @@
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">第2回</span>
+              			<span class="day">第5回</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">9月26日(土)午前11:00-12:00(日本時間)</a></h3>
-                <p>「キャリアとプライベートどう両立するの？」</p>
+                <h3 class="heading"><a href="single.html">11月21日(土) 午前11:00-12:00</a></h3>
+                <p>担当メンター：Kanako Sakai</p>
                 <div class="d-flex align-items-center mt-4 meta">
 	                <p class="mb-0">
 	                    {{-- リクエストページへのリンク --}}
-        					<a href="https://forms.gle/d9LEG9eCUG5FTZki7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">参加申し込み</a>
+        					<a href="https://forms.gle/K6gpkn7tkz3aUSAJ9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">参加申し込み</a>
         				  </p>
       				  </div>
       				</div>
@@ -66,15 +66,15 @@
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
               		<div class="one mr-2">
-              			<span class="day">第3回</span>
+              			<span class="day">第6回</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">10月3日(土)午前11:00-12:00(日本時間)</a></h3>
-                <p>「社会人になっての海外留学は意味がある？」</p>
+                <h3 class="heading"><a href="single.html">11月28日(土) 午前11:00-12:00</a></h3>
+                <p>担当メンター：Itoko Shibata / Kanako Sakai</p>
                 <div class="d-flex align-items-center mt-4 meta">
 	                <p class="mb-0">
 	                    {{-- リクエストページへのリンク --}}
-        					<a href="https://forms.gle/br7q6xvnUEP6i3Lp7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">参加申し込み</a>
+        					<a href="https://forms.gle/9P5B2b9v1PQMSqVR9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">参加申し込み</a>
         				  </p>
       				  </div>
       				</div>
