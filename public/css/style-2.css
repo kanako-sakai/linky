@@ -360,7 +360,7 @@ table .records th, table .records td {
 }
 
 .fa-heart {
-  color: #808080;
+  color: #ff6347;
 }
 
 .fa-baby {
@@ -664,16 +664,17 @@ table.contact-confirm td{
   font-weight: bold;
 }
 
-.official_icon {
+.official-profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-position: center center;
     margin-left: auto;
     margin-right: auto;
+    font-size:9px;
 }
   @media (max-width: 767.98px) {
-    .official_icon {
+    .official-profile-pic {
       width: 100px;
       height: 100px;
       border-radius: 50%;
@@ -727,7 +728,7 @@ table.contact-confirm td{
   .official-mentor-list th{
   width:20%;
   border-bottom: 10px solid white;
-}
+}}
 
 .top {
   vertical-align: top;
@@ -749,4 +750,58 @@ table.contact-confirm td{
 .mentee-list td{
   padding-left:5px;
   width:40%;
+}
+
+.profile-icon-bbs {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  @media (max-width: 767.98px) {
+    .profile-icon-bbs {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-position: center center;
+      margin-left: auto;
+      margin-right: auto;
+}}
+
+.no-icon-bbs {
+    background-image: url('../images/green.png');
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  @media (max-width: 767.98px) {
+    .no-icon-bbs {
+      background-image: url('../images/green.png');
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-position: center center;
+      margin-left: auto;
+      margin-right: auto;
+}}
+
+.bbs-subject {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.like-button {
+  background-color:#ffffff;
+  border-color: transparent;
+  display: inline-block;
+}
+
+.official_icon{
+  color: #20b2aa;
+  font-size: 12px;
 }

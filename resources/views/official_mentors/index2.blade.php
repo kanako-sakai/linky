@@ -18,8 +18,8 @@
                 @foreach ($users as $user)
                 <div class="coach-wrap d-sm-flex">
                     <div class="img coach-img">
-                    	@if(isset($user->picture)) <img src ="{{ $user->picture }}" class="official_icon"></div> 
-                    	@else<p class="no_icon"></p></div>@endif
+                    	@if(isset($user->picture)) <img src ="{{ $user->picture }}" class="official-profile-pic"></div> 
+                    	@else<p class="no_icon_official"></p></div>@endif
            
                 	<div class="text pl-md-5">
                          <h2 class="official-name">{{ $user -> name }}</h2>

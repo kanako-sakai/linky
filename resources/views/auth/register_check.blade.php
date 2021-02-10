@@ -26,6 +26,9 @@
                 @csrf
                 <input type="hidden" name="email" value="{{$email}}">
                 <input type="hidden" name="password" value="{{$password}}">
+                
+                <div class="g-recaptcha" data-sitekey="6LeZFlEaAAAAABv3tne42xCeCIsbYYrFaeUuIsAf"></div>
+                <br/>
                 <div class="submit-return-buttons text-center">
                     <span>
                        <input value= "前に戻る" onclick= "history.back();" type="button" class="btn btn-light">

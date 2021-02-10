@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Rolemy</title>
+    <title>rolemy</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -33,12 +33,7 @@
       gtag('config', 'UA-177863081-1');
     </script>
     <!-- google recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-     <script>
-       function onSubmit(token) {
-         document.getElementById("demo-form").submit();
-       }
-     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
      
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@KanamamaH" />
