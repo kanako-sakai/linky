@@ -85,6 +85,7 @@
           	<span class="subheading">Our Team</span>
             <h2 class="mb-4">公式メンター</h2>
             <p>様々なご経験を持たれている方々にメンターとしてご協力いただいております。</p>
+            <p class="small">全員無償ボランティアでご協力いただいており、頂いている相談料は全て運営費として使用させていただいております。</p>
           </div>
         </div>
         <div class="row">
