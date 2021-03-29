@@ -276,20 +276,6 @@
 					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(/images/anna_nakayasu.jpg);"></div>
-							</div>
-							<div class="text d-flex align-items-center pt-3 text-center">
-								<div>
-									<h3 class="mb-2">Anna Nakayasu</h3>
-									<span class="position mb-4">Official Mentor</span>
-									<p class="top-intro">東京大学医学部卒業後、都内で初期研修・産婦人科後期研修。現在スタンフォードMBAに在籍中。</p>
-		            			</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="staff">
-							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/shizuka_kato.jpg);"></div>
 							</div>
 							<div class="text d-flex align-items-center pt-3 text-center">
