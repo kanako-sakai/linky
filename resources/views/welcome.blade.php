@@ -106,7 +106,7 @@
 					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(/images/yurie_mizukami.png);"></div>
+								<div class="img align-self-stretch" style="background-image: url(/images/hayami_koga.jpg);"></div>
 							</div>
 							<div class="text d-flex align-items-center pt-3 text-center">
 								<div>
