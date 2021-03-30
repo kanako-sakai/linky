@@ -106,6 +106,20 @@
 					<div class="col-md-6 col-lg-4 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
+								<div class="img align-self-stretch" style="background-image: url(/images/yurie_mizukami.png);"></div>
+							</div>
+							<div class="text d-flex align-items-center pt-3 text-center">
+								<div>
+									<h3 class="mb-2">Hayami Koga</h3>
+									<span class="position mb-4">Official Mentor</span>
+									<p class="top-intro">日本で医学部を卒業後、初期臨床研修を経てハーバード大学公衆衛生大学院修士課程に進学。社会疫学・社会行動科学を学び、現在、同大学院の博士課程でウェルビーイングと健康の関連、健康格差などについて研究。</p>
+		            			</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 ftco-animate">
+						<div class="staff">
+							<div class="img-wrap d-flex align-items-stretch">
 								<div class="img align-self-stretch" style="background-image: url(/images/eiko_ichikawa.jpg);"></div>
 							</div>
 							<div class="text d-flex align-items-center pt-3 text-center">
