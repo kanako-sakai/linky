@@ -182,15 +182,15 @@ class AdminController extends Controller
             'to' => $user->email,
             'to_name' => $user->name,
             'from'=>'rolemy.official.requests@gmail.com',
-            'from_name' => 'ROLEMY',
-            'subject' => '公式メンター相談実施のお知らせ',
+            'from_name' => 'rolemy',
+            'subject' => '【公式メンター相談】アンケートにご協力お願いします',
             'schedule'=>$schedule->dates."".$schedule->times,
         ], 'to'));
         
         //自分に送るメール
         \Mail::send(new AdminEmail([
             'to' => 'rolemy.official.requests@gmail.com',
-            'to_name'=>'ROLEMY',
+            'to_name'=>'rolemy',
             'from' => $user->email,
             'from_name' => $user->name,
             'subject' => '公式メンター相談実施履歴',
