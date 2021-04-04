@@ -98,7 +98,7 @@ table.profile td{
 .card-header {
   background: #48d1cc;
   color: #fff;
-  font-style: bold;
+  font-weight: bold;
 }
 
 .card-title {
@@ -794,6 +794,11 @@ table.contact-confirm td{
   font-size: 20px;
   font-weight: bold;
 }
+@media (max-width: 767.98px) {
+  .bbs-subject {
+    font-size: 16px;
+    font-weight: bold;
+  }}
 
 .like-button {
   background-color:#ffffff;
@@ -808,4 +813,35 @@ table.contact-confirm td{
 
 .small{
   font-size: 12px;
+}
+
+.blog-thumnail {
+  width: 300px ;
+  height: 157px
+}
+
+@media (max-width: 767.98px) {
+  .blog-thumnail {
+    width:113px;
+    height: 60px;
+}}
+
+table.blog-table{
+  width:100%;
+  text-indent: initial;
+  border-collapse: collapse;
+}
+
+table.blog-table tr{
+  border-bottom: 1px solid #dee2e6;
+}
+
+table.blog-table th{
+  width:30%;
+  padding: 20px;
+  vertical-align: top;}
+  
+.blog-title {
+  color: #48d1cc;
+  font-weight: bold;
 }

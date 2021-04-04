@@ -3,7 +3,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"><span><a href="index.html">Rolemy</a></span></h2>
+              <h2 class="ftco-heading-2"><span><a href="index.html">rolemy</a></span></h2>
               <p>女性プロフェッショナルのキャリアをより自由に、より前向きに</p>
             </div>
           </div>
@@ -17,6 +17,7 @@
                 @if (Auth::check())
                 {{-- マイページへのリンク --}}
                 <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
+                <li class="nav-item">{!! link_to_route('how_to', '使い方', [], ['class' => 'nav-link']) !!}</li>
                 {{-- ログアウトへのリンク --}}
                 <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
                 @else  

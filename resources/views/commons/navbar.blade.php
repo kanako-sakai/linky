@@ -12,9 +12,9 @@
           <li class="nav-item">{!! link_to_route('users.index', '相談相手を探す',[],['class' => 'nav-link']) !!}</li>
           <li class="nav-item">{!! link_to_route('official_mentors', '公式メンターリスト',[],['class' => 'nav-link']) !!}</li>
           <li class="nav-item">{!! link_to_route('group_index', 'グループ相談会', [], ['class' => 'nav-link']) !!}</li>
+          <li class="nav-item">{!! link_to_route('blog.index', 'メディア', [], ['class' => 'nav-link']) !!}</li>
           {{-- マイページへのリンク --}}
           <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
-          <li class="nav-item">{!! link_to_route('how_to', '使い方', [], ['class' => 'nav-link']) !!}</li>
           {{-- ログアウトへのリンク --}}
           <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
         {{--管理画面 --}}
@@ -29,10 +29,12 @@
           <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>
           {{-- ログインページへのリンク --}}
           <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
-        @endif
-      
+          {{--ブログへのリンク　--}}
+          <li class="nav-item">{!! link_to_route('blog.index', 'メディア', [], ['class' => 'nav-link']) !!}</li>
           <li class="nav-item">{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'nav-link']) !!}</li>
+        @endif
         </ul>
+          
       </div>
     </div>
   </nav>
